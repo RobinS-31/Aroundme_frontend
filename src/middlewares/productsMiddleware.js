@@ -5,7 +5,7 @@ const productsMiddleware = store => next => async action => {
     switch (action.type) {
         case GETCATEGORIES:
             try {
-                const response = await axios.get('http://localhost:5000/api/categories/getcategories');
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}api/categories/getcategories`);
                 if (response.status === 200) store.dispatch(setCategories(response.data));
 
                 next(action);

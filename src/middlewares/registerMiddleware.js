@@ -74,7 +74,7 @@ const registerMiddleware = store => next => async action => {
                 })
 
                 const response = await axios.post(
-                    'http://localhost:5000/api/auth/createProducer',
+                    `${process.env.REACT_APP_API_URL}api/auth/createProducer`,
                     formData,
                     {
                         'withCredentials': true,
@@ -110,7 +110,7 @@ const registerMiddleware = store => next => async action => {
                 };
 
                 const response = await axios.post(
-                    'http://localhost:5000/api/auth/createUser',
+                    `${process.env.REACT_APP_API_URL}api/auth/createUser`,
                     dataConsumer,
                     {
                         'withCredentials': true,

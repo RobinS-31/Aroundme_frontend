@@ -5,7 +5,7 @@ const producerMiddleware = store => next => async action => {
     switch (action.type) {
         case GETPRODUCERSLIST:
             try {
-                const response = await axios.get('http://localhost:5000/api/producers/getproducer');
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}api/producers/getproducer`);
                 if (response.status === 200) store.dispatch(setProducersList(response.data));
 
                 next(action);
@@ -15,7 +15,7 @@ const producerMiddleware = store => next => async action => {
             break;
         case GETONEPRODUCER:
             try {
-                const response = await axios.get(`http://localhost:5000/api/producers/getoneproducer/${action.id}`);
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}api/producers/getoneproducer/${action.id}`);
                 if (response.status === 200) store.dispatch(setOneProducer(response.data));
 
                 next(action);

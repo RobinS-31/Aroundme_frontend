@@ -21,7 +21,7 @@ const authMiddleware = store => next => async action => {
                 };
 
                 const response = await axios.post(
-                    'http://localhost:5000/api/auth/login',
+                    `${process.env.REACT_APP_API_URL}api/auth/login`,
                     dataLogin,
                     {
                         'withCredentials': true,
@@ -47,7 +47,7 @@ const authMiddleware = store => next => async action => {
         case LOGOUT:
             try {
                 const response = await axios.get(
-                    'http://localhost:5000/api/auth/logout',
+                    `${process.env.REACT_APP_API_URL}api/auth/logout`,
                     {
                         'withCredentials': true,
                         headers: { 'Content-Type': 'application/json' }
@@ -64,7 +64,7 @@ const authMiddleware = store => next => async action => {
         case CHECKEDIFLOGGED:
             try {
                 const response = await axios.get(
-                    'http://localhost:5000/api/auth/checkediflogged',
+                    `${process.env.REACT_APP_API_URL}api/auth/checkediflogged`,
                     {
                         'withCredentials': true,
                         headers: { 'Content-Type': 'application/json' }

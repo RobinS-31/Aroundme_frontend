@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a91621d5-ada7-48d4-b047-30fc6668e5ce" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middlewares/authMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/authMiddleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middlewares/producerMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/producerMiddleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middlewares/productsMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/productsMiddleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middlewares/registerMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/registerMiddleware.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +38,7 @@
       <option name="presentableId" value="Default" />
       <updated>1628002895713</updated>
       <workItem from="1628002897139" duration="34000" />
+      <workItem from="1628003488188" duration="596000" />
     </task>
     <servers />
   </component>
