@@ -1,0 +1,23 @@
+.mapapi {
+  width: 750px;
+  height: 600px;
+  padding-left: 1rem;
+}
+.mapapi .mapapi_container {
+  height: 100%;
+  border-radius: 0.25rem;
+}
+.mapapi .mapapi_container .mapapi_container_popup {
+  text-align: center;
+}
+.mapapi .mapapi_container .mapapi_container_popup_name {
+  font-family: "Lobster", cursive;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+.mapapi .mapapi_container .mapapi_container_popup_job {
+  font-size: 0.75rem;
+  margin: 0;
+}
+
+/*# sourceMappingURL=style.css.map */

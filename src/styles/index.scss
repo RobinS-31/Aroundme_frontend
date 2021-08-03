@@ -1,0 +1,43 @@
+@import 'reset';
+
+@font-face {
+    font-family: 'Galada';
+    src: url('../assets/fonts/Galada-Regular.ttf');
+}
+@font-face {
+    font-family: 'Lobster';
+    src: url('../assets/fonts/Lobster-Regular.ttf');
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    #root {
+        min-height: 100vh;
+        display: flex;
+        overflow: auto;
+        justify-content: center;
+        background-image: url('../assets/images/wallpaper-field.webp');
+        background-origin: border-box;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+    }
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+    min-height: calc(100% - 300px);
+    width: 100%;
+}

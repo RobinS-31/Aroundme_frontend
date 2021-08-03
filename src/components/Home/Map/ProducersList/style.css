@@ -1,0 +1,59 @@
+.producersList {
+  width: 450px;
+  height: 600px;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  overflow: auto;
+  scrollbar-width: none;
+}
+.producersList::-webkit-scrollbar {
+  display: none;
+}
+.producersList .producersList_item {
+  display: flex;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+  background-color: white;
+  padding: 0.5rem;
+  transition: all 0.1s ease;
+  margin-bottom: 0.75rem;
+}
+.producersList .producersList_item:hover {
+  transform: translateY(-3px);
+  cursor: pointer;
+}
+.producersList .producersList_item .producersList_item_imgContainer {
+  height: 100px;
+  overflow: hidden;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.25rem;
+}
+.producersList .producersList_item .producersList_item_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: calc(100% - 150px);
+  padding-left: 0.5rem;
+}
+.producersList .producersList_item .producersList_item_content .producersList_item_content_name {
+  font-family: "Lobster", cursive;
+}
+.producersList .producersList_item .producersList_item_content .producersList_item_content_job > p {
+  margin-bottom: 0.25rem;
+  font-size: 0.8rem;
+}
+.producersList .producersList_item .producersList_item_content .producersList_item_content_job > p .producersList_item_content_job_spanKey {
+  display: inline-block;
+  width: 92px;
+  text-align: right;
+}
+.producersList .producersList_item .producersList_item_content .producersList_item_content_job > p .producersList_item_content_job_spanValue {
+  font-weight: 700;
+}
+
+/*# sourceMappingURL=style.css.map */

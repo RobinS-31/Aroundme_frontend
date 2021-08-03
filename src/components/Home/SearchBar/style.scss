@@ -1,0 +1,109 @@
+.searchBar {
+    display: flex;
+    align-items: flex-end;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.15);
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: .25rem;
+    padding: 1rem;
+
+    .searchBar_categories, .searchBar_distance {
+        width: 200px;
+    }
+    .searchBar_location {
+        width: 250px;
+    }
+    .searchBar_categories, .searchBar_location, .searchBar_distance {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin-right: 1rem;
+
+        label {
+            height: 20px;
+            font-size: .75rem;
+            font-weight: 600;
+        }
+        select, input {
+            height: 38px;
+            background-color: white;
+            border: 1px solid rgba(34,36,38,.15);
+            border-radius: .25rem;
+
+            &:hover {
+                border-color: rgba(34,36,38,.35);
+            }
+            &:focus {
+                border-color: #85b7d9;
+            }
+            &::placeholder {
+                color: rgb(191,191,191);
+            }
+        }
+        > select {
+            cursor: pointer;
+            padding: .5rem 1rem;
+        }
+        > input {
+            padding: .5rem 2rem .5rem 1rem;
+        }
+        .searchBar_location_icon {
+            position: absolute;
+            right: 10px;
+            top: 30px;
+        }
+        .searchBar_location_displayResults {
+            position: absolute;
+            top: 60px;
+            z-index: 9999;
+            background-color: white;
+            border-radius: .25rem;
+            box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.15);
+            border: 1px solid #d4d4d5;
+
+            .searchBar_location_displayResults_item {
+                font-size: .8rem;
+                font-weight: 600;
+                padding: 0.85rem;
+                border-bottom: 1px solid rgba(34,36,38,.1);
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #f9fafb;
+                }
+            }
+        }
+        .searchBar_distance_container {
+            > select {
+                width: 25%;
+                cursor: pointer;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+            > input {
+                width: 75%;
+                padding: .5rem .5rem .5rem 1rem;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+                border-right: none;
+            }
+        }
+    }
+    .searchBar_displayMapButton {
+        background-color: #21ba45;
+        color: #fff;
+        text-shadow: none;
+        background-image: none;
+        padding: .5rem 1.25rem;
+        border: none;
+        outline: 0;
+        border-radius: .25rem;
+        font-weight: 700;
+        height: 38px;
+        width: 150px;
+        transition: background-color .15s;
+
+        &.hideMap {
+            background-color: #fbc02d;
+        }
+    }
+}

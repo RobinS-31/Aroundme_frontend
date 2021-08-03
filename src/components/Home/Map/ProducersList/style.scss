@@ -1,0 +1,61 @@
+.producersList {
+    width: 450px;
+    height: 600px;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: .5rem;
+    border-radius: .25rem;
+    overflow: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    .producersList_item {
+        display: flex;
+        border-radius: .25rem;
+        box-shadow: 0 1px 3px 0 #d4d4d5,0 0 0 1px #d4d4d5;
+        background-color: white;
+        padding: .5rem;
+        transition: all .1s ease;
+        margin-bottom: .75rem;
+
+        &:hover {
+            transform: translateY(-3px);
+            cursor: pointer;
+        }
+        .producersList_item_imgContainer {
+            height: 100px;
+            overflow: hidden;
+            width: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: .25rem;
+        }
+        .producersList_item_content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            width: calc(100% - 150px);
+            padding-left: .5rem;
+
+            .producersList_item_content_name {
+                font-family: 'Lobster', cursive;
+            }
+            .producersList_item_content_job > p {
+                margin-bottom: .25rem;
+                font-size: .8rem;
+
+                .producersList_item_content_job_spanKey {
+                    display: inline-block;
+                    width: 92px;
+                    text-align: right;
+                }
+                .producersList_item_content_job_spanValue {
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}

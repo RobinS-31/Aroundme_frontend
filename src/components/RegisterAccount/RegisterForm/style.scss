@@ -1,0 +1,144 @@
+.registerForm {
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.15);
+    border-radius: .25rem;
+    padding: 2rem;
+    width: 80%;
+    max-width: 750px;
+    height: min-content;
+
+    .registerForm_title {
+        font-family: 'Lobster', cursive;
+        font-size: 2rem;
+        text-align: center;
+        margin: 2rem 0 3rem 0;
+    }
+    .registerForm_formContainer {
+        .registerForm_formContainer_form {
+            display: flex;
+            flex-wrap: wrap;
+
+            .registerForm_formContainer_form_inputContainer {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 1rem;
+                padding: 0 .5rem;
+                flex-basis: 50%;
+
+                > label {
+                    height: 20px;
+                    font-size: .8rem;
+                    font-weight: 600;
+
+                    &:not(.notRequired)::after {
+                        content: "*";
+                        color: #db2828;
+                        margin-left: .1rem;
+                    }
+                }
+                > input, textarea, select {
+                    outline: 0;
+                    border: 1px solid rgba(34,36,38,.15);
+                    box-shadow: 0 0 0 0 transparent inset;
+                    border-radius: .25rem;
+                    padding: .65rem;
+
+                    &::placeholder {
+                        color: rgb(191,191,191);
+                    }
+                    &:focus {
+                        border-color: #85b7d9;
+                    }
+                    &[type='file'] {
+                        background-color: white;
+                        height: 38.8px;
+                        padding: .5rem;
+                    }
+                }
+
+                .registerForm_formContainer_form_inputContainer_passwordMessage {
+                    position: absolute;
+                    z-index: 99;
+                    top: 65px;
+                    background-color: #f8ffff;
+                    box-shadow: 0 0 0 1px #a9d5de inset,0 0 0 0 transparent;
+                    color: #276f86;
+                    width: calc(100% - 1rem);
+                    padding: 1rem 1.5rem;
+                    border-radius: .25rem;
+                    font-size: .8rem;
+                    line-height: 1.3rem;
+
+                    .registerForm_formContainer_form_inputContainer_passwordMessage_icon {
+                        margin-right: .25rem;
+                    }
+                }
+                .registerForm_formContainer_form_inputContainer_errorMessage {
+                    background-color: #fb3;
+                    padding: 1rem 1.5rem;
+                    border-radius: .25rem;
+                    font-size: .8rem;
+                    margin-top: .15rem;
+                }
+            }
+            .registerForm_formContainer_form_errorMessage, .registerForm_formContainer_form_registrationMessage {
+                width: 100%;
+                border-radius: .25rem;
+                padding: 1rem;
+                text-align: center;
+                cursor: pointer;
+            }
+            .registerForm_formContainer_form_errorMessage {
+                background-color: #fb3;
+            }
+            .registerForm_formContainer_form_registrationMessage {
+                color: white;
+                background-color: #00c851;
+            }
+            .registerForm_formContainer_form_submit {
+                flex-basis: 100%;
+                display: flex;
+                justify-content: center;
+                margin-top: 2rem;
+
+                .registerForm_formContainer_form_submit_button {
+                    width: 250px;
+                    background-color: #21ba45;
+                    color: #fff;
+                    text-shadow: none;
+                    background-image: none;
+                    padding: .5rem 1.25rem;
+                    border: none;
+                    outline: 0;
+                    border-radius: .25rem;
+                    font-weight: 700;
+
+                    &.loading {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 2px 1.25rem;
+                    }
+                    .spinnerLoader {
+                        display: inline-block;
+                        width: 28px;
+                        height: 28px;
+                        border: 5px solid rgba(255,255,255,.3);
+                        border-radius: 50%;
+                        border-top-color: #fff;
+                        animation: spin 1s ease-in-out infinite;
+                        -webkit-animation: spin 1s ease-in-out infinite;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes spin {
+    to { -webkit-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    to { -webkit-transform: rotate(360deg); }
+}
