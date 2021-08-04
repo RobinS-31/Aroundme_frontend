@@ -197,10 +197,10 @@ const RegisterForm = ({
 
     return (
         <div className={'registerForm'}>
-            <h2 className={'registerForm_title'}>Je créé mon compte ...</h2>
+            <h2 className={'form_title'}>Je créé mon compte ...</h2>
             <div className={'registerForm_formContainer'}>
                 <form className={'registerForm_formContainer_form'} onSubmit={handleOnSubmitForm}>
-                    <div className={'registerForm_formContainer_form_inputContainer'}>
+                    <div className={'inputContainer'}>
                         <label htmlFor={'firstname'}>Prénom</label>
                         <input
                             id={'firstname'}
@@ -211,12 +211,12 @@ const RegisterForm = ({
                             onChange={handleOnChangeFormInput}
                         />
                         {state.isFirstnameError &&
-                        <div className={'registerForm_formContainer_form_inputContainer_errorMessage'}>
+                        <div className={'inputContainer_errorMessage'}>
                             Veuillez ajouter un prénom
                         </div>
                         }
                     </div>
-                    <div className={'registerForm_formContainer_form_inputContainer'}>
+                    <div className={'inputContainer'}>
                         <label htmlFor={'lastname'}>Nom</label>
                         <input
                             id={'lastname'}
@@ -227,12 +227,12 @@ const RegisterForm = ({
                             onChange={handleOnChangeFormInput}
                         />
                         {state.isLastnameError &&
-                        <div className={'registerForm_formContainer_form_inputContainer_errorMessage'}>
+                        <div className={'inputContainer_errorMessage'}>
                             Veuillez ajouter un nom
                         </div>
                         }
                     </div>
-                    <div className={'registerForm_formContainer_form_inputContainer'}>
+                    <div className={'inputContainer'}>
                         <label htmlFor={'address'}>Adresse</label>
                         <input
                             id={'address'}
@@ -243,12 +243,12 @@ const RegisterForm = ({
                             onChange={handleOnChangeFormInput}
                         />
                         {state.isAddressError &&
-                        <div className={'registerForm_formContainer_form_inputContainer_errorMessage'}>
+                        <div className={'inputContainer_errorMessage'}>
                             Veuillez ajouter une adresse
                         </div>
                         }
                     </div>
-                    <div className={'registerForm_formContainer_form_inputContainer'}>
+                    <div className={'inputContainer'}>
                         <label htmlFor={'city'}>Ville</label>
                         <input
                             id={'city'}
@@ -259,12 +259,12 @@ const RegisterForm = ({
                             onChange={handleOnChangeFormInput}
                         />
                         {state.isCityError &&
-                        <div className={'registerForm_formContainer_form_inputContainer_errorMessage'}>
+                        <div className={'inputContainer_errorMessage'}>
                             Veuillez ajouter une ville
                         </div>
                         }
                     </div>
-                    <div className={'registerForm_formContainer_form_inputContainer'}>
+                    <div className={'inputContainer'}>
                         <label htmlFor={'postcode'}>Code Postal</label>
                         <input
                             id={'postcode'}
@@ -275,12 +275,12 @@ const RegisterForm = ({
                             onChange={handleOnChangeFormInput}
                         />
                         {state.isPostcodeError &&
-                        <div className={'registerForm_formContainer_form_inputContainer_errorMessage'}>
+                        <div className={'inputContainer_errorMessage'}>
                             Veuillez ajouter un code postal
                         </div>
                         }
                     </div>
-                    <div className={'registerForm_formContainer_form_inputContainer'}>
+                    <div className={'inputContainer'}>
                         <label htmlFor={'email'}>Email</label>
                         <input
                             id={'email'}
@@ -291,12 +291,12 @@ const RegisterForm = ({
                             onChange={handleOnChangeFormInput}
                         />
                         {state.isEmailError &&
-                        <div className={'registerForm_formContainer_form_inputContainer_errorMessage'}>
+                        <div className={'inputContainer_errorMessage'}>
                             Veuillez ajouter un email
                         </div>
                         }
                     </div>
-                    <div className={'registerForm_formContainer_form_inputContainer'}>
+                    <div className={'inputContainer'}>
                         <label htmlFor={'password'}>Mot de passe</label>
                         <input
                             id={'password'}
@@ -309,35 +309,35 @@ const RegisterForm = ({
                             onBlur={() => setIsPasswordFocus(false)}
                         />
                         {state.isPasswordError &&
-                        <div className={'registerForm_formContainer_form_inputContainer_errorMessage'}>
+                        <div className={'inputContainer_errorMessage'}>
                             Veuillez ajouter un mot de passe correct
                         </div>
                         }
                         {isPasswordFocus &&
-                        <div className={'registerForm_formContainer_form_inputContainer_passwordMessage'}>
+                        <div className={'inputContainer_passwordMessage'}>
                             <p>Le mot de passe doit contenir, au moins :</p>
                             <ul>
                                 <li>
                                     {isLowerUpperChar &&
-                                    <FontAwesomeIcon className={'registerForm_formContainer_form_inputContainer_passwordMessage_icon'} icon={faCheck} />
+                                    <FontAwesomeIcon className={'inputContainer_passwordMessage_icon'} icon={faCheck} />
                                     }
                                     1 lettre majuscule et 1 minuscule
                                 </li>
                                 <li>
                                     {isNumberChar &&
-                                    <FontAwesomeIcon className={'registerForm_formContainer_form_inputContainer_passwordMessage_icon'} icon={faCheck} />
+                                    <FontAwesomeIcon className={'inputContainer_passwordMessage_icon'} icon={faCheck} />
                                     }
                                     1 chiffre
                                 </li>
                                 <li>
                                     {isSpecialChar &&
-                                    <FontAwesomeIcon className={'registerForm_formContainer_form_inputContainer_passwordMessage_icon'} icon={faCheck} />
+                                    <FontAwesomeIcon className={'inputContainer_passwordMessage_icon'} icon={faCheck} />
                                     }
                                     1 caractère spécial
                                 </li>
                                 <li>
                                     {isMinLength &&
-                                    <FontAwesomeIcon className={'registerForm_formContainer_form_inputContainer_passwordMessage_icon'} icon={faCheck} />
+                                    <FontAwesomeIcon className={'inputContainer_passwordMessage_icon'} icon={faCheck} />
                                     }
                                     6 caratères
                                 </li>
@@ -345,7 +345,7 @@ const RegisterForm = ({
                         </div>
                         }
                     </div>
-                    <div className={'registerForm_formContainer_form_inputContainer'}>
+                    <div className={'inputContainer'}>
                         <label className={'notRequired'} htmlFor={'phone'}>Téléphone</label>
                         <input
                             id={'phone'}
@@ -358,7 +358,7 @@ const RegisterForm = ({
                     </div>
                     {isProducer &&
                     <>
-                        <div className={'registerForm_formContainer_form_inputContainer'}>
+                        <div className={'inputContainer'}>
                             <label htmlFor={'establishment'}>Etablissement</label>
                             <input
                                 id={'establishment'}
@@ -369,12 +369,12 @@ const RegisterForm = ({
                                 onChange={handleOnChangeFormInput}
                             />
                             {state.isEstablishmentError &&
-                            <div className={'registerForm_formContainer_form_inputContainer_errorMessage'}>
+                            <div className={'inputContainer_errorMessage'}>
                                 Veuillez ajouter un nom d'établissement
                             </div>
                             }
                         </div>
-                        <div className={'registerForm_formContainer_form_inputContainer'}>
+                        <div className={'inputContainer'}>
                             <label htmlFor={'job'}>Métier</label>
                             <input
                                 id={'job'}
@@ -385,12 +385,12 @@ const RegisterForm = ({
                                 onChange={handleOnChangeFormInput}
                             />
                             {state.isJobError &&
-                            <div className={'registerForm_formContainer_form_inputContainer_errorMessage'}>
+                            <div className={'inputContainer_errorMessage'}>
                                 Veuillez ajouter un métier
                             </div>
                             }
                         </div>
-                        <div className={'registerForm_formContainer_form_inputContainer'}>
+                        <div className={'inputContainer'}>
                             <label htmlFor={'category'}>Catégorie de produits</label>
                             <select
                                 id={'category'}
@@ -410,7 +410,7 @@ const RegisterForm = ({
                                 })}
                             </select>
                         </div>
-                        <div className={'registerForm_formContainer_form_inputContainer'}>
+                        <div className={'inputContainer'}>
                             <label htmlFor={'siret'}>Numéro Siret</label>
                             <input
                                 id={'siret'}
@@ -421,12 +421,12 @@ const RegisterForm = ({
                                 onChange={handleOnChangeFormInput}
                             />
                             {state.isSiretError &&
-                            <div className={'registerForm_formContainer_form_inputContainer_errorMessage'}>
+                            <div className={'inputContainer_errorMessage'}>
                                 Veuillez ajouter un numéro d'immatriculation de votre entreprise
                             </div>
                             }
                         </div>
-                        <div className={'registerForm_formContainer_form_inputContainer'}>
+                        <div className={'inputContainer'}>
                             <label htmlFor={'imageFile'}>Image</label>
                             <input
                                 id={'imageFile'}
@@ -435,12 +435,12 @@ const RegisterForm = ({
                                 onChange={handleOnChangeFormInput}
                             />
                             {state.isImageFileError &&
-                            <div className={'registerForm_formContainer_form_inputContainer_errorMessage'}>
+                            <div className={'inputContainer_errorMessage'}>
                                 Veuillez ajouter une image
                             </div>
                             }
                         </div>
-                        <div className={'registerForm_formContainer_form_inputContainer'}>
+                        <div className={'inputContainer'}>
                             <label className={'notRequired'} htmlFor={'description'}>Description</label>
                             <textarea
                                 id={'description'}

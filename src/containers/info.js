@@ -2,7 +2,7 @@
 import { connect } from 'react-redux';
 
 // == Import : components
-import Producer from "../components/Dashboard/Producer/producer";
+import Info from "../components/Dashboard/Info/info";
 import { getCategories } from "../actions/products";
 
 const mapStateToProps = (state, ownProps) => ({
@@ -28,4 +28,4 @@ const mapDispatchToProps = (dispatch) => ({
     }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Producer);
+export default connect(mapStateToProps, mapDispatchToProps)(Info);

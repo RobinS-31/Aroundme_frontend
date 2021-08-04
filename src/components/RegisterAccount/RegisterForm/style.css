@@ -7,74 +7,9 @@
   max-width: 750px;
   height: min-content;
 }
-.registerForm .registerForm_title {
-  font-family: "Lobster", cursive;
-  font-size: 2rem;
-  text-align: center;
-  margin: 2rem 0 3rem 0;
-}
 .registerForm .registerForm_formContainer .registerForm_formContainer_form {
   display: flex;
   flex-wrap: wrap;
-}
-.registerForm .registerForm_formContainer .registerForm_formContainer_form .registerForm_formContainer_form_inputContainer {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1rem;
-  padding: 0 0.5rem;
-  flex-basis: 50%;
-}
-.registerForm .registerForm_formContainer .registerForm_formContainer_form .registerForm_formContainer_form_inputContainer > label {
-  height: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
-}
-.registerForm .registerForm_formContainer .registerForm_formContainer_form .registerForm_formContainer_form_inputContainer > label:not(.notRequired)::after {
-  content: "*";
-  color: #db2828;
-  margin-left: 0.1rem;
-}
-.registerForm .registerForm_formContainer .registerForm_formContainer_form .registerForm_formContainer_form_inputContainer > input, .registerForm .registerForm_formContainer .registerForm_formContainer_form .registerForm_formContainer_form_inputContainer textarea, .registerForm .registerForm_formContainer .registerForm_formContainer_form .registerForm_formContainer_form_inputContainer select {
-  outline: 0;
-  border: 1px solid rgba(34, 36, 38, 0.15);
-  box-shadow: 0 0 0 0 transparent inset;
-  border-radius: 0.25rem;
-  padding: 0.65rem;
-}
-.registerForm .registerForm_formContainer .registerForm_formContainer_form .registerForm_formContainer_form_inputContainer > input::placeholder, .registerForm .registerForm_formContainer .registerForm_formContainer_form .registerForm_formContainer_form_inputContainer textarea::placeholder, .registerForm .registerForm_formContainer .registerForm_formContainer_form .registerForm_formContainer_form_inputContainer select::placeholder {
-  color: #bfbfbf;
-}
-.registerForm .registerForm_formContainer .registerForm_formContainer_form .registerForm_formContainer_form_inputContainer > input:focus, .registerForm .registerForm_formContainer .registerForm_formContainer_form .registerForm_formContainer_form_inputContainer textarea:focus, .registerForm .registerForm_formContainer .registerForm_formContainer_form .registerForm_formContainer_form_inputContainer select:focus {
-  border-color: #85b7d9;
-}
-.registerForm .registerForm_formContainer .registerForm_formContainer_form .registerForm_formContainer_form_inputContainer > input[type=file], .registerForm .registerForm_formContainer .registerForm_formContainer_form .registerForm_formContainer_form_inputContainer textarea[type=file], .registerForm .registerForm_formContainer .registerForm_formContainer_form .registerForm_formContainer_form_inputContainer select[type=file] {
-  background-color: white;
-  height: 38.8px;
-  padding: 0.5rem;
-}
-.registerForm .registerForm_formContainer .registerForm_formContainer_form .registerForm_formContainer_form_inputContainer .registerForm_formContainer_form_inputContainer_passwordMessage {
-  position: absolute;
-  z-index: 99;
-  top: 65px;
-  background-color: #f8ffff;
-  box-shadow: 0 0 0 1px #a9d5de inset, 0 0 0 0 transparent;
-  color: #276f86;
-  width: calc(100% - 1rem);
-  padding: 1rem 1.5rem;
-  border-radius: 0.25rem;
-  font-size: 0.8rem;
-  line-height: 1.3rem;
-}
-.registerForm .registerForm_formContainer .registerForm_formContainer_form .registerForm_formContainer_form_inputContainer .registerForm_formContainer_form_inputContainer_passwordMessage .registerForm_formContainer_form_inputContainer_passwordMessage_icon {
-  margin-right: 0.25rem;
-}
-.registerForm .registerForm_formContainer .registerForm_formContainer_form .registerForm_formContainer_form_inputContainer .registerForm_formContainer_form_inputContainer_errorMessage {
-  background-color: #fb3;
-  padding: 1rem 1.5rem;
-  border-radius: 0.25rem;
-  font-size: 0.8rem;
-  margin-top: 0.15rem;
 }
 .registerForm .registerForm_formContainer .registerForm_formContainer_form .registerForm_formContainer_form_errorMessage, .registerForm .registerForm_formContainer .registerForm_formContainer_form .registerForm_formContainer_form_registrationMessage {
   width: 100%;
@@ -107,33 +42,6 @@
   outline: 0;
   border-radius: 0.25rem;
   font-weight: 700;
-}
-.registerForm .registerForm_formContainer .registerForm_formContainer_form .registerForm_formContainer_form_submit .registerForm_formContainer_form_submit_button.loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2px 1.25rem;
-}
-.registerForm .registerForm_formContainer .registerForm_formContainer_form .registerForm_formContainer_form_submit .registerForm_formContainer_form_submit_button .spinnerLoader {
-  display: inline-block;
-  width: 28px;
-  height: 28px;
-  border: 5px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  border-top-color: #fff;
-  animation: spin 1s ease-in-out infinite;
-  -webkit-animation: spin 1s ease-in-out infinite;
-}
-
-@keyframes spin {
-  to {
-    -webkit-transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes spin {
-  to {
-    -webkit-transform: rotate(360deg);
-  }
 }
 
 /*# sourceMappingURL=style.css.map */

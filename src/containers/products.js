@@ -2,7 +2,7 @@
 import { connect } from 'react-redux';
 
 // == Import : components
-import Customer from "../components/Dashboard/Customer/customer";
+import Products from "../components/Dashboard/Products/products";
 
 const mapStateToProps = (state, ownProps) => ({
     props: ownProps
@@ -12,4 +12,4 @@ const mapDispatchToProps = (dispatch) => ({
 
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Customer);
+export default connect(mapStateToProps, mapDispatchToProps)(Products);

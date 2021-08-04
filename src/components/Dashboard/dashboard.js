@@ -2,8 +2,8 @@
 import React, { useEffect } from 'react';
 
 // == Import : components
-import Producer from "../../containers/dashboardProducer";
-import Customer from "../../containers/dashboardCustomer";
+import Info from "../../containers/info";
+import Products from "../../containers/products";
 
 // == Import : local
 import './style.scss';
@@ -23,8 +23,8 @@ const Dashboard = ({ userConnected, userData, setInputDashboardFormValues, props
 
     return (
         <div className='section dashboard'>
-            {userConnected && userData.isProducer && <Producer userData={userData} />}
-            {userConnected && !userData.isProducer && <Customer />}
+            {userConnected && <Info userData={userData} />}
+            {userConnected && userData.isProducer && <Products />}
         </div>
     );
 };

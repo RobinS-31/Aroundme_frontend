@@ -36,22 +36,6 @@
 .login .login_form .login_form_button {
   background-color: #21ba45;
 }
-.login .login_form .login_form_button.loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2px 1.25rem;
-}
-.login .login_form .login_form_button .spinnerLoader {
-  display: inline-block;
-  width: 28px;
-  height: 28px;
-  border: 5px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  border-top-color: #fff;
-  animation: spin 1s ease-in-out infinite;
-  -webkit-animation: spin 1s ease-in-out infinite;
-}
 .login .login_errorMessage {
   position: relative;
   margin-top: 0.25rem;
@@ -71,17 +55,6 @@
 }
 .login .login_button {
   background-color: #2185d0;
-}
-
-@keyframes spin {
-  to {
-    -webkit-transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes spin {
-  to {
-    -webkit-transform: rotate(360deg);
-  }
 }
 
 /*# sourceMappingURL=style.css.map */
