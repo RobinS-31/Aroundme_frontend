@@ -18,7 +18,7 @@ const ProducersList = ({ props }) => {
         const heightToSkip = producerList.current.childNodes[0].offsetTop;
         if (producerItem.current) {
             producerList.current.scrollTo({
-                top: (producerItem.current.offsetTop - heightToSkip),
+                top: (producerItem.current.offsetTop - (heightToSkip + 12)),
                 left: 0,
                 behavior: "smooth"
             });

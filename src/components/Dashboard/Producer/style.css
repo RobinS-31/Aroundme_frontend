@@ -1,0 +1,81 @@
+.dashboard_producer {
+  width: 100%;
+}
+.dashboard_producer .dashboard_producer_info .dashboard_producer_info_container {
+  display: flex;
+}
+.dashboard_producer .dashboard_producer_info .dashboard_producer_info_container .dashboard_producer_info_container_picture {
+  width: 300px;
+  height: 300px;
+}
+.dashboard_producer .dashboard_producer_info .dashboard_producer_info_container .dashboard_producer_info_container_picture > img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.dashboard_producer .dashboard_producer_info .dashboard_producer_info_container .dashboard_producer_info_container_data {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% - 300px);
+  padding-left: 2rem;
+}
+
+.form_title {
+  font-family: "Lobster", cursive;
+  font-size: 1.75rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.inputContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  padding: 0 0.5rem;
+  flex-basis: 50%;
+}
+.inputContainer > label {
+  height: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.inputContainer > label:not(.notRequired)::after {
+  content: "*";
+  color: #db2828;
+  margin-left: 0.1rem;
+}
+.inputContainer > input, .inputContainer textarea, .inputContainer select {
+  outline: 0;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  box-shadow: 0 0 0 0 transparent inset;
+  border-radius: 0.25rem;
+  padding: 0.65rem;
+}
+.inputContainer > input::placeholder, .inputContainer textarea::placeholder, .inputContainer select::placeholder {
+  color: #bfbfbf;
+}
+.inputContainer > input:focus, .inputContainer textarea:focus, .inputContainer select:focus {
+  border-color: #85b7d9;
+}
+.inputContainer > input[type=file], .inputContainer textarea[type=file], .inputContainer select[type=file] {
+  background-color: white;
+  height: 38.8px;
+  padding: 0.5rem;
+}
+.inputContainer .inputContainer_checkboxSection {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  box-shadow: 0 0 0 0 transparent inset;
+  border-radius: 0.25rem;
+  padding: 0.65rem;
+  background-color: #ffffff;
+}
+.inputContainer .inputContainer_checkboxSection > div {
+  flex-basis: 50%;
+}
+.inputContainer .inputContainer_checkboxSection > div > label {
+  font-size: 0.8rem;
+}
+
+/*# sourceMappingURL=style.css.map */

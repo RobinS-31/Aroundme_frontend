@@ -50,7 +50,7 @@ const ProducerShowCase = ({ producerData, getOneProducer, resetOneProducer, prop
     };
 
     return (
-        <div className="producerShowCase">
+        <div className="section producerShowCase">
             {producerData.length !== 0 &&
                 <>
                     <div className="producerShowCase_info">

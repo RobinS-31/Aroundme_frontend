@@ -1,0 +1,90 @@
+.dashboard_producer {
+    width: 100%;
+
+    .dashboard_producer_info {
+
+        .dashboard_producer_info_container {
+            display: flex;
+
+            .dashboard_producer_info_container_picture {
+                width: 300px;
+                height: 300px;
+
+                > img {
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+            }
+            .dashboard_producer_info_container_data {
+                display: flex;
+                flex-wrap: wrap;
+                width: calc(100% - 300px);
+                padding-left: 2rem;
+            }
+        }
+    }
+}
+
+.form_title {
+    font-family: 'Lobster', cursive;
+    font-size: 1.75rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.inputContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    padding: 0 .5rem;
+    flex-basis: 50%;
+
+    > label {
+        height: 20px;
+        font-size: .8rem;
+        font-weight: 600;
+
+        &:not(.notRequired)::after {
+            content: "*";
+            color: #db2828;
+            margin-left: .1rem;
+        }
+    }
+    > input, textarea, select {
+        outline: 0;
+        border: 1px solid rgba(34,36,38,.15);
+        box-shadow: 0 0 0 0 transparent inset;
+        border-radius: .25rem;
+        padding: .65rem;
+
+        &::placeholder {
+            color: rgb(191,191,191);
+        }
+        &:focus {
+            border-color: #85b7d9;
+        }
+        &[type='file'] {
+            background-color: white;
+            height: 38.8px;
+            padding: .5rem;
+        }
+    }
+    .inputContainer_checkboxSection {
+        display: flex;
+        flex-wrap: wrap;
+        border: 1px solid rgba(34,36,38,.15);
+        box-shadow: 0 0 0 0 transparent inset;
+        border-radius: .25rem;
+        padding: .65rem;
+        background-color: #ffffff;
+
+        > div {
+            flex-basis: 50%;
+
+            > label {
+                font-size: .8rem;
+            }
+        }
+    }
+}
