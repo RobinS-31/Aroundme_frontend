@@ -63,6 +63,8 @@ const authMiddleware = store => next => async action => {
             break;
         case CHECKEDIFLOGGED:
             try {
+                const { location } = store.getState().user;
+
                 const response = await axios.get(
                     `${process.env.REACT_APP_API_URL}api/auth/checkediflogged`,
                     {
@@ -73,7 +75,7 @@ const authMiddleware = store => next => async action => {
                 if (response.status === 200) {
                     const { xsrfToken, userInfo } = response.data;
                     store.dispatch(setUserData(userInfo._id, userInfo, xsrfToken));
-                    if (!userInfo.isProducer) {
+                    if (!userInfo.isProducer && !location.lat && !location.lon) {
                         store.dispatch(getUserLocation());
                     }
                 } else {

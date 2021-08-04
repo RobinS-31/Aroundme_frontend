@@ -30,7 +30,13 @@ const user = (state = initialState, action = {}) => {
                 }
             }
         case RESETUSERDATA:
-            return initialState;
+            return {
+                ...state,
+                userConnected: false,
+                userId: 0,
+                userData: {},
+                xsrfToken: null,
+            };
         default: return state;
     }
 };
