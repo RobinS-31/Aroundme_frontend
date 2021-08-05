@@ -5,26 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a91621d5-ada7-48d4-b047-30fc6668e5ce" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/actions/form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/style.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reducers/form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/Customer/customer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/Products/products.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/Customer/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/Products/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/Customer/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/Products/style.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/Customer/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/Products/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/Producer/producer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/Info/info.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/Producer/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/Info/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/Producer/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/Info/style.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/Producer/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/Info/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/registerForm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/Info/info.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/Info/info.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Dashboard/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/LoginButton/Login/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/LoginButton/Login/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/LoginButton/Login/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/LoginButton/Login/style.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/LoginButton/Login/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/LoginButton/Login/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/Map/MapAPI/mapApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Map/MapAPI/mapApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/Map/ProducersList/producersList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Map/ProducersList/producersList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/Map/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Map/map.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/RegisterAccount/RegisterForm/registerForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RegisterAccount/RegisterForm/registerForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RegisterAccount/RegisterForm/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RegisterAccount/RegisterForm/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RegisterAccount/RegisterForm/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RegisterAccount/RegisterForm/style.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RegisterAccount/RegisterForm/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RegisterAccount/RegisterForm/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/dashboardCustomer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/products.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/dashboardProducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/info.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/registerForm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middlewares/authMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/authMiddleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middlewares/registerMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/registerMiddleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middlewares/searchbarMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/searchbarMiddleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/registerForm.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/index.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.scss" afterDir="false" />
@@ -54,7 +55,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../back" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -73,7 +74,8 @@
       <updated>1628002895713</updated>
       <workItem from="1628002897139" duration="34000" />
       <workItem from="1628003488188" duration="596000" />
-      <workItem from="1628065008331" duration="21018000" />
+      <workItem from="1628065008331" duration="23771000" />
+      <workItem from="1628151646214" duration="18176000" />
     </task>
     <servers />
   </component>
@@ -90,5 +92,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

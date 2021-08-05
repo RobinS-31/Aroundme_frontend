@@ -53,7 +53,7 @@ const searchbarMiddleware = store => next => async action => {
 
                 if (response.status === 200) {
                     const result = response.data[distanceMetric][0];
-                    result.shift();
+                    await result.shift();
                     store.dispatch(setDistanceOrDuration(result));
                     next(action);
                 }

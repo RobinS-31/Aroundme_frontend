@@ -1,6 +1,5 @@
 // == Import : npm
-import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import L from 'leaflet';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { Link } from 'react-router-dom';

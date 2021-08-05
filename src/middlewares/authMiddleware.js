@@ -8,6 +8,7 @@ import {
     resetLoginForm
 } from "../actions/login";
 import { setUserData, resetUserData, getUserLocation } from "../actions/user";
+import { resetRegisterForm } from "../actions/form";
 
 const authMiddleware = store => next => async action => {
     const { email, password } = store.getState().login;
@@ -55,6 +56,7 @@ const authMiddleware = store => next => async action => {
                 );
                 if (response.status === 200) {
                     store.dispatch(resetUserData());
+                    store.dispatch(resetRegisterForm());
                     next(action);
                 }
             } catch (err) {

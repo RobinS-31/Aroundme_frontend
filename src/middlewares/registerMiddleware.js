@@ -1,15 +1,16 @@
 import axios from 'axios';
+
 import {
     GETLOCATION,
     SENDREGISTERCONSUMER,
     SENDREGISTERPRODUCER,
     sendRegisterProducer,
     setProducerLocation,
-    setIsRegisterFormError,
-    setRegistrationIsValidated,
-    setIsWaitingRegisterFormValidation,
+    setIsFormError,
+    setFormRequestIsValidated,
+    setIsWaitingFormValidation,
     resetRegisterForm
-} from "../actions/registerForm";
+} from "../actions/form";
 
 const registerMiddleware = store => next => async action => {
     const {
@@ -26,17 +27,18 @@ const registerMiddleware = store => next => async action => {
         imageFile,
         email,
         password,
-        location,
-        category
-    } = store.getState().registerForm;
+        categories,
+        lat,
+        lon,
+    } = store.getState().form;
 
     switch (action.type) {
         case GETLOCATION:
             try {
                 const response = await axios.get(`https://api-adresse.data.gouv.fr/search/?q=${address}&postcode=${postcode}&city=${city}`);
                 if (response.status !== 200) {
-                    store.dispatch(setIsWaitingRegisterFormValidation(false));
-                    store.dispatch(setIsRegisterFormError(true, 'L\'adresse indiqué n\'est pas correcte' ));
+                    store.dispatch(setIsWaitingFormValidation(false));
+                    store.dispatch(setIsFormError(true, 'L\'adresse indiqué n\'est pas correcte' ));
                 } else {
                     const result = response.data.features[0].geometry.coordinates;
                     store.dispatch(setProducerLocation(result[0], result[1]));
@@ -62,9 +64,9 @@ const registerMiddleware = store => next => async action => {
                     description,
                     email,
                     password,
-                    lat: location.lat,
-                    lon: location.lon,
-                    category
+                    lat,
+                    lon,
+                    categories
                 };
 
                 const formData = new FormData();
@@ -83,13 +85,13 @@ const registerMiddleware = store => next => async action => {
                 );
 
                 if (response.status === 200) {
-                    store.dispatch(setIsWaitingRegisterFormValidation(false));
-                    store.dispatch(setIsRegisterFormError(true, response.data.message));
+                    store.dispatch(setIsWaitingFormValidation(false));
+                    store.dispatch(setIsFormError(true, response.data.message));
                 }
                 if (response.status === 201) {
-                    store.dispatch(setIsWaitingRegisterFormValidation(false));
+                    store.dispatch(setIsWaitingFormValidation(false));
                     store.dispatch(resetRegisterForm());
-                    store.dispatch(setRegistrationIsValidated(true));
+                    store.dispatch(setFormRequestIsValidated(true));
                     next(action);
                 }
             } catch (err) {
@@ -120,17 +122,17 @@ const registerMiddleware = store => next => async action => {
                     }
                 );
                 if (response.status === 200) {
-                    store.dispatch(setIsWaitingRegisterFormValidation(false));
-                    store.dispatch(setIsRegisterFormError(true, response.data.message));
+                    store.dispatch(setIsWaitingFormValidation(false));
+                    store.dispatch(setIsFormError(true, response.data.message));
                 }
                 if (response.status === 201) {
-                    store.dispatch(setIsWaitingRegisterFormValidation(false));
+                    store.dispatch(setIsWaitingFormValidation(false));
                     store.dispatch(resetRegisterForm());
-                    store.dispatch(setRegistrationIsValidated(true));
+                    store.dispatch(setFormRequestIsValidated(true));
                     next(action);
                 }
             } catch (err) {
-                store.dispatch(setIsRegisterFormError(true, err));
+                store.dispatch(setIsFormError(true, err));
             }
             break;
         default:

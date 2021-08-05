@@ -1,6 +1,5 @@
 // == Import : npm
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 
 // == Import : components
 import MapApi from "../../../containers/mapApi";
@@ -20,16 +19,6 @@ const Map = ({
 
     const [markerIdOnFocus, setMarkerIdOnFocus] = useState('');
     const [producerToDisplay, setProducerToDisplay] = useState([]);
-
-    useEffect(() => {
-        displayMarker();
-    }, [
-        producersList,
-        category,
-        distanceUnit,
-        distanceMetric,
-        distanceOrDuration
-    ]);
 
     const displayMarker = () => {
         const producerFiltering = [];
@@ -66,6 +55,16 @@ const Map = ({
             setProducerToDisplay(producersList);
         }
     };
+
+    useEffect(() => {
+        displayMarker();
+    }, [
+        producersList,
+        category,
+        distanceUnit,
+        distanceMetric,
+        distanceOrDuration
+    ]);
 
     return (
         <div className={'map'}>

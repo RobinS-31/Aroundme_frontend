@@ -8,8 +8,10 @@ import Header from "../Header/header";
 import Home from "../../containers/home";
 import ProducerShowCase from "../../containers/producerShowCase";
 import RegisterAccount from "../RegisterAccount/registerAccount";
-import RegisterForm from "../../containers/registerForm";
+import RegisterForm from "../RegisterAccount/RegisterForm/registerForm";
 import Footer from "../Footer/footer";
+
+import Form from "../../containers/form";
 
 // == Import : local
 import './style.scss';
@@ -29,7 +31,7 @@ const App = ({
         if (location === "/" && userLocation.lat && distanceUnit !== '') {
             getDistanceOrDuration();
         }
-    }, [userLocation, distanceUnit, distanceMetric])
+    }, [userLocation, distanceUnit, distanceMetric, location, getDistanceOrDuration]);
 
     useEffect(() => {
         checkedIfLogged();
@@ -65,6 +67,16 @@ const App = ({
         );
     };
 
+    const RestrictedRoute = ({ component: Component, ...rest }) => {
+        return (
+            <Route {...rest} render={props => (
+                !userConnected
+                    ? <Component {...props} />
+                    : <Redirect to="/" />
+            )} />
+        );
+    };
+
     return (
         <div className='app'>
             <Header />
@@ -73,11 +85,12 @@ const App = ({
                     <Route path={'/'} exact>
                         <Home />
                     </Route>
-                    <Route path={'/register'} component={RegisterAccount} />
-                    <Route path={'/register-user'} component={RegisterForm} />
-                    <Route path={'/register-producer'} component={RegisterForm} />
-                    <Route path={'/producteur/:name'} component={ProducerShowCase} />
-                    <PrivateRoute component={Dashboard} path={'/dashboard'}/>
+                    <RestrictedRoute component={RegisterAccount} path={'/register'} exact />
+                    <RestrictedRoute component={RegisterForm} path={'/register-user'} exact />
+                    <RestrictedRoute component={RegisterForm} path={'/register-producer'} exact />
+                    <Route path={'/producteur/:name'} component={ProducerShowCase} exact />
+                    <PrivateRoute component={Dashboard} path={'/dashboard'} exact />
+                    <Route path={'/test'} component={Form} />
                 </Switch>
             </div>
             <Footer />

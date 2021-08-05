@@ -19,7 +19,7 @@ const Dashboard = ({ userConnected, userData, setInputDashboardFormValues, props
         delete userInfo.imageUrl;
         delete userInfo.products;
         setInputDashboardFormValues(userInfo);
-    }, [])
+    }, [userData, setInputDashboardFormValues])
 
     return (
         <div className='section dashboard'>

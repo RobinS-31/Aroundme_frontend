@@ -1,0 +1,141 @@
+.form .form_container {
+  display: flex;
+}
+.form .form_container .form_container_picture {
+  max-width: 300px;
+  max-height: 300px;
+}
+.form .form_container .form_container_picture > img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.form .form_container .form_container_data {
+  display: flex;
+  flex-wrap: wrap;
+  width: max-content;
+  padding-left: 2rem;
+}
+.form .form_container .form_container_data .inputContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  padding: 0 0.5rem;
+  flex-basis: 50%;
+}
+.form .form_container .form_container_data .inputContainer > label {
+  height: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.form .form_container .form_container_data .inputContainer > label:not(.notRequired)::after {
+  content: "*";
+  color: #db2828;
+  margin-left: 0.1rem;
+}
+.form .form_container .form_container_data .inputContainer > input, .form .form_container .form_container_data .inputContainer textarea, .form .form_container .form_container_data .inputContainer select {
+  outline: 0;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  box-shadow: 0 0 0 0 transparent inset;
+  border-radius: 0.25rem;
+  padding: 0.65rem;
+}
+.form .form_container .form_container_data .inputContainer > input::placeholder, .form .form_container .form_container_data .inputContainer textarea::placeholder, .form .form_container .form_container_data .inputContainer select::placeholder {
+  color: #bfbfbf;
+}
+.form .form_container .form_container_data .inputContainer > input:focus, .form .form_container .form_container_data .inputContainer textarea:focus, .form .form_container .form_container_data .inputContainer select:focus {
+  border-color: #85b7d9;
+}
+.form .form_container .form_container_data .inputContainer > input[type=file], .form .form_container .form_container_data .inputContainer textarea[type=file], .form .form_container .form_container_data .inputContainer select[type=file] {
+  background-color: white;
+  height: 38.8px;
+  padding: 0.5rem;
+}
+.form .form_container .form_container_data .inputContainer > input[type=file]:disabled, .form .form_container .form_container_data .inputContainer textarea[type=file]:disabled, .form .form_container .form_container_data .inputContainer select[type=file]:disabled {
+  border: none;
+  background-color: transparent;
+}
+.form .form_container .form_container_data .inputContainer > input:not([type=file]):disabled, .form .form_container .form_container_data .inputContainer textarea:not([type=file]):disabled, .form .form_container .form_container_data .inputContainer select:not([type=file]):disabled {
+  border: none;
+  background-color: transparent;
+  color: black;
+}
+.form .form_container .form_container_data .inputContainer > textarea {
+  font-family: inherit;
+  font-size: 0.8rem;
+}
+.form .form_container .form_container_data .inputContainer .inputContainer_checkboxSection {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  box-shadow: 0 0 0 0 transparent inset;
+  border-radius: 0.25rem;
+  padding: 0.65rem;
+  background-color: #ffffff;
+}
+.form .form_container .form_container_data .inputContainer .inputContainer_checkboxSection > div {
+  flex-basis: 50%;
+}
+.form .form_container .form_container_data .inputContainer .inputContainer_checkboxSection > div > label {
+  font-size: 0.8rem;
+}
+.form .form_container .form_container_data .inputContainer .inputContainer_checkboxSection.disabled {
+  border: none;
+  background-color: transparent;
+}
+.form .form_container .form_container_data .inputContainer .inputContainer_checkboxSection .inputContainer_checkboxSection_item {
+  margin-bottom: 0.25rem;
+}
+.form .form_container .form_container_data .inputContainer .inputContainer_passwordMessage {
+  position: absolute;
+  z-index: 99;
+  top: 65px;
+  background-color: #f8ffff;
+  box-shadow: 0 0 0 1px #a9d5de inset, 0 0 0 0 transparent;
+  color: #276f86;
+  width: calc(100% - 1rem);
+  padding: 1rem 1.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.8rem;
+  line-height: 1.3rem;
+}
+.form .form_container .form_container_data .inputContainer .inputContainer_passwordMessage .inputContainer_passwordMessage_icon {
+  margin-right: 0.25rem;
+}
+.form .form_container .form_container_data .inputContainer .inputContainer_errorMessage {
+  background-color: #fb3;
+  padding: 1rem 1.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.8rem;
+  margin-top: 0.15rem;
+}
+.form .form_button {
+  display: flex;
+  justify-content: flex-end;
+}
+.form .form_button .formButton {
+  width: 150px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  border: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  color: white;
+  font-size: 0.8rem;
+  padding: 0.6rem 1.5rem;
+  border-radius: 0.125rem;
+}
+.form .form_button .formButton:hover {
+  outline: none;
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15) !important;
+}
+.form .form_button .formButton.saveButton {
+  background-color: #00c851;
+}
+.form .form_button .formButton.editButton {
+  background-color: #fb3;
+}
+.form .form_button > :first-child:not(.saveButton) {
+  margin-right: 1rem !important;
+}
+
+/*# sourceMappingURL=style.css.map */

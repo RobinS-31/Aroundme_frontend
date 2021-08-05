@@ -1,8 +1,9 @@
 // == Import : npm
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useReducer, useState } from 'react';
 
 // == Import : local
 import './style.scss';
+import { emailRegEx } from "../../../utils/regEx";
 
 const Info = ({
     getCategories,
@@ -24,18 +25,128 @@ const Info = ({
     const { userData } = props;
     const [disabledInput, setDisabledInput] = useState(true);
 
+    const initialState = {
+        isFirstnameError: false,
+        isLastnameError: false,
+        isAddressError: false,
+        isCityError: false,
+        isPostcodeError: false,
+        isEstablishmentError: false,
+        isJobError: false,
+        isSiretError: false,
+        isEmailError: false,
+    };
+    const reducer = (state, action) => {
+        switch (action.type) {
+            case 'SETVALUES':
+                return {
+                    ...state,
+                    [action.name]: action.value
+                };
+            case 'RESETVALUES':
+                return initialState;
+            default: break;
+        }
+    };
+    const [state, dispatch] = useReducer(reducer, initialState);
+
     useEffect(() => {
-        console.log(userData);
         getCategories();
-    }, []);
+    }, [getCategories]);
+
+    useEffect(() => {
+        switch (true) {
+            case state.isFirstnameError && firstname !== '':
+                dispatch({ type: 'SETVALUES', name: 'isFirstnameError', value: false });
+                break;
+            case state.isLastnameError && lastname !== '':
+                dispatch({ type: 'SETVALUES', name: 'isLastnameError', value: false });
+                break;
+            case state.isAddressError && address !== '':
+                dispatch({ type: 'SETVALUES', name: 'isAddressError', value: false });
+                break;
+            case state.isCityError && city !== '':
+                dispatch({ type: 'SETVALUES', name: 'isCityError', value: false });
+                break;
+            case state.isPostcodeError && postcode !== '':
+                if (parseInt(postcode)) dispatch({ type: 'SETVALUES', name: 'isPostcodeError', value: false })
+                break;
+            case state.isEstablishmentError && establishment !== '':
+                dispatch({ type: 'SETVALUES', name: 'isEstablishmentError', value: false });
+                break;
+            case state.isJobError && job !== '':
+                dispatch({ type: 'SETVALUES', name: 'isJobError', value: false });
+                break;
+            case state.isSiretError && siret !== '':
+                dispatch({ type: 'SETVALUES', name: 'isSiretError', value: false });
+                break;
+            case state.isEmailError && emailRegEx.test(email):
+                dispatch({ type: 'SETVALUES', name: 'isEmailError', value: false });
+                break;
+            default: break;
+        }
+    }, [
+        firstname,
+        lastname,
+        address,
+        city,
+        postcode,
+        email,
+        establishment,
+        job,
+        siret,
+        state.isFirstnameError,
+        state.isLastnameError,
+        state.isAddressError,
+        state.isCityError,
+        state.isPostcodeError,
+        state.isEstablishmentError,
+        state.isJobError,
+        state.isSiretError,
+        state.isEmailError,
+    ])
 
     const handleOnChangeInputCheckbox = (e) => {
         console.log(e.currentTarget.name, e.currentTarget.value, e.currentTarget.checked);
     };
 
+    const handleOnChangeInput = (e) => {
+        console.log(e.currentTarget.name, e.currentTarget.value);
+    };
+
+    const handleOnClickSubmitButton = (e) => {
+        console.log("handleOnClickSubmitButton");
+
+        if (firstname === '') dispatch({ type: 'SETVALUES', name: 'isFirstnameError', value: true });
+        if (lastname === '') dispatch({ type: 'SETVALUES', name: 'isLastnameError', value: true });
+        if (address === '') dispatch({ type: 'SETVALUES', name: 'isAddressError', value: true });
+        if (city === '') dispatch({ type: 'SETVALUES', name: 'isCityError', value: true });
+        if (!parseInt(postcode)) dispatch({ type: 'SETVALUES', name: 'isPostcodeError', value: true });
+        if (!emailRegEx.test(email)) dispatch({ type: 'SETVALUES', name: 'isEmailError', value: true });
+        if (userData.isProducer) {
+            if (establishment === '') dispatch({ type: 'SETVALUES', name: 'isEstablishmentError', value: true });
+            if (job === '') dispatch({ type: 'SETVALUES', name: 'isJobError', value: true });
+            if (siret === '') dispatch({ type: 'SETVALUES', name: 'isSiretError', value: true });
+            if (imageFile.length === 0) dispatch({ type: 'SETVALUES', name: 'isImageFileError', value: true });
+        }
+    };
+
+    const handleOnSubmitForm = (e) => {
+        e.preventDefault();
+        console.log("handleOnSubmitForm")
+
+        const isError = Object.entries(state).filter(value => {
+            return (value[1] === true);
+        });
+        if (isError.length === 0) {
+            //setIsWaitingRegisterFormValidation(true);
+            //userData.isProducer ? getLocation() : sendRegisterConsumer();
+        }
+    };
+
     return (
         <div className={'dashboard_info'}>
-            <form className={'dashboard_info_form'}>
+            <form className={'dashboard_info_form'} onSubmit={handleOnSubmitForm}>
                 <h2 className={'form_title'}>Mes Informations</h2>
                 <div className={'dashboard_info_form_container'}>
                     <div className={'dashboard_info_form_container_picture'}>
@@ -57,6 +168,7 @@ const Info = ({
                                 placeholder={'Prénom'}
                                 value={firstname}
                                 disabled={disabledInput}
+                                onChange={handleOnChangeInput}
                             />
                         </div>
                         <div className={'dashboard_info_form_container_data_item inputContainer'}>
@@ -70,6 +182,7 @@ const Info = ({
                                 placeholder={'Nom'}
                                 value={lastname}
                                 disabled={disabledInput}
+                                onChange={handleOnChangeInput}
                             />
                         </div>
                         <div className={'dashboard_info_form_container_data_item inputContainer'}>
@@ -83,6 +196,7 @@ const Info = ({
                                 placeholder={'Adresse'}
                                 value={address}
                                 disabled={disabledInput}
+                                onChange={handleOnChangeInput}
                             />
                         </div>
                         <div className={'dashboard_info_form_container_data_item inputContainer'}>
@@ -96,6 +210,7 @@ const Info = ({
                                 placeholder={'Ville'}
                                 value={city}
                                 disabled={disabledInput}
+                                onChange={handleOnChangeInput}
                             />
                         </div>
                         <div className={'dashboard_info_form_container_data_item inputContainer'}>
@@ -107,6 +222,7 @@ const Info = ({
                                 placeholder={'Code Postal'}
                                 value={postcode}
                                 disabled={disabledInput}
+                                onChange={handleOnChangeInput}
                             />
                         </div>
                         <div className={'dashboard_info_form_container_data_item inputContainer'}>
@@ -118,6 +234,7 @@ const Info = ({
                                 placeholder={'Email'}
                                 value={email}
                                 disabled={disabledInput}
+                                onChange={handleOnChangeInput}
                             />
                         </div>
                         <div className={'dashboard_info_form_container_data_item inputContainer'}>
@@ -129,6 +246,7 @@ const Info = ({
                                 placeholder={'Téléphone'}
                                 value={phone}
                                 disabled={disabledInput}
+                                onChange={handleOnChangeInput}
                             />
                         </div>
                         {userData.isProducer &&
@@ -142,6 +260,7 @@ const Info = ({
                                         placeholder={'Établissement'}
                                         value={establishment}
                                         disabled={disabledInput}
+                                        onChange={handleOnChangeInput}
                                     />
                                 </div>
                                 <div className={'dashboard_info_form_container_data_item inputContainer'}>
@@ -153,6 +272,7 @@ const Info = ({
                                         placeholder={'Métier'}
                                         value={job}
                                         disabled={disabledInput}
+                                        onChange={handleOnChangeInput}
                                     />
                                 </div>
                                 <div className={'dashboard_info_form_container_data_item inputContainer'}>
@@ -185,6 +305,7 @@ const Info = ({
                                         placeholder={'Numéro Siret'}
                                         value={siret}
                                         disabled={disabledInput}
+                                        onChange={handleOnChangeInput}
                                     />
                                 </div>
                                 <div className={'dashboard_info_form_container_data_item inputContainer'}>
@@ -194,6 +315,7 @@ const Info = ({
                                         name={'imageFile'}
                                         type={'file'}
                                         disabled={disabledInput}
+                                        onChange={handleOnChangeInput}
                                     />
                                 </div>
                                 <div className={'dashboard_info_form_container_data_item inputContainer'}>
@@ -205,6 +327,7 @@ const Info = ({
                                         value={description}
                                         disabled={disabledInput}
                                         rows={6}
+                                        onChange={handleOnChangeInput}
                                     />
                                 </div>
                             </>
@@ -217,9 +340,16 @@ const Info = ({
                         type={'button'}
                         onClick={() => setDisabledInput(!disabledInput)}
                     >
-                        Modifier
+                        {!disabledInput ? 'Annuler' : 'Modifier'}
                     </button>
-                    <button className={'formButton saveButton'} type={'button'}>Enregister</button>
+                    <button
+                        className={'formButton saveButton'}
+                        type={'submit'}
+                        disabled={disabledInput}
+                        onClick={handleOnClickSubmitButton}
+                    >
+                        Enregister
+                    </button>
                 </div>
             </form>
         </div>
