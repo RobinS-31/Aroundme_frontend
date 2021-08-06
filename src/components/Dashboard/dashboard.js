@@ -1,30 +1,17 @@
 // == Import : npm
-import React, { useEffect } from 'react';
+import React from 'react';
 
 // == Import : components
-import Info from "../../containers/info";
-import Products from "../../containers/products";
+import Form from "../../containers/form";
 
 // == Import : local
 import './style.scss';
 
-const Dashboard = ({ userConnected, userData, setInputDashboardFormValues, props }) => {
-
-    useEffect(() => {
-        const userInfo = { ...userData };
-        delete userInfo._id;
-        delete userInfo.isProducer;
-        delete userInfo.lat;
-        delete userInfo.lon;
-        delete userInfo.imageUrl;
-        delete userInfo.products;
-        setInputDashboardFormValues(userInfo);
-    }, [userData, setInputDashboardFormValues])
-
+const Dashboard = () => {
     return (
         <div className='section dashboard'>
-            {userConnected && <Info userData={userData} />}
-            {userConnected && userData.isProducer && <Products />}
+            <h2 className={'title'}>Informations</h2>
+            <Form />
         </div>
     );
 };

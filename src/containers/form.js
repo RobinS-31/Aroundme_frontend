@@ -8,9 +8,11 @@ import {
     setInitialData,
     setInputFormValues,
     setIsWaitingFormValidation,
+    setIsWaitingSecurityFormValidation,
     setFormRequestIsValidated,
     setIsFormError,
-    sendRegisterConsumer, getLocation
+    sendRegisterConsumer,
+    getLocation
 } from "../actions/form";
 
 const mapStateToProps = (state, ownProps) => ({
@@ -32,9 +34,11 @@ const mapStateToProps = (state, ownProps) => ({
     categories: state.form.categories,
     oldPassword: state.form.oldPassword,
     isWaitingFormValidation: state.form.isWaitingFormValidation,
+    isWaitingSecurityFormValidation: state.form.isWaitingSecurityFormValidation,
     formRequestIsValidated: state.form.formRequestIsValidated,
     isFormError: state.form.isFormError,
     formErrorMessage: state.form.formErrorMessage,
+    formRequestValidatedMessage: state.form.formRequestValidatedMessage,
     props: ownProps
 });
 
@@ -50,6 +54,9 @@ const mapDispatchToProps = (dispatch) => ({
     },
     setIsWaitingFormValidation: (bool) => {
         dispatch(setIsWaitingFormValidation(bool));
+    },
+    setIsWaitingSecurityFormValidation: (bool) => {
+        dispatch(setIsWaitingSecurityFormValidation(bool));
     },
     setFormRequestIsValidated: (bool) => {
         dispatch(setFormRequestIsValidated(bool))

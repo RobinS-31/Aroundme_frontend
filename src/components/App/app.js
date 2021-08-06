@@ -3,15 +3,13 @@ import React, { useEffect } from 'react';
 import { Switch, Route, useLocation, Redirect } from 'react-router-dom';
 
 // == Import : components
-import Dashboard from "../../containers/dashboard";
+import Dashboard from "../Dashboard/dashboard";
 import Header from "../Header/header";
 import Home from "../../containers/home";
 import ProducerShowCase from "../../containers/producerShowCase";
 import RegisterAccount from "../RegisterAccount/registerAccount";
 import RegisterForm from "../RegisterAccount/RegisterForm/registerForm";
 import Footer from "../Footer/footer";
-
-import Form from "../../containers/form";
 
 // == Import : local
 import './style.scss';
@@ -50,6 +48,9 @@ const App = ({
                 break;
             case '/register-producer':
                 document.title = 'Aroundme - Créer un compte producteur';
+                break;
+            case '/dashboard':
+                document.title = 'Aroundme - Tableau de bord';
                 break;
             default:
                 document.title = 'Aroundme';
@@ -90,7 +91,6 @@ const App = ({
                     <RestrictedRoute component={RegisterForm} path={'/register-producer'} exact />
                     <Route path={'/producteur/:name'} component={ProducerShowCase} exact />
                     <PrivateRoute component={Dashboard} path={'/dashboard'} exact />
-                    <Route path={'/test'} component={Form} />
                 </Switch>
             </div>
             <Footer />

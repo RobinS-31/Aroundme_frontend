@@ -2,6 +2,7 @@ import {
     SETINITIALDATA,
     SETINPUTFORMVALUES,
     SETISWAITINGFORMVALIDATION,
+    SETISWAITINGSECURITYFORMVALIDATION,
     SETISFORMERROR,
     SETFORMREQUESTISVALIDATED,
     RESETFORM,
@@ -27,7 +28,9 @@ const initialState = {
     lat: '',
     lon: '',
     isWaitingFormValidation: false,
+    isWaitingSecurityFormValidation: false,
     formRequestIsValidated: false,
+    formRequestValidatedMessage: '',
     isFormError: false,
     formErrorMessage: ''
 };
@@ -55,10 +58,16 @@ const form = (state = initialState, action = {}) => {
                 ...state,
                 isWaitingFormValidation: action.bool
             };
+        case SETISWAITINGSECURITYFORMVALIDATION:
+            return {
+                ...state,
+                isWaitingSecurityFormValidation: action.bool
+            };
         case SETFORMREQUESTISVALIDATED:
             return {
                 ...state,
-                formRequestIsValidated: action.bool
+                formRequestIsValidated: action.bool,
+                formRequestValidatedMessage: action.message
             };
         case RESETFORM:
             return initialState;

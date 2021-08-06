@@ -91,7 +91,7 @@ const registerMiddleware = store => next => async action => {
                 if (response.status === 201) {
                     store.dispatch(setIsWaitingFormValidation(false));
                     store.dispatch(resetRegisterForm());
-                    store.dispatch(setFormRequestIsValidated(true));
+                    store.dispatch(setFormRequestIsValidated(true, response.data.message));
                     next(action);
                 }
             } catch (err) {
@@ -128,7 +128,7 @@ const registerMiddleware = store => next => async action => {
                 if (response.status === 201) {
                     store.dispatch(setIsWaitingFormValidation(false));
                     store.dispatch(resetRegisterForm());
-                    store.dispatch(setFormRequestIsValidated(true));
+                    store.dispatch(setFormRequestIsValidated(true, response.data.message));
                     next(action);
                 }
             } catch (err) {

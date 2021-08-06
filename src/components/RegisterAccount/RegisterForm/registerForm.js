@@ -10,7 +10,7 @@ import './style.scss';
 const RegisterForm = () => {
     return (
         <div className={'registerForm'}>
-            <h2 className={'form_title'}>Je créé mon compte ...</h2>
+            <h2 className={'title'}>Je créé mon compte ...</h2>
             <Form />
         </div>
     );

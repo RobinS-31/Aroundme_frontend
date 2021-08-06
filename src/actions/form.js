@@ -1,6 +1,7 @@
 export const SETINITIALDATA = 'SETINITIALDATA';
 export const SETINPUTFORMVALUES = 'SETINPUTFORMVALUES';
 export const SETISWAITINGFORMVALIDATION = 'SETISWAITINGFORMVALIDATION';
+export const SETISWAITINGSECURITYFORMVALIDATION = 'SETISWAITINGSECURITYFORMVALIDATION';
 export const SETISFORMERROR = 'SETISFORMERROR';
 export const SETFORMREQUESTISVALIDATED = 'SETFORMREQUESTISVALIDATED';
 export const RESETFORM = 'RESETFORM';
@@ -27,9 +28,14 @@ export const setIsWaitingFormValidation = (bool) => ({
     type: SETISWAITINGFORMVALIDATION,
     bool
 });
-export const setFormRequestIsValidated = (bool) => ({
-    type: SETFORMREQUESTISVALIDATED,
+export const setIsWaitingSecurityFormValidation = (bool) => ({
+    type: SETISWAITINGSECURITYFORMVALIDATION,
     bool
+});
+export const setFormRequestIsValidated = (bool, message) => ({
+    type: SETFORMREQUESTISVALIDATED,
+    bool,
+    message
 });
 export const resetRegisterForm = () => ({
     type: RESETFORM

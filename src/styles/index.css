@@ -213,11 +213,11 @@ code {
   max-width: 1200px;
 }
 
-.form_title {
+.title {
   font-family: "Lobster", cursive;
   font-size: 2rem;
   text-align: center;
-  margin: 2rem 0 3rem 0;
+  margin: 1rem 0 3rem 0;
 }
 
 .loading {
