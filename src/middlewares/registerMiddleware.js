@@ -46,7 +46,7 @@ const registerMiddleware = store => next => async action => {
                     next(action);
                 }
             } catch (err) {
-                console.error(err);
+                console.error("GETLOCATION err :", err);
             }
             break;
         case SENDREGISTERPRODUCER:
@@ -95,7 +95,8 @@ const registerMiddleware = store => next => async action => {
                     next(action);
                 }
             } catch (err) {
-                console.error(err);
+                console.error("SENDREGISTERPRODUCER err :", err);
+                store.dispatch(setIsFormError(true, err));
             }
             break;
         case SENDREGISTERCONSUMER:
@@ -132,6 +133,7 @@ const registerMiddleware = store => next => async action => {
                     next(action);
                 }
             } catch (err) {
+                console.error("SENDREGISTERCONSUMER err :", err);
                 store.dispatch(setIsFormError(true, err));
             }
             break;

@@ -1,5 +1,5 @@
 // == Import : npm
-import React, { useEffect, useReducer, useState } from 'react';
+import React, { useEffect, useReducer, useState, useRef } from 'react';
 import { useLocation, useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
@@ -48,11 +48,15 @@ const Form = ({
     isFormError,
     formErrorMessage,
     formRequestValidatedMessage,
+    updateUser,
+    updateProducer,
+    updateSecurityAccount,
     props
 }) => {
 
     const location = useLocation().pathname; // Route empruntée
     const history = useHistory();
+    const inputFile = useRef(null);
     const [isProducer, setIsProducer] = useState(false); // Permet au formulaire d'adopter un certain comportement selon la valeur de la variable
     const [isDashboard, setIsDashboard] = useState(false); // Permet au formulaire d'adopter un certain comportement selon la valeur de la variable
     const [disabledInput, setDisabledInput] = useState(false); // Permet au formulaire d'adopter un certain comportement selon la valeur de la variable
@@ -263,6 +267,12 @@ const Form = ({
         }
     };
 
+    /**
+     * Fonction gérant le clique sur le bouton "Valider", du formulaire de création de compte (quand le composant est appelé sur la route '/register')
+     * ou du formulaire de gestion de compte (quand le composant est appelé sur la route '/dashboard').
+     * Vérifie que les valeurs des "inputs" correspondent à ce qui est attendu, sinon indique qu'il y a une ou des erreurs.
+     * @param e
+     */
     const handleOnClickSubmitButton = (e) => {
         if (firstname === '') dispatch({ type: 'SETVALUES', name: 'isFirstnameError', value: true });
         if (lastname === '') dispatch({ type: 'SETVALUES', name: 'isLastnameError', value: true });
@@ -280,6 +290,11 @@ const Form = ({
         }
     };
 
+    /**
+     * Fonction gérant la soumission du formulaire de création de compte (quand le composant est appelé sur la route '/register')
+     * ou du formulaire de gestion de compte (quand le composant est appelé sur la route '/dashboard').
+     * @param e
+     */
     const handleOnSubmitForm = (e) => {
         e.preventDefault();
         const isError = Object.entries(state).filter(value => {
@@ -288,13 +303,18 @@ const Form = ({
         if (isError.length === 0) {
             setIsWaitingFormValidation(true);
             if (isDashboard) {
-
+                isProducer ? updateProducer() : updateUser();
             } else {
                 isProducer ? getLocation() : sendRegisterConsumer();
             }
         }
     };
 
+    /**
+     * Fonction gérant le clique sur le bouton "Valider" du formulaire de sécurité (pour changer son mot de passe, uniquement
+     * présent quand le formulaire est appelé sur la route 'dashboard').
+     * @param e
+     */
     const handleOnClickSecuritySubmitButton = (e) => {
         if (!passwordRegEx.test(password)) dispatch({ type: 'SETVALUES', name: 'isPasswordError', value: true });
         if (oldPassword === '') dispatch({ type: 'SETVALUES', name: 'isOldPasswordError', value: true });
@@ -307,7 +327,7 @@ const Form = ({
         });
         if (isError.length === 0) {
             setIsWaitingSecurityFormValidation(true);
-            //isProducer ? getLocation() : sendRegisterConsumer();
+            updateSecurityAccount();
         }
     };
 
@@ -316,13 +336,22 @@ const Form = ({
             <form className={'form'} onSubmit={handleOnSubmitForm}>
                 <div className={'form_container'}>
                     {isProducer && isDashboard &&
-                    <div className={'form_container_picture'}>
-                        <img
-                            src={`${process.env.REACT_APP_API_URL}${userData.imageUrl[0]}`}
-                            alt={'Représentation du producteur'}
-                            loading={'lazy'}
-                        />
-                    </div>
+                        <div className={'form_container_picture'}>
+                            {imageFile.length === 0
+                                ?
+                                    <img
+                                        src={`${process.env.REACT_APP_API_URL}${userData.imageUrl[0]}`}
+                                        alt={'Représentation du producteur'}
+                                        loading={'lazy'}
+                                    />
+                                :
+                                    <img
+                                        src={URL.createObjectURL(imageFile[0])}
+                                        alt={'Représentation du producteur'}
+                                        loading={'lazy'}
+                                    />
+                            }
+                        </div>
                     }
                     <div className={'form_container_data'}>
                         <div className={'form_container_data_item inputContainer'}>
@@ -558,6 +587,8 @@ const Form = ({
                                     id={'imageFile'}
                                     name={'imageFile'}
                                     type={'file'}
+                                    accept="image/png, image/jpeg, image/jpg, image/webp"
+                                    ref={inputFile}
                                     disabled={disabledInput}
                                     onChange={handleOnChangeFormInput}
                                 />

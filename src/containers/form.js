@@ -14,6 +14,7 @@ import {
     sendRegisterConsumer,
     getLocation
 } from "../actions/form";
+import { updateUser, updateProducer, updateSecurityAccount } from "../actions/dashboard";
 
 const mapStateToProps = (state, ownProps) => ({
     userData: state.user.userData,
@@ -70,6 +71,15 @@ const mapDispatchToProps = (dispatch) => ({
     getLocation: () => {
         dispatch(getLocation());
     },
+    updateUser: () => {
+        dispatch(updateUser());
+    },
+    updateProducer: () => {
+        dispatch(updateProducer());
+    },
+    updateSecurityAccount: () => {
+        dispatch(updateSecurityAccount());
+    }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Form);
