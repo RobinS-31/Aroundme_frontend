@@ -6,6 +6,7 @@ import {
     setIsWaitingFormValidation,
 } from "../actions/form";
 import { UPDATEUSER, UPDATEPRODUCER, UPDATESECURITYACCOUNT } from "../actions/dashboard";
+import { setUserData, resetUserData, getUserLocation } from "../actions/user";
 
 const dashboardMiddleware = store => next => async action => {
 
@@ -29,7 +30,7 @@ const dashboardMiddleware = store => next => async action => {
         lon,
     } = store.getState().form;
 
-    const { userData, xsrfToken } = store.getState().user;
+    const { userData, userId, xsrfToken } = store.getState().user;
 
     switch (action.type) {
         case UPDATEUSER :
@@ -51,7 +52,8 @@ const dashboardMiddleware = store => next => async action => {
                     imageUrl: userData.imageUrl,
                     email,
                     categories,
-                    xsrfToken
+                    xsrfToken,
+                    userId
                 };
 
                 if (address !== userData.address || city !== userData.city || postcode !== userData.postcode) {
@@ -74,7 +76,7 @@ const dashboardMiddleware = store => next => async action => {
                     formData.append('image', file);
                 });
 
-                const response = await axios.post(
+                const response = await axios.put(
                     `${process.env.REACT_APP_API_URL}api/dashboard/updateproducer`,
                     formData,
                     {
@@ -83,9 +85,12 @@ const dashboardMiddleware = store => next => async action => {
                     }
                 );
 
-                console.log("response :", response);
-
-                next(action);
+                if (response.status === 200) {
+                    store.dispatch(setUserData(response.data._id, response.data, xsrfToken));
+                    store.dispatch(setIsWaitingFormValidation(false));
+                    store.dispatch(setFormRequestIsValidated(true, 'Vos informations ont été mises à jours.'));
+                    next(action);
+                }
             } catch (err) {
                 console.error("SENDREGISTERCONSUMER err :", err);
                 store.dispatch(setIsFormError(true, err));

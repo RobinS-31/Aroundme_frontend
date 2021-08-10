@@ -51,6 +51,21 @@
 .form .form_button > :first-child:not(.saveButton) {
   margin-right: 1rem !important;
 }
+.form .form_registrationMessage, .form .form_errorMessage {
+  width: 100%;
+  border-radius: 0.125rem;
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  margin: 1rem 0;
+}
+.form .form_registrationMessage {
+  color: white;
+  background-color: #00c851;
+}
+.form .form_errorMessage {
+  background-color: #fb3;
+}
 
 .inputContainer {
   position: relative;

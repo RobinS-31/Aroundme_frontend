@@ -131,6 +131,8 @@ const Form = ({
             delete userInfo.isProducer;
             delete userInfo.imageUrl;
             delete userInfo.products;
+            delete userInfo.createdAt;
+            delete userInfo.updatedAt;
             setInitialData(userInfo);
         }
     }, [isDashboard, userData]);
@@ -312,7 +314,7 @@ const Form = ({
 
     /**
      * Fonction gérant le clique sur le bouton "Valider" du formulaire de sécurité (pour changer son mot de passe, uniquement
-     * présent quand le formulaire est appelé sur la route 'dashboard').
+     * présent quand le formulaire est appelé sur la route '/dashboard').
      * @param e
      */
     const handleOnClickSecuritySubmitButton = (e) => {
@@ -642,7 +644,7 @@ const Form = ({
                 </div>
                 {formRequestIsValidated &&
                     <div
-                        className={'registerForm_formContainer_form_registrationMessage'}
+                        className={'form_registrationMessage'}
                         onClick={() => setFormRequestIsValidated(false, '')}
                     >
                         {formRequestValidatedMessage}
@@ -650,7 +652,7 @@ const Form = ({
                 }
                 {isFormError &&
                     <div
-                        className={'registerForm_formContainer_form_errorMessage'}
+                        className={'form_errorMessage'}
                         onClick={() => setIsFormError(false, '')}
                     >
                         {formErrorMessage}.
