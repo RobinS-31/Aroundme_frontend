@@ -3,7 +3,9 @@ export const SETINPUTFORMVALUES = 'SETINPUTFORMVALUES';
 export const SETISWAITINGFORMVALIDATION = 'SETISWAITINGFORMVALIDATION';
 export const SETISWAITINGSECURITYFORMVALIDATION = 'SETISWAITINGSECURITYFORMVALIDATION';
 export const SETISFORMERROR = 'SETISFORMERROR';
+export const SETISSECURITYFORMERROR = 'SETISSECURITYFORMERROR';
 export const SETFORMREQUESTISVALIDATED = 'SETFORMREQUESTISVALIDATED';
+export const SETSECURITYFORMREQUESTISVALIDATED = 'SETSECURITYFORMREQUESTISVALIDATED';
 export const RESETFORM = 'RESETFORM';
 export const SENDREGISTERPRODUCER = 'SENDREGISTERPRODUCER';
 export const SENDREGISTERCONSUMER = 'SENDREGISTERCONSUMER';
@@ -24,6 +26,11 @@ export const setIsFormError = (bool, errorMessage) => ({
     bool,
     errorMessage
 });
+export const setIsSecurityFormError = (bool, errorMessage) => ({
+    type: SETISSECURITYFORMERROR,
+    bool,
+    errorMessage
+});
 export const setIsWaitingFormValidation = (bool) => ({
     type: SETISWAITINGFORMVALIDATION,
     bool
@@ -34,6 +41,11 @@ export const setIsWaitingSecurityFormValidation = (bool) => ({
 });
 export const setFormRequestIsValidated = (bool, message) => ({
     type: SETFORMREQUESTISVALIDATED,
+    bool,
+    message
+});
+export const setSecurityFormRequestIsValidated = (bool, message) => ({
+    type: SETSECURITYFORMREQUESTISVALIDATED,
     bool,
     message
 });

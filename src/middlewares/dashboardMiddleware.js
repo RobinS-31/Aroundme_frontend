@@ -2,14 +2,16 @@ import axios from 'axios';
 
 import {
     setFormRequestIsValidated,
+    setSecurityFormRequestIsValidated,
     setIsFormError,
+    setIsSecurityFormError,
     setIsWaitingFormValidation,
+    setIsWaitingSecurityFormValidation
 } from "../actions/form";
 import { UPDATEUSER, UPDATEPRODUCER, UPDATESECURITYACCOUNT } from "../actions/dashboard";
-import { setUserData, resetUserData, getUserLocation } from "../actions/user";
+import { setUserData } from "../actions/user";
 
 const dashboardMiddleware = store => next => async action => {
-
     const {
         firstname,
         lastname,
@@ -25,16 +27,49 @@ const dashboardMiddleware = store => next => async action => {
         email,
         password,
         oldPassword,
-        categories,
-        lat,
-        lon,
+        categories
     } = store.getState().form;
 
     const { userData, userId, xsrfToken } = store.getState().user;
 
     switch (action.type) {
         case UPDATEUSER :
-            next(action);
+            try {
+                const userInfo = {
+                    firstname,
+                    lastname,
+                    address,
+                    city,
+                    postcode,
+                    phone,
+                    email,
+                    xsrfToken,
+                    userId
+                };
+
+                const response = await axios.put(
+                    `${process.env.REACT_APP_API_URL}api/dashboard/updateuser`,
+                    userInfo,
+                    {
+                        'withCredentials': true,
+                        headers: {
+                            "Accept": "application/json",
+                            "Content-Type": "application/json",
+                        }
+                    }
+                );
+
+                if (response.status === 200) {
+                    store.dispatch(setUserData(response.data._id, response.data, xsrfToken));
+                    store.dispatch(setIsWaitingFormValidation(false));
+                    store.dispatch(setFormRequestIsValidated(true, 'Vos informations ont été mises à jours.'));
+                    next(action);
+                }
+            } catch (err) {
+                console.error("UPDATEUSER err :", err);
+                store.dispatch(setIsWaitingFormValidation(false));
+                store.dispatch(setIsFormError(true, "Erreur dans la mise à jour de vos informations, veuillez éssayer à nouveau."));
+            }
             break;
         case UPDATEPRODUCER :
             try {
@@ -92,12 +127,43 @@ const dashboardMiddleware = store => next => async action => {
                     next(action);
                 }
             } catch (err) {
-                console.error("SENDREGISTERCONSUMER err :", err);
-                store.dispatch(setIsFormError(true, err));
+                console.error("UPDATEPRODUCER err :", err);
+                store.dispatch(setIsWaitingFormValidation(false));
+                store.dispatch(setIsFormError(true, "Erreur dans la mise à jour de vos informations, veuillez éssayer à nouveau."));
             }
             break;
         case UPDATESECURITYACCOUNT :
-            next(action);
+            try {
+                const accountData = {
+                    password,
+                    oldPassword,
+                    isProducer: userData.isProducer,
+                    xsrfToken,
+                    userId
+                };
+
+                const response = await axios.put(
+                    `${process.env.REACT_APP_API_URL}api/dashboard/updatepasswordaccount`,
+                    accountData,
+                    {
+                        'withCredentials': true,
+                        headers: {
+                            "Accept": "application/json",
+                            "Content-Type": "application/json",
+                        }
+                    }
+                );
+
+                if (response.status === 200) {
+                    store.dispatch(setIsWaitingSecurityFormValidation(false));
+                    store.dispatch(setSecurityFormRequestIsValidated(true, 'Votre mot de passe à été mis à jour.'));
+                    next(action);
+                }
+            } catch (err) {
+                console.error("UPDATESECURITYACCOUNT err :", err);
+                store.dispatch(setIsWaitingSecurityFormValidation(false));
+                store.dispatch(setIsSecurityFormError(true, "Erreur dans la mise à jour du mot de passe, veuillez éssayer à nouveau."));
+            }
             break;
         default:
             next(action);

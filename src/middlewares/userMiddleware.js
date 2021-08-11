@@ -17,7 +17,7 @@ const userMiddleware = store => next => async action => {
                     next(action);
                 }
             } catch (err) {
-                console.error(err);
+                console.error("GETUSERLOCATION err :", err);
             }
             break;
         default:

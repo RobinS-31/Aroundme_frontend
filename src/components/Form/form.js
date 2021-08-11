@@ -24,7 +24,9 @@ const Form = ({
     setIsWaitingFormValidation,
     setIsWaitingSecurityFormValidation,
     setFormRequestIsValidated,
+    setSecurityFormRequestIsValidated,
     setIsFormError,
+    setIsSecurityFormError,
     sendRegisterConsumer,
     getLocation,
     firstname,
@@ -45,13 +47,16 @@ const Form = ({
     isWaitingFormValidation,
     isWaitingSecurityFormValidation,
     formRequestIsValidated,
+    securityFormRequestIsValidated,
     isFormError,
+    isSecurityFormError,
+    securityFormErrorMessage,
     formErrorMessage,
     formRequestValidatedMessage,
+    securityFormRequestValidatedMessage,
     updateUser,
     updateProducer,
-    updateSecurityAccount,
-    props
+    updateSecurityAccount
 }) => {
 
     const location = useLocation().pathname; // Route empruntée
@@ -751,6 +756,22 @@ const Form = ({
                             }
                         </div>
                     </div>
+                    {securityFormRequestIsValidated &&
+                    <div
+                        className={'form_registrationMessage'}
+                        onClick={() => setSecurityFormRequestIsValidated(false, '')}
+                    >
+                        {securityFormRequestValidatedMessage}
+                    </div>
+                    }
+                    {isSecurityFormError &&
+                    <div
+                        className={'form_errorMessage'}
+                        onClick={() => setIsSecurityFormError(false, '')}
+                    >
+                        {securityFormErrorMessage}
+                    </div>
+                    }
                     <div className={'form_button'}>
                         <button
                             className={`formButton saveButton ${isWaitingSecurityFormValidation ? 'loading' : ''}`}

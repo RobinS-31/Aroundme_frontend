@@ -16,7 +16,7 @@ const Home = ({ getProducersList, getCategories }) => {
     useEffect(() => {
         getProducersList();
         getCategories();
-    }, [getProducersList, getCategories])
+    }, [getProducersList, getCategories]);
 
     return (
         <div className={'home'}>

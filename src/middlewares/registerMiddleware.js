@@ -96,7 +96,8 @@ const registerMiddleware = store => next => async action => {
                 }
             } catch (err) {
                 console.error("SENDREGISTERPRODUCER err :", err);
-                store.dispatch(setIsFormError(true, err));
+                store.dispatch(setIsWaitingFormValidation(false));
+                store.dispatch(setIsFormError(true, "La création de votre compte a échoué, veuillez essayer à nouveau."));
             }
             break;
         case SENDREGISTERCONSUMER:
@@ -134,7 +135,8 @@ const registerMiddleware = store => next => async action => {
                 }
             } catch (err) {
                 console.error("SENDREGISTERCONSUMER err :", err);
-                store.dispatch(setIsFormError(true, err));
+                store.dispatch(setIsWaitingFormValidation(false));
+                store.dispatch(setIsFormError(true, "La création de votre compte a échoué, veuillez essayer à nouveau."));
             }
             break;
         default:

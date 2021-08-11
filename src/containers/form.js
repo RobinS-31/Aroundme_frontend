@@ -12,11 +12,13 @@ import {
     setFormRequestIsValidated,
     setIsFormError,
     sendRegisterConsumer,
-    getLocation
+    getLocation,
+    setIsSecurityFormError,
+    setSecurityFormRequestIsValidated
 } from "../actions/form";
 import { updateUser, updateProducer, updateSecurityAccount } from "../actions/dashboard";
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
     userData: state.user.userData,
     categoriesList: state.products.categories,
     firstname: state.form.firstname,
@@ -37,10 +39,13 @@ const mapStateToProps = (state, ownProps) => ({
     isWaitingFormValidation: state.form.isWaitingFormValidation,
     isWaitingSecurityFormValidation: state.form.isWaitingSecurityFormValidation,
     formRequestIsValidated: state.form.formRequestIsValidated,
+    securityFormRequestIsValidated: state.form.securityFormRequestIsValidated,
     isFormError: state.form.isFormError,
+    isSecurityFormError: state.form.isSecurityFormError,
     formErrorMessage: state.form.formErrorMessage,
+    securityFormErrorMessage: state.form.securityFormErrorMessage,
     formRequestValidatedMessage: state.form.formRequestValidatedMessage,
-    props: ownProps
+    securityFormRequestValidatedMessage: state.form.securityFormRequestValidatedMessage
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -79,6 +84,12 @@ const mapDispatchToProps = (dispatch) => ({
     },
     updateSecurityAccount: () => {
         dispatch(updateSecurityAccount());
+    },
+    setIsSecurityFormError: (bool, errorMessage) => {
+        dispatch(setIsSecurityFormError(bool, errorMessage));
+    },
+    setSecurityFormRequestIsValidated: (bool, message) => {
+        dispatch(setSecurityFormRequestIsValidated(bool, message));
     }
 });
 

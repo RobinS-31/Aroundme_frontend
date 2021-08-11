@@ -6,7 +6,9 @@ import {
     SETISFORMERROR,
     SETFORMREQUESTISVALIDATED,
     RESETFORM,
-    SETPRODUCERLOCATION
+    SETPRODUCERLOCATION,
+    SETISSECURITYFORMERROR,
+    SETSECURITYFORMREQUESTISVALIDATED
 } from "../actions/form";
 
 const initialState = {
@@ -30,9 +32,13 @@ const initialState = {
     isWaitingFormValidation: false,
     isWaitingSecurityFormValidation: false,
     formRequestIsValidated: false,
+    securityFormRequestIsValidated: false,
     formRequestValidatedMessage: '',
+    securityFormRequestValidatedMessage: '',
     isFormError: false,
-    formErrorMessage: ''
+    isSecurityFormError: false,
+    formErrorMessage: '',
+    securityFormErrorMessage: ''
 };
 
 const form = (state = initialState, action = {}) => {
@@ -53,6 +59,12 @@ const form = (state = initialState, action = {}) => {
                 isFormError: action.bool,
                 formErrorMessage: action.errorMessage
             };
+        case SETISSECURITYFORMERROR:
+            return {
+                ...state,
+                isSecurityFormError: action.bool,
+                securityFormErrorMessage: action.errorMessage
+            }
         case SETISWAITINGFORMVALIDATION:
             return {
                 ...state,
@@ -69,6 +81,12 @@ const form = (state = initialState, action = {}) => {
                 formRequestIsValidated: action.bool,
                 formRequestValidatedMessage: action.message
             };
+        case SETSECURITYFORMREQUESTISVALIDATED:
+            return {
+                ...state,
+                securityFormRequestIsValidated: action.bool,
+                securityFormRequestValidatedMessage: action.message
+            }
         case RESETFORM:
             return initialState;
         case SETPRODUCERLOCATION:

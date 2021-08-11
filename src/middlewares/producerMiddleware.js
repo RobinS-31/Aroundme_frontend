@@ -7,7 +7,6 @@ const producerMiddleware = store => next => async action => {
             try {
                 const response = await axios.get(`${process.env.REACT_APP_API_URL}api/producers/getproducer`);
                 if (response.status === 200) store.dispatch(setProducersList(response.data));
-
                 next(action);
             } catch (err) {
                 console.error("GETPRODUCERSLIST err :", err);
@@ -17,7 +16,6 @@ const producerMiddleware = store => next => async action => {
             try {
                 const response = await axios.get(`${process.env.REACT_APP_API_URL}api/producers/getoneproducer/${action.id}`);
                 if (response.status === 200) store.dispatch(setOneProducer(response.data));
-
                 next(action);
             } catch (err) {
                 console.error("GETONEPRODUCER err :", err);

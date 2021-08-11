@@ -26,7 +26,7 @@ const searchbarMiddleware = store => next => async action => {
 
                 next(action);
             } catch (err) {
-                console.error(err);
+                console.error("GETADDRESSRESULT err :", err);
             }
             break;
         case GETDISTANCEORDURATION:
@@ -58,7 +58,7 @@ const searchbarMiddleware = store => next => async action => {
                     next(action);
                 }
             } catch (err) {
-                console.error(err);
+                console.error("GETDISTANCEORDURATION err :", err);
             }
             break;
         default:

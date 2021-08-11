@@ -34,15 +34,13 @@ const authMiddleware = store => next => async action => {
                     store.dispatch(setUserData(userInfo._id, userInfo, xsrfToken));
                     store.dispatch(setIsWaitingLoginFormValidation(false));
                     store.dispatch(resetLoginForm());
-                    if (!userInfo.isProducer) {
-                        store.dispatch(getUserLocation());
-                    }
+                    if (!userInfo.isProducer) store.dispatch(getUserLocation());
                     next(action);
-                } else {
-                    store.dispatch(setIsLoginError(true, 'Une erreur est survenue, veuillez essayer de vous reconnecter'));
                 }
             } catch (err) {
-                console.log("err :",err);
+                console.error("LOGIN err :", err);
+                store.dispatch(setIsWaitingLoginFormValidation(false));
+                store.dispatch(setIsLoginError(true, 'Une erreur est survenue, veuillez essayer de vous reconnecter.'));
             }
             break;
         case LOGOUT:
@@ -60,7 +58,7 @@ const authMiddleware = store => next => async action => {
                     next(action);
                 }
             } catch (err) {
-                console.log("err :",err);
+                console.error("LOGOUT err :", err);
             }
             break;
         case CHECKEDIFLOGGED:
@@ -77,15 +75,13 @@ const authMiddleware = store => next => async action => {
                 if (response.status === 200) {
                     const { xsrfToken, userInfo } = response.data;
                     store.dispatch(setUserData(userInfo._id, userInfo, xsrfToken));
-                    if (!userInfo.isProducer && !location.lat && !location.lon) {
-                        store.dispatch(getUserLocation());
-                    }
+                    if (!userInfo.isProducer && !location.lat && !location.lon) store.dispatch(getUserLocation());
                 } else {
                     store.dispatch(resetUserData());
                 }
                 next(action);
             } catch (err) {
-                console.log("err :",err);
+                console.error("CHECKEDIFLOGGED err :", err);
             }
             break;
         default:
