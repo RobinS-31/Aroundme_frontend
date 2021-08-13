@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { Switch, Route, useLocation, Redirect } from 'react-router-dom';
 
 // == Import : components
-import Dashboard from "../Dashboard/dashboard";
+import Dashboard from "../../containers/dashboard";
 import Header from "../Header/header";
 import Home from "../../containers/home";
 import ProducerShowCase from "../../containers/producerShowCase";

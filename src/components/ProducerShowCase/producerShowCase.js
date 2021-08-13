@@ -93,7 +93,7 @@ const ProducerShowCase = ({ producerData, getOneProducer, resetOneProducer, prop
                         </div>
                     </div>
                     <div className="producerShowCase_products">
-                        {/*{ producerData.productsData.map(productData => displayProducts(productData)) }*/}
+                        {/*{producerData.productsData.map(productData => displayProducts(productData))}*/}
                     </div>
                 </>
             }

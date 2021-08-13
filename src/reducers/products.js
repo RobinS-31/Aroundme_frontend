@@ -1,7 +1,8 @@
-import { SETCATEGORIES } from "../actions/products";
+import { SETCATEGORIES, SETPRODUCTS } from "../actions/products";
 
 const initialState = {
-    categories: []
+    categories: [],
+    products: []
 };
 
 const products = (state = initialState, action = {}) => {
@@ -10,6 +11,11 @@ const products = (state = initialState, action = {}) => {
             return {
                 ...state,
                 categories: action.categories
+            };
+        case SETPRODUCTS:
+            return {
+                ...state,
+                products: action.products
             };
         default: return state;
     }
