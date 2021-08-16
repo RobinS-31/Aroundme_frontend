@@ -5,22 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a91621d5-ada7-48d4-b047-30fc6668e5ce" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/containers/dashboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/products.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Dashboard/Products/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/Products/products.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Dashboard/Products/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/Products/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Dashboard/Products/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/Products/style.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Dashboard/Products/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/Products/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/style.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProducerShowCase/producerShowCase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProducerShowCase/producerShowCase.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/products.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middlewares/productsMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/productsMiddleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/products.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +37,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../back" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -72,7 +62,8 @@
       <workItem from="1628501817213" duration="8290000" />
       <workItem from="1628587781749" duration="6165000" />
       <workItem from="1628674188574" duration="11251000" />
-      <workItem from="1628846975587" duration="12037000" />
+      <workItem from="1628846975587" duration="12252000" />
+      <workItem from="1629122580118" duration="7828000" />
     </task>
     <servers />
   </component>

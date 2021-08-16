@@ -10,6 +10,7 @@ import products from "../reducers/products";
 const mapStateToProps = (state, ownProps) => ({
     categories: state.products.categories,
     products: state.products.products,
+    userData: state.user.userData,
     props: ownProps
 });
 
