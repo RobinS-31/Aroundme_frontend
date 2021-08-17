@@ -5,18 +5,25 @@ import { connect } from 'react-redux';
 import Products from "../components/Dashboard/Products/products";
 
 import { getProducts } from "../actions/products";
-import products from "../reducers/products";
+import { setProductData, addProduct } from "../actions/dashboard";
 
 const mapStateToProps = (state, ownProps) => ({
     categories: state.products.categories,
     products: state.products.products,
     userData: state.user.userData,
+    productData: state.dashboard.productDataToAdd,
     props: ownProps
 });
 
 const mapDispatchToProps = (dispatch) => ({
     getProducts: () => {
         dispatch(getProducts());
+    },
+    setProductData: (productData) => {
+        dispatch(setProductData(productData));
+    },
+    addProduct: () => {
+        dispatch(addProduct());
     }
 });
 

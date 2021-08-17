@@ -8,7 +8,7 @@ import {
     setIsWaitingFormValidation,
     setIsWaitingSecurityFormValidation
 } from "../actions/form";
-import { UPDATEUSER, UPDATEPRODUCER, UPDATESECURITYACCOUNT } from "../actions/dashboard";
+import { UPDATEUSER, UPDATEPRODUCER, UPDATESECURITYACCOUNT, ADDPRODUCT } from "../actions/dashboard";
 import { setUserData } from "../actions/user";
 
 const dashboardMiddleware = store => next => async action => {
@@ -31,6 +31,7 @@ const dashboardMiddleware = store => next => async action => {
     } = store.getState().form;
 
     const { userData, userId, xsrfToken } = store.getState().user;
+    const { productDataToAdd } = store.getState().dashboard;
 
     switch (action.type) {
         case UPDATEUSER :
@@ -163,6 +164,35 @@ const dashboardMiddleware = store => next => async action => {
                 console.error("UPDATESECURITYACCOUNT err :", err);
                 store.dispatch(setIsWaitingSecurityFormValidation(false));
                 store.dispatch(setIsSecurityFormError(true, "Erreur dans la mise à jour du mot de passe, veuillez éssayer à nouveau."));
+            }
+            break;
+        case ADDPRODUCT:
+            try {
+                const data = {
+                    producerProducts: [
+                        ...userData.products,
+                        productDataToAdd
+                    ],
+                    xsrfToken,
+                    userId
+                };
+
+                const response = await axios.put(
+                    `${process.env.REACT_APP_API_URL}api/dashboard/addproducttoproducer`,
+                    data,
+                    {
+                        'withCredentials': true,
+                        headers: {
+                            "Accept": "application/json",
+                            "Content-Type": "application/json",
+                        }
+                    }
+                );
+
+                console.log(response);
+
+            } catch (err) {
+                console.error("ADDPRODUCT err :", err);
             }
             break;
         default:

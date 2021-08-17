@@ -5,14 +5,21 @@ import React, { useEffect, useState } from 'react';
 import './style.scss';
 import imgPlaceholder from '../../../assets/images/imageFake.webp';
 
-const Products = ({ getProducts, categories, products, userData }) => {
+const Products = ({
+    getProducts,
+    categories,
+    products,
+    userData,
+    setProductData,
+    productData,
+    addProduct
+}) => {
 
     const [category, setCategory] = useState('');
     const [product, setProduct] = useState({});
-    const [price, setPrice] = useState('0');
+    const [price, setPrice] = useState('');
     const [measure, setMeasure] = useState('kg');
     const [description, setDescription] = useState('');
-    const [productData, setProductData] = useState({});
     const [isFormError, setIsFormError] = useState(false);
 
     useEffect(() => {
@@ -24,11 +31,9 @@ const Products = ({ getProducts, categories, products, userData }) => {
     }, [category]);
 
     const handleOnClickAddButton = () => {
-        if (category !== '' && product._id && price !== '0') {
+        if (category !== '' && product._id && price !== '0' && !isNaN(parseInt(price, 10))) {
             setProductData({
-                category,
-                imageUrl: product.imageUrl,
-                name: product.name,
+                ...product,
                 price,
                 measure,
                 description
@@ -40,7 +45,7 @@ const Products = ({ getProducts, categories, products, userData }) => {
         e.preventDefault();
         if (Object.entries(productData).length !== 0) {
             setIsFormError(false);
-            // Faire logique pour envoi au backend
+            addProduct();
         } else {
             setIsFormError(true);
         }
@@ -85,7 +90,7 @@ const Products = ({ getProducts, categories, products, userData }) => {
                             <input
                                 name={'price'}
                                 type={'number'}
-                                placeholder={0}
+                                placeholder={"Prix (€)"}
                                 step={0.1}
                                 value={price}
                                 onChange={e => setPrice(e.currentTarget.value)}
