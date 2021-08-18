@@ -7,29 +7,45 @@
   border-bottom: 1px solid rgba(34, 36, 38, 0.15);
 }
 .dashboard_products .dashboard_products_add > h3 {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  font-size: 1.25rem;
 }
-.dashboard_products .dashboard_products_add .dashboard_products_add_card {
+.dashboard_products .dashboard_products_list > h3 {
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 1.25rem;
+}
+.dashboard_products .dashboard_products_list .dashboard_products_list_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.dashboard_products .dashboard_products_list .dashboard_products_list_container .dashboard_products_list_container_item {
+  margin-right: 1rem;
+  margin-bottom: 1.5rem;
+}
+.dashboard_products .dashboard_products_add_card, .dashboard_products .dashboard_products_list_container_item {
   background-color: white;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   width: 250px;
   padding: 1rem;
+  border-radius: 0.25rem;
 }
-.dashboard_products .dashboard_products_add .dashboard_products_add_card .dashboard_products_add_card_productImg {
+.dashboard_products .dashboard_products_add_card .dashboard_products_add_card_productImg, .dashboard_products .dashboard_products_add_card .dashboard_products_list_container_item_productImg, .dashboard_products .dashboard_products_list_container_item .dashboard_products_add_card_productImg, .dashboard_products .dashboard_products_list_container_item .dashboard_products_list_container_item_productImg {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 200px;
   margin-bottom: 0.5rem;
 }
-.dashboard_products .dashboard_products_add .dashboard_products_add_card .dashboard_products_add_card_productImg > img {
+.dashboard_products .dashboard_products_add_card .dashboard_products_add_card_productImg > img, .dashboard_products .dashboard_products_add_card .dashboard_products_list_container_item_productImg > img, .dashboard_products .dashboard_products_list_container_item .dashboard_products_add_card_productImg > img, .dashboard_products .dashboard_products_list_container_item .dashboard_products_list_container_item_productImg > img {
   max-width: 100%;
 }
-.dashboard_products .dashboard_products_add .dashboard_products_add_card .dashboard_products_add_card_form {
+.dashboard_products .dashboard_products_add_card .dashboard_products_add_card_form, .dashboard_products .dashboard_products_list_container_item .dashboard_products_add_card_form {
   display: flex;
   flex-direction: column;
 }
-.dashboard_products .dashboard_products_add .dashboard_products_add_card .dashboard_products_add_card_form .dashboard_products_add_card_form_select {
+.dashboard_products .dashboard_products_add_card .dashboard_products_add_card_form .dashboard_products_add_card_form_select, .dashboard_products .dashboard_products_list_container_item .dashboard_products_add_card_form .dashboard_products_add_card_form_select {
   width: 100%;
   height: 38px;
   background-color: white;
@@ -39,28 +55,28 @@
   padding: 0.5rem 1rem;
   margin-bottom: 0.5rem;
 }
-.dashboard_products .dashboard_products_add .dashboard_products_add_card .dashboard_products_add_card_form .dashboard_products_add_card_form_priceContainer {
+.dashboard_products .dashboard_products_add_card .dashboard_products_add_card_form .dashboard_products_add_card_form_priceContainer, .dashboard_products .dashboard_products_list_container_item .dashboard_products_add_card_form .dashboard_products_add_card_form_priceContainer {
   display: flex;
   width: 100%;
   margin-bottom: 0.5rem;
 }
-.dashboard_products .dashboard_products_add .dashboard_products_add_card .dashboard_products_add_card_form .dashboard_products_add_card_form_priceContainer > input, .dashboard_products .dashboard_products_add .dashboard_products_add_card .dashboard_products_add_card_form .dashboard_products_add_card_form_priceContainer > select {
+.dashboard_products .dashboard_products_add_card .dashboard_products_add_card_form .dashboard_products_add_card_form_priceContainer > input, .dashboard_products .dashboard_products_add_card .dashboard_products_add_card_form .dashboard_products_add_card_form_priceContainer > select, .dashboard_products .dashboard_products_list_container_item .dashboard_products_add_card_form .dashboard_products_add_card_form_priceContainer > input, .dashboard_products .dashboard_products_list_container_item .dashboard_products_add_card_form .dashboard_products_add_card_form_priceContainer > select {
   border: 1px solid rgba(34, 36, 38, 0.15);
   height: 38px;
   padding: 0.5rem 1rem;
 }
-.dashboard_products .dashboard_products_add .dashboard_products_add_card .dashboard_products_add_card_form .dashboard_products_add_card_form_priceContainer > input {
+.dashboard_products .dashboard_products_add_card .dashboard_products_add_card_form .dashboard_products_add_card_form_priceContainer > input, .dashboard_products .dashboard_products_list_container_item .dashboard_products_add_card_form .dashboard_products_add_card_form_priceContainer > input {
   width: calc(100% - 70px);
   border-radius: 0.25rem 0 0 0.25rem;
   padding: 0.5rem 0.5rem 0.5rem 1rem;
 }
-.dashboard_products .dashboard_products_add .dashboard_products_add_card .dashboard_products_add_card_form .dashboard_products_add_card_form_priceContainer > select {
+.dashboard_products .dashboard_products_add_card .dashboard_products_add_card_form .dashboard_products_add_card_form_priceContainer > select, .dashboard_products .dashboard_products_list_container_item .dashboard_products_add_card_form .dashboard_products_add_card_form_priceContainer > select {
   width: 70px;
   border-left: none;
   border-radius: 0 0.25rem 0.25rem 0;
   padding: 0.5rem 1rem;
 }
-.dashboard_products .dashboard_products_add .dashboard_products_add_card .dashboard_products_add_card_form .dashboard_products_add_card_form_textarea {
+.dashboard_products .dashboard_products_add_card .dashboard_products_add_card_form .dashboard_products_add_card_form_textarea, .dashboard_products .dashboard_products_list_container_item .dashboard_products_add_card_form .dashboard_products_add_card_form_textarea {
   border: 1px solid rgba(34, 36, 38, 0.15);
   border-radius: 0.25rem;
   font-family: inherit;
@@ -69,7 +85,7 @@
   outline: 0;
   margin-bottom: 0.5rem;
 }
-.dashboard_products .dashboard_products_add .dashboard_products_add_card .dashboard_products_add_card_form .dashboard_products_add_card_form_addButton {
+.dashboard_products .dashboard_products_add_card .dashboard_products_add_card_form .dashboard_products_add_card_form_addButton, .dashboard_products .dashboard_products_list_container_item .dashboard_products_add_card_form .dashboard_products_add_card_form_addButton {
   width: 100%;
   height: 40px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -79,14 +95,31 @@
   font-size: 0.8rem;
   border-radius: 0.25rem;
 }
-.dashboard_products .dashboard_products_add .dashboard_products_add_card .dashboard_products_add_card_form .dashboard_products_add_card_form_errorMessage p {
+.dashboard_products .dashboard_products_add_card .dashboard_products_add_card_form .dashboard_products_add_card_form_message, .dashboard_products .dashboard_products_list_container_item .dashboard_products_add_card_form .dashboard_products_add_card_form_message {
+  cursor: pointer;
+}
+.dashboard_products .dashboard_products_add_card .dashboard_products_add_card_form .dashboard_products_add_card_form_message > p, .dashboard_products .dashboard_products_list_container_item .dashboard_products_add_card_form .dashboard_products_add_card_form_message > p {
   margin-top: 0.5rem;
-  background-color: #fb3;
   border-radius: 0.25rem;
   padding: 0.5rem 1rem;
   font-size: 0.85rem;
   font-style: italic;
   line-height: 1rem;
+}
+.dashboard_products .dashboard_products_add_card .dashboard_products_add_card_form .dashboard_products_add_card_form_message > p.error, .dashboard_products .dashboard_products_list_container_item .dashboard_products_add_card_form .dashboard_products_add_card_form_message > p.error {
+  background-color: #fb3;
+}
+.dashboard_products .dashboard_products_add_card .dashboard_products_add_card_form .dashboard_products_add_card_form_message > p.valid, .dashboard_products .dashboard_products_list_container_item .dashboard_products_add_card_form .dashboard_products_add_card_form_message > p.valid {
+  background-color: #00c851;
+  color: white;
+}
+.dashboard_products .dashboard_products_add_card .dashboard_products_list_container_item_productInfo, .dashboard_products .dashboard_products_list_container_item .dashboard_products_list_container_item_productInfo {
+  padding-top: 1rem;
+  border-top: 1px solid rgba(34, 36, 38, 0.15);
+}
+.dashboard_products .dashboard_products_add_card .dashboard_products_list_container_item_productInfo > p, .dashboard_products .dashboard_products_list_container_item .dashboard_products_list_container_item_productInfo > p {
+  font-family: "Lobster", cursive;
+  margin-bottom: 0.5rem;
 }
 
 /*# sourceMappingURL=style.css.map */

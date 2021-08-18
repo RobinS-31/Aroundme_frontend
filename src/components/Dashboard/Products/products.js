@@ -10,9 +10,15 @@ const Products = ({
     categories,
     products,
     userData,
-    setProductData,
-    productData,
-    addProduct
+    updateProducerProducts,
+    setProducerProducts,
+    addProduct,
+    setIsWaitingProductFormValidation,
+    isWaitingProductsFormValidation,
+    isProductsFormValidationError,
+    setIsProductFormValidationError,
+    setIsProductFormValidated,
+    isProductsFormValidated
 }) => {
 
     const [category, setCategory] = useState('');
@@ -24,31 +30,63 @@ const Products = ({
 
     useEffect(() => {
         getProducts();
+        setProducerProducts(userData.products);
     }, []);
 
     useEffect(() => {
         setProduct({});
     }, [category]);
 
+    useEffect(() => {
+        if (isProductsFormValidated) {
+            setCategory('');
+            setProduct({});
+            setPrice('');
+            setMeasure('kg');
+            setDescription('');
+            setTimeout(() => setIsProductFormValidated(false), 5000);
+        }
+    }, [isProductsFormValidated]);
+
     const handleOnClickAddButton = () => {
         if (category !== '' && product._id && price !== '0' && !isNaN(parseInt(price, 10))) {
-            setProductData({
+            setIsFormError(false);
+            addProduct({
                 ...product,
                 price,
                 measure,
                 description
             });
+        } else {
+            setIsFormError(true);
         }
     };
 
     const handleSubmitForm = (e) => {
         e.preventDefault();
-        if (Object.entries(productData).length !== 0) {
-            setIsFormError(false);
-            addProduct();
-        } else {
-            setIsFormError(true);
+        if (!isFormError) {
+            setIsWaitingProductFormValidation(true);
+            updateProducerProducts();
         }
+    };
+
+    const displayProduct = (product) => {
+        return (
+            <div className={'dashboard_products_list_container_item'} key={product._id}>
+                <div className={'dashboard_products_list_container_item_productImg'}>
+                    <img
+                        src={`${process.env.REACT_APP_API_URL}${product.imageUrl}`}
+                        alt={'Représentation du produit'}
+                        loading={'lazy'}
+                    />
+                </div>
+                <div className={'dashboard_products_list_container_item_productInfo'}>
+                    <p>{product.name}</p>
+                    <p>{product.price}€ / {product.measure}</p>
+                    <p>{product.description}</p>
+                </div>
+            </div>
+        );
     };
 
     return (
@@ -113,15 +151,14 @@ const Products = ({
                             type={'submit'}
                             onClick={handleOnClickAddButton}
                         >
-                            {/*{true
+                            {isWaitingProductsFormValidation
                                 ? <div className={'spinnerLoader'}/>
                                 : 'Ajouter'
-                            }*/}
-                            Ajouter
+                            }
                         </button>
                         {isFormError &&
-                            <div className={'dashboard_products_add_card_form_errorMessage'}>
-                                <p>
+                            <div className={'dashboard_products_add_card_form_message'} onClick={() => setIsFormError(false)}>
+                                <p className={'error'}>
                                     Veuillez indiquer, au moins :
                                     <br/>La catégorie du produit
                                     <br/>Le type du produit
@@ -129,11 +166,24 @@ const Products = ({
                                 </p>
                             </div>
                         }
+                        {isProductsFormValidationError &&
+                            <div className={'dashboard_products_add_card_form_message'} onClick={() => setIsProductFormValidationError(false)}>
+                                <p className={'error'}>Une erreur est survenue, veuillez éssayer à nouveau ou contactez un administrateur.</p>
+                            </div>
+                        }
+                        {isProductsFormValidated &&
+                            <div className={'dashboard_products_add_card_form_message'} onClick={() => setIsProductFormValidated(false)}>
+                                <p className={'valid'}>Votre produit à bien été ajouté.</p>
+                            </div>
+                        }
                     </form>
                 </div>
             </div>
             <div className={'dashboard_products_list'}>
                 <h3>Gérer mes produits</h3>
+                <div className={'dashboard_products_list_container'}>
+                    {userData && userData.products.map(product => displayProduct(product))}
+                </div>
             </div>
         </div>
     );

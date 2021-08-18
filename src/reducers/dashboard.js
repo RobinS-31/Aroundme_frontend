@@ -1,15 +1,44 @@
-import { SETPRODUCTDATA } from "../actions/dashboard";
+import {
+    SETPRODUCERPRODUCTS,
+    ADDPRODUCT,
+    SETISWAITINGPRODUCTSFORMVALIDATION,
+    SETISPRODUCTSFORMVALIDATIONERROR,
+    SETISPRODUCTSFORMVALIDATED
+} from "../actions/dashboard";
 
 const initialState = {
-    productDataToAdd: {}
+    producerProducts: [],
+    isWaitingProductsFormValidation: false,
+    isProductsFormValidationError: false,
+    isProductsFormValidated: false
 };
 
 const dashboard = (state = initialState, action = {}) => {
     switch (action.type) {
-        case SETPRODUCTDATA:
+        case ADDPRODUCT:
             return {
                 ...state,
-                productDataToAdd: action.productData
+                producerProducts: [...state.producerProducts, action.product]
+            };
+        case SETPRODUCERPRODUCTS:
+            return {
+                ...state,
+                producerProducts: action.producerProducts
+            };
+        case SETISWAITINGPRODUCTSFORMVALIDATION:
+            return {
+                ...state,
+                isWaitingProductsFormValidation: action.bool
+            };
+        case SETISPRODUCTSFORMVALIDATIONERROR:
+            return {
+                ...state,
+                isProductsFormValidationError: action.bool
+            };
+        case SETISPRODUCTSFORMVALIDATED:
+            return {
+                ...state,
+                isProductsFormValidated: action.bool
             };
         default: return state;
     }

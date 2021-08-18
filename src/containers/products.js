@@ -5,13 +5,22 @@ import { connect } from 'react-redux';
 import Products from "../components/Dashboard/Products/products";
 
 import { getProducts } from "../actions/products";
-import { setProductData, addProduct } from "../actions/dashboard";
+import {
+    updateProducerProducts,
+    setProducerProducts,
+    addProduct,
+    setIsWaitingProductFormValidation,
+    setIsProductFormValidationError,
+    setIsProductFormValidated
+} from "../actions/dashboard";
 
 const mapStateToProps = (state, ownProps) => ({
     categories: state.products.categories,
     products: state.products.products,
     userData: state.user.userData,
-    productData: state.dashboard.productDataToAdd,
+    isWaitingProductsFormValidation: state.dashboard.isWaitingProductsFormValidation,
+    isProductsFormValidationError: state.dashboard.isProductsFormValidationError,
+    isProductsFormValidated: state.dashboard.isProductsFormValidated,
     props: ownProps
 });
 
@@ -19,11 +28,23 @@ const mapDispatchToProps = (dispatch) => ({
     getProducts: () => {
         dispatch(getProducts());
     },
-    setProductData: (productData) => {
-        dispatch(setProductData(productData));
+    updateProducerProducts: () => {
+        dispatch(updateProducerProducts());
     },
-    addProduct: () => {
-        dispatch(addProduct());
+    setProducerProducts: (producerProducts) => {
+        dispatch(setProducerProducts(producerProducts))
+    },
+    addProduct: (product) => {
+        dispatch(addProduct(product));
+    },
+    setIsWaitingProductFormValidation: (bool) => {
+        dispatch(setIsWaitingProductFormValidation(bool))
+    },
+    setIsProductFormValidationError: (bool) => {
+        dispatch(setIsProductFormValidationError(bool))
+    },
+    setIsProductFormValidated: (bool) => {
+        dispatch(setIsProductFormValidated(bool))
     }
 });
 

@@ -52,7 +52,7 @@ const Dashboard = ({ isProducer }) => {
             }
             {menuToDisplay === 'products' && isProducer &&
                 <div className={'dashboard_content'}>
-                    <h2 className={'title'}>Mes Produits</h2>
+                    <h2 className={'title dashboard_content_title'}>Mes Produits</h2>
                     <Products />
                 </div>
             }

@@ -8,7 +8,16 @@ import {
     setIsWaitingFormValidation,
     setIsWaitingSecurityFormValidation
 } from "../actions/form";
-import { UPDATEUSER, UPDATEPRODUCER, UPDATESECURITYACCOUNT, ADDPRODUCT } from "../actions/dashboard";
+import {
+    UPDATEUSER,
+    UPDATEPRODUCER,
+    UPDATESECURITYACCOUNT,
+    UPDATEPRODUCERPRODUCTS,
+    setProducerProducts,
+    setIsWaitingProductFormValidation,
+    setIsProductFormValidationError,
+    setIsProductFormValidated
+} from "../actions/dashboard";
 import { setUserData } from "../actions/user";
 
 const dashboardMiddleware = store => next => async action => {
@@ -31,7 +40,7 @@ const dashboardMiddleware = store => next => async action => {
     } = store.getState().form;
 
     const { userData, userId, xsrfToken } = store.getState().user;
-    const { productDataToAdd } = store.getState().dashboard;
+    const { producerProducts } = store.getState().dashboard;
 
     switch (action.type) {
         case UPDATEUSER :
@@ -166,19 +175,16 @@ const dashboardMiddleware = store => next => async action => {
                 store.dispatch(setIsSecurityFormError(true, "Erreur dans la mise à jour du mot de passe, veuillez éssayer à nouveau."));
             }
             break;
-        case ADDPRODUCT:
+        case UPDATEPRODUCERPRODUCTS:
             try {
                 const data = {
-                    producerProducts: [
-                        ...userData.products,
-                        productDataToAdd
-                    ],
+                    producerProducts,
                     xsrfToken,
                     userId
                 };
 
                 const response = await axios.put(
-                    `${process.env.REACT_APP_API_URL}api/dashboard/addproducttoproducer`,
+                    `${process.env.REACT_APP_API_URL}api/dashboard/updateproducerproducts`,
                     data,
                     {
                         'withCredentials': true,
@@ -189,10 +195,18 @@ const dashboardMiddleware = store => next => async action => {
                     }
                 );
 
-                console.log(response);
+                if (response.status === 200) {
+                    store.dispatch(setUserData(response.data._id, response.data, xsrfToken));
+                    store.dispatch(setIsWaitingProductFormValidation(false));
+                    store.dispatch(setIsProductFormValidated(true));
+                    next(action);
+                }
 
             } catch (err) {
                 console.error("ADDPRODUCT err :", err);
+                store.dispatch(setProducerProducts(userData.products));
+                store.dispatch(setIsWaitingProductFormValidation(false));
+                store.dispatch(setIsProductFormValidationError(true));
             }
             break;
         default:
