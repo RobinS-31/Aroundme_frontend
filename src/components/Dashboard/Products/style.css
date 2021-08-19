@@ -18,11 +18,12 @@
 .dashboard_products .dashboard_products_list .dashboard_products_list_container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
 }
 .dashboard_products .dashboard_products_list .dashboard_products_list_container .dashboard_products_list_container_item {
-  margin-right: 1rem;
+  position: relative;
+  margin-right: 2rem;
   margin-bottom: 1.5rem;
+  padding: 1rem 1rem 3rem 1rem;
 }
 .dashboard_products .dashboard_products_add_card, .dashboard_products .dashboard_products_list_container_item {
   background-color: white;
@@ -76,6 +77,60 @@
   border-radius: 0 0.25rem 0.25rem 0;
   padding: 0.5rem 1rem;
 }
+.dashboard_products .dashboard_products_add_card .dashboard_products_add_card_form .dashboard_products_add_card_form_detailsContainer, .dashboard_products .dashboard_products_list_container_item .dashboard_products_add_card_form .dashboard_products_add_card_form_detailsContainer {
+  position: relative;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+  padding: 0.75rem 1rem 0.5rem 1rem;
+}
+.dashboard_products .dashboard_products_add_card .dashboard_products_add_card_form .dashboard_products_add_card_form_detailsContainer > ul, .dashboard_products .dashboard_products_list_container_item .dashboard_products_add_card_form .dashboard_products_add_card_form_detailsContainer > ul {
+  margin-bottom: 1rem;
+}
+.dashboard_products .dashboard_products_add_card .dashboard_products_add_card_form .dashboard_products_add_card_form_detailsContainer > ul > li, .dashboard_products .dashboard_products_list_container_item .dashboard_products_add_card_form .dashboard_products_add_card_form_detailsContainer > ul > li {
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-size: 0.8rem;
+  height: 20px;
+}
+.dashboard_products .dashboard_products_add_card .dashboard_products_add_card_form .dashboard_products_add_card_form_detailsContainer > ul > li > button, .dashboard_products .dashboard_products_list_container_item .dashboard_products_add_card_form .dashboard_products_add_card_form_detailsContainer > ul > li > button {
+  position: absolute;
+  border-radius: 2px;
+  background-color: black;
+  color: white;
+  padding: 0;
+  width: 15px;
+  height: 15px;
+  border: 0;
+  right: 0;
+}
+.dashboard_products .dashboard_products_add_card .dashboard_products_add_card_form .dashboard_products_add_card_form_detailsContainer > label, .dashboard_products .dashboard_products_list_container_item .dashboard_products_add_card_form .dashboard_products_add_card_form_detailsContainer > label {
+  position: absolute;
+  padding: 0 0.125rem;
+  font-size: 0.75rem;
+  left: 23px;
+  bottom: 70px;
+  background-color: white;
+  color: #6e6e6e;
+}
+.dashboard_products .dashboard_products_add_card .dashboard_products_add_card_form .dashboard_products_add_card_form_detailsContainer > input, .dashboard_products .dashboard_products_list_container_item .dashboard_products_add_card_form .dashboard_products_add_card_form_detailsContainer > input {
+  width: 100%;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+.dashboard_products .dashboard_products_add_card .dashboard_products_add_card_form .dashboard_products_add_card_form_detailsContainer > button, .dashboard_products .dashboard_products_list_container_item .dashboard_products_add_card_form .dashboard_products_add_card_form_detailsContainer > button {
+  margin-top: 0.25rem;
+  width: 100%;
+  height: 30px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  border: none;
+  background-color: #00c851;
+  color: white;
+  font-size: 0.8rem;
+  border-radius: 0.25rem;
+}
 .dashboard_products .dashboard_products_add_card .dashboard_products_add_card_form .dashboard_products_add_card_form_textarea, .dashboard_products .dashboard_products_list_container_item .dashboard_products_add_card_form .dashboard_products_add_card_form_textarea {
   border: 1px solid rgba(34, 36, 38, 0.15);
   border-radius: 0.25rem;
@@ -117,9 +172,49 @@
   padding-top: 1rem;
   border-top: 1px solid rgba(34, 36, 38, 0.15);
 }
-.dashboard_products .dashboard_products_add_card .dashboard_products_list_container_item_productInfo > p, .dashboard_products .dashboard_products_list_container_item .dashboard_products_list_container_item_productInfo > p {
+.dashboard_products .dashboard_products_add_card .dashboard_products_list_container_item_productInfo .dashboard_products_list_container_item_productInfo_name, .dashboard_products .dashboard_products_list_container_item .dashboard_products_list_container_item_productInfo .dashboard_products_list_container_item_productInfo_name {
   font-family: "Lobster", cursive;
+  font-size: 1.25rem;
   margin-bottom: 0.5rem;
+}
+.dashboard_products .dashboard_products_add_card .dashboard_products_list_container_item_productInfo .dashboard_products_list_container_item_productInfo_price, .dashboard_products .dashboard_products_list_container_item .dashboard_products_list_container_item_productInfo .dashboard_products_list_container_item_productInfo_price {
+  text-align: right;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+.dashboard_products .dashboard_products_add_card .dashboard_products_list_container_item_productInfo .dashboard_products_list_container_item_productInfo_details, .dashboard_products .dashboard_products_list_container_item .dashboard_products_list_container_item_productInfo .dashboard_products_list_container_item_productInfo_details {
+  font-size: 0.95rem;
+}
+.dashboard_products .dashboard_products_add_card .dashboard_products_list_container_item_productInfo .dashboard_products_list_container_item_productInfo_details > p, .dashboard_products .dashboard_products_list_container_item .dashboard_products_list_container_item_productInfo .dashboard_products_list_container_item_productInfo_details > p {
+  margin-bottom: 0.25rem;
+}
+.dashboard_products .dashboard_products_add_card .dashboard_products_list_container_item_productInfo .dashboard_products_list_container_item_productInfo_details > ul, .dashboard_products .dashboard_products_list_container_item .dashboard_products_list_container_item_productInfo .dashboard_products_list_container_item_productInfo_details > ul {
+  padding-left: 1rem;
+  font-size: 0.9rem;
+}
+.dashboard_products .dashboard_products_add_card .dashboard_products_list_container_item_productInfo .dashboard_products_list_container_item_productInfo_details > ul > li, .dashboard_products .dashboard_products_list_container_item .dashboard_products_list_container_item_productInfo .dashboard_products_list_container_item_productInfo_details > ul > li {
+  margin-bottom: 0.25rem;
+}
+.dashboard_products .dashboard_products_add_card .dashboard_products_list_container_item_productInfo .dashboard_products_list_container_item_productInfo_description > p:first-child, .dashboard_products .dashboard_products_list_container_item .dashboard_products_list_container_item_productInfo .dashboard_products_list_container_item_productInfo_description > p:first-child {
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+.dashboard_products .dashboard_products_add_card .dashboard_products_list_container_item_productInfo .dashboard_products_list_container_item_productInfo_description > p:not(:first-of-type), .dashboard_products .dashboard_products_list_container_item .dashboard_products_list_container_item_productInfo .dashboard_products_list_container_item_productInfo_description > p:not(:first-of-type) {
+  font-size: 0.9rem;
+}
+.dashboard_products .dashboard_products_add_card .dashboard_products_list_container_item_removeButton, .dashboard_products .dashboard_products_list_container_item .dashboard_products_list_container_item_removeButton {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  margin-top: 0.25rem;
+  width: 100px;
+  height: 30px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  border: none;
+  background-color: #ff3547;
+  color: white;
+  font-size: 0.8rem;
+  border-radius: 0.25rem;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -9,6 +9,7 @@ import {
     updateProducerProducts,
     setProducerProducts,
     addProduct,
+    removeProduct,
     setIsWaitingProductFormValidation,
     setIsProductFormValidationError,
     setIsProductFormValidated
@@ -36,6 +37,9 @@ const mapDispatchToProps = (dispatch) => ({
     },
     addProduct: (product) => {
         dispatch(addProduct(product));
+    },
+    removeProduct: (product) => {
+        dispatch(removeProduct(product));
     },
     setIsWaitingProductFormValidation: (bool) => {
         dispatch(setIsWaitingProductFormValidation(bool))

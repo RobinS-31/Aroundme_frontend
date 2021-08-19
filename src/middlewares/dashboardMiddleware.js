@@ -196,9 +196,11 @@ const dashboardMiddleware = store => next => async action => {
                 );
 
                 if (response.status === 200) {
+                    if (userData.products.length < producerProducts.length) {
+                        store.dispatch(setIsProductFormValidated(true));
+                    }
                     store.dispatch(setUserData(response.data._id, response.data, xsrfToken));
                     store.dispatch(setIsWaitingProductFormValidation(false));
-                    store.dispatch(setIsProductFormValidated(true));
                     next(action);
                 }
 

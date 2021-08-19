@@ -4,6 +4,7 @@ export const UPDATESECURITYACCOUNT = 'UPDATESECURITYACCOUNT';
 export const UPDATEPRODUCERPRODUCTS = 'UPDATEPRODUCERPRODUCTS';
 export const SETPRODUCERPRODUCTS = 'SETPRODUCERPRODUCTS';
 export const ADDPRODUCT = 'ADDPRODUCT';
+export const REMOVEPRODUCT = 'REMOVEPRODUCT';
 export const SETISWAITINGPRODUCTSFORMVALIDATION = 'SETISWAITINGPRODUCTSFORMVALIDATION';
 export const SETISPRODUCTSFORMVALIDATIONERROR = 'SETISPRODUCTSFORMVALIDATIONERROR';
 export const SETISPRODUCTSFORMVALIDATED = 'SETISPRODUCTSFORMVALIDATED';
@@ -26,6 +27,10 @@ export const setProducerProducts = (producerProducts) => ({
 });
 export const addProduct = (product) => ({
     type: ADDPRODUCT,
+    product
+});
+export const removeProduct = (product) => ({
+    type: REMOVEPRODUCT,
     product
 });
 export const setIsWaitingProductFormValidation = (bool) => ({

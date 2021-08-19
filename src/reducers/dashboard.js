@@ -1,6 +1,7 @@
 import {
     SETPRODUCERPRODUCTS,
     ADDPRODUCT,
+    REMOVEPRODUCT,
     SETISWAITINGPRODUCTSFORMVALIDATION,
     SETISPRODUCTSFORMVALIDATIONERROR,
     SETISPRODUCTSFORMVALIDATED
@@ -19,6 +20,11 @@ const dashboard = (state = initialState, action = {}) => {
             return {
                 ...state,
                 producerProducts: [...state.producerProducts, action.product]
+            };
+        case REMOVEPRODUCT:
+            return {
+              ...state,
+              producerProducts: action.product
             };
         case SETPRODUCERPRODUCTS:
             return {

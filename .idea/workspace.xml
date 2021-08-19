@@ -5,16 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a91621d5-ada7-48d4-b047-30fc6668e5ce" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/utils/tools.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/dashboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Dashboard/Products/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/Products/products.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Dashboard/Products/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/Products/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Dashboard/Products/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/Products/style.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Dashboard/Products/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/Products/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/style.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/style.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/products.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/middlewares/dashboardMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/dashboardMiddleware.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/dashboard.js" afterDir="false" />
@@ -80,7 +77,8 @@
       <workItem from="1628846975587" duration="12252000" />
       <workItem from="1629122580118" duration="7990000" />
       <workItem from="1629197942339" duration="5064000" />
-      <workItem from="1629278070716" duration="9384000" />
+      <workItem from="1629278070716" duration="9581000" />
+      <workItem from="1629364605403" duration="17114000" />
     </task>
     <servers />
   </component>
