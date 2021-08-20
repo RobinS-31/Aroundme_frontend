@@ -193,29 +193,31 @@
             }
             .dashboard_products_list_container_item_productInfo_price {
                 text-align: right;
-                margin-bottom: 1rem;
+                margin-bottom: 1.5rem;
                 font-size: .95rem;
             }
             .dashboard_products_list_container_item_productInfo_details {
                 font-size: .95rem;
+                margin-bottom: 1.5rem;
 
                 > p {
-                    margin-bottom: .25rem;
+                    margin-bottom: .5rem;
                 }
                 > ul {
                     padding-left: 1rem;
                     font-size: .9rem;
 
                     > li {
-                        //height: 20px;
                         margin-bottom: .25rem;
                     }
                 }
             }
             .dashboard_products_list_container_item_productInfo_description {
+                margin-bottom: 1rem;
+
                 > p:first-child {
                     font-size: .95rem;
-                    margin-bottom: .25rem;
+                    margin-bottom: .5rem;
                 }
                 > p:not(:first-of-type) {
                     font-size: .9rem;

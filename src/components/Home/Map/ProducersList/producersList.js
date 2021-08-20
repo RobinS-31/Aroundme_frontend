@@ -69,11 +69,13 @@ const ProducersList = ({ props }) => {
     };
 
     return (
-        <div className={'producersList'} ref={producerList}>
-            {producerToDisplay.length
-                ? producerToDisplay.map(producer => producerDisplay(producer))
-                : <div />
-            }
+        <div className={'producersList'}>
+            <div className={'producersList_container'} ref={producerList}>
+                {producerToDisplay.length
+                    ? producerToDisplay.map(producer => producerDisplay(producer))
+                    : <div />
+                }
+            </div>
         </div>
     );
 };

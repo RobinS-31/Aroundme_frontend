@@ -34,14 +34,6 @@ code {
     monospace;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    padding-top: 2rem;
-    min-height: calc(100% - 300px);
-    width: 100%;
-}
-
 .section {
     display: flex;
     flex-direction: column;

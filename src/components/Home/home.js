@@ -11,7 +11,7 @@ import './style.scss';
 
 const Home = ({ getProducersList, getCategories }) => {
 
-    const [displayMap, setDisplayMap] = useState(true);
+    const [displayMap, setDisplayMap] = useState(false);
 
     useEffect(() => {
         getProducersList();

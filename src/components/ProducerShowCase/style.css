@@ -32,43 +32,76 @@
   margin-bottom: 0.5rem;
   font-family: "Lobster", cursive;
 }
+.producerShowCase .producerShowCase_info .producerShowCase_info_data .producerShowCase_info_data_item > p {
+  word-break: normal;
+  overflow-wrap: anywhere;
+  padding-right: 0.5rem;
+}
 .producerShowCase .producerShowCase_products {
   display: flex;
   flex-wrap: wrap;
   border-top: 1px solid rgba(34, 36, 38, 0.15);
   width: 100%;
-  margin-top: 1rem;
-  padding-top: 1rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
 }
-.producerShowCase .producerShowCase_products .producerShowCase_products_containerItem {
-  width: 250px;
-  padding: 1rem;
-}
-.producerShowCase .producerShowCase_products .producerShowCase_products_containerItem .producerShowCase_products_item {
+.producerShowCase .producerShowCase_products .producerShowCase_products_item {
   background-color: #fff;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   border-radius: 0.25rem;
+  width: 250px;
+  padding: 1rem 1rem 3rem 1rem;
+  margin-right: 2rem;
+  margin-bottom: 1.5rem;
 }
-.producerShowCase .producerShowCase_products .producerShowCase_products_containerItem .producerShowCase_products_item .producerShowCase_products_item_picture {
+.producerShowCase .producerShowCase_products .producerShowCase_products_item .producerShowCase_products_item_picture {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 200px;
+  margin-bottom: 0.5rem;
 }
-.producerShowCase .producerShowCase_products .producerShowCase_products_containerItem .producerShowCase_products_item .producerShowCase_products_item_picture > img {
+.producerShowCase .producerShowCase_products .producerShowCase_products_item .producerShowCase_products_item_picture > img {
   max-width: 100%;
 }
-.producerShowCase .producerShowCase_products .producerShowCase_products_containerItem .producerShowCase_products_item .producerShowCase_products_item_divider {
+.producerShowCase .producerShowCase_products .producerShowCase_products_item .producerShowCase_products_item_info {
+  padding-top: 1rem;
   border-top: 1px solid rgba(34, 36, 38, 0.15);
-  width: 85%;
-  margin: 0 auto;
 }
-.producerShowCase .producerShowCase_products .producerShowCase_products_containerItem .producerShowCase_products_item .producerShowCase_products_item_info {
-  padding: 1rem;
-}
-.producerShowCase .producerShowCase_products .producerShowCase_products_containerItem .producerShowCase_products_item .producerShowCase_products_item_info .producerShowCase_products_item_info_name {
+.producerShowCase .producerShowCase_products .producerShowCase_products_item .producerShowCase_products_item_info .producerShowCase_products_item_info_name {
   font-family: "Lobster", cursive;
   font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.producerShowCase .producerShowCase_products .producerShowCase_products_item .producerShowCase_products_item_info .producerShowCase_products_item_info_price {
+  font-family: "Lobster", cursive;
+  font-size: 1.125rem;
+  text-align: right;
+  margin-bottom: 1.5rem;
+}
+.producerShowCase .producerShowCase_products .producerShowCase_products_item .producerShowCase_products_item_info .producerShowCase_products_item_info_details {
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+.producerShowCase .producerShowCase_products .producerShowCase_products_item .producerShowCase_products_item_info .producerShowCase_products_item_info_details > p {
+  margin-bottom: 0.5rem;
+}
+.producerShowCase .producerShowCase_products .producerShowCase_products_item .producerShowCase_products_item_info .producerShowCase_products_item_info_details > ul {
+  padding-left: 1rem;
+  font-size: 0.9rem;
+}
+.producerShowCase .producerShowCase_products .producerShowCase_products_item .producerShowCase_products_item_info .producerShowCase_products_item_info_details > ul > li {
+  margin-bottom: 0.25rem;
+}
+.producerShowCase .producerShowCase_products .producerShowCase_products_item .producerShowCase_products_item_info .producerShowCase_products_item_info_description {
+  margin-bottom: 1rem;
+}
+.producerShowCase .producerShowCase_products .producerShowCase_products_item .producerShowCase_products_item_info .producerShowCase_products_item_info_description > p:first-child {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+.producerShowCase .producerShowCase_products .producerShowCase_products_item .producerShowCase_products_item_info .producerShowCase_products_item_info_description > p:not(:first-of-type) {
+  font-size: 0.9rem;
 }
 
 /*# sourceMappingURL=style.css.map */

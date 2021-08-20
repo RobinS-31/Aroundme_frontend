@@ -179,14 +179,15 @@
 }
 .dashboard_products .dashboard_products_add_card .dashboard_products_list_container_item_productInfo .dashboard_products_list_container_item_productInfo_price, .dashboard_products .dashboard_products_list_container_item .dashboard_products_list_container_item_productInfo .dashboard_products_list_container_item_productInfo_price {
   text-align: right;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   font-size: 0.95rem;
 }
 .dashboard_products .dashboard_products_add_card .dashboard_products_list_container_item_productInfo .dashboard_products_list_container_item_productInfo_details, .dashboard_products .dashboard_products_list_container_item .dashboard_products_list_container_item_productInfo .dashboard_products_list_container_item_productInfo_details {
   font-size: 0.95rem;
+  margin-bottom: 1.5rem;
 }
 .dashboard_products .dashboard_products_add_card .dashboard_products_list_container_item_productInfo .dashboard_products_list_container_item_productInfo_details > p, .dashboard_products .dashboard_products_list_container_item .dashboard_products_list_container_item_productInfo .dashboard_products_list_container_item_productInfo_details > p {
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 .dashboard_products .dashboard_products_add_card .dashboard_products_list_container_item_productInfo .dashboard_products_list_container_item_productInfo_details > ul, .dashboard_products .dashboard_products_list_container_item .dashboard_products_list_container_item_productInfo .dashboard_products_list_container_item_productInfo_details > ul {
   padding-left: 1rem;
@@ -195,9 +196,12 @@
 .dashboard_products .dashboard_products_add_card .dashboard_products_list_container_item_productInfo .dashboard_products_list_container_item_productInfo_details > ul > li, .dashboard_products .dashboard_products_list_container_item .dashboard_products_list_container_item_productInfo .dashboard_products_list_container_item_productInfo_details > ul > li {
   margin-bottom: 0.25rem;
 }
+.dashboard_products .dashboard_products_add_card .dashboard_products_list_container_item_productInfo .dashboard_products_list_container_item_productInfo_description, .dashboard_products .dashboard_products_list_container_item .dashboard_products_list_container_item_productInfo .dashboard_products_list_container_item_productInfo_description {
+  margin-bottom: 1rem;
+}
 .dashboard_products .dashboard_products_add_card .dashboard_products_list_container_item_productInfo .dashboard_products_list_container_item_productInfo_description > p:first-child, .dashboard_products .dashboard_products_list_container_item .dashboard_products_list_container_item_productInfo .dashboard_products_list_container_item_productInfo_description > p:first-child {
   font-size: 0.95rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 .dashboard_products .dashboard_products_add_card .dashboard_products_list_container_item_productInfo .dashboard_products_list_container_item_productInfo_description > p:not(:first-of-type), .dashboard_products .dashboard_products_list_container_item .dashboard_products_list_container_item_productInfo .dashboard_products_list_container_item_productInfo_description > p:not(:first-of-type) {
   font-size: 0.9rem;

@@ -1,7 +1,4 @@
 .mapapi {
-    width: 750px;
-    height: 600px;
-    padding-left: 1rem;
 
     .mapapi_container {
         height: 100%;
@@ -21,3 +18,36 @@
         }
     }
 }
+
+@media screen and (max-width: 575px) {
+    .mapapi {
+        width: 100%;
+        height: 300px;
+    }
+};
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    .mapapi {
+        width: 100%;
+        height: 300px;
+    }
+};
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .mapapi {
+        width: 100%;
+        height: 400px;
+    }
+};
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .mapapi {
+        width: calc(100% - 466px);
+        height: 600px;
+        padding-left: 1rem;
+    }
+};
+@media screen and (min-width: 1200px) {
+    .mapapi {
+        width: calc(100% - 466px);
+        height: 600px;
+        padding-left: 1rem;
+    }
+};

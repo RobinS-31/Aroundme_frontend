@@ -144,15 +144,17 @@ const SearchBar = ({
                     </select>
                 </div>
             </div>
-            <button
-                className={`searchBar_displayMapButton ${displayMap ? 'hideMap' : ''}`}
-                onClick={() => setDisplayMap(!displayMap)}
-            >
-                {displayMap
-                    ? 'Masquer la carte'
-                    : 'Voir la carte'
-                }
-            </button>
+            <div className={'searchBar_displayMapButton'}>
+                <button
+                    className={displayMap ? 'hideMap' : ''}
+                    onClick={() => setDisplayMap(!displayMap)}
+                >
+                    {displayMap
+                        ? 'Masquer la carte'
+                        : 'Voir la carte'
+                    }
+                </button>
+            </div>
         </div>
     );
 };

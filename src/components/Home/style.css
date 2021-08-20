@@ -18,6 +18,7 @@
   font-family: "Galada", cursive;
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  text-align: center;
 }
 .home .home_intro > p {
   font-family: "Lobster", cursive;
@@ -25,10 +26,17 @@
   text-align: center;
   line-height: 1.4rem;
 }
-.home .home_placeholderMap {
-  height: 600px;
-  width: 1200px;
-  margin-top: 2rem;
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .home_intro {
+    width: 950px;
+    max-width: 100%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .home_intro {
+    width: 992px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,22 +1,14 @@
 .searchBar {
   display: flex;
-  align-items: flex-end;
   box-shadow: 0 2px 4px 0 rgba(34, 36, 38, 0.12), 0 2px 10px 0 rgba(34, 36, 38, 0.15);
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 0.25rem;
   padding: 1rem;
-}
-.searchBar .searchBar_categories, .searchBar .searchBar_distance {
-  width: 200px;
-}
-.searchBar .searchBar_location {
-  width: 250px;
 }
 .searchBar .searchBar_categories, .searchBar .searchBar_location, .searchBar .searchBar_distance {
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-right: 1rem;
 }
 .searchBar .searchBar_categories label, .searchBar .searchBar_location label, .searchBar .searchBar_distance label {
   height: 20px;
@@ -82,7 +74,7 @@
   border-bottom-right-radius: 0;
   border-right: none;
 }
-.searchBar .searchBar_displayMapButton {
+.searchBar .searchBar_displayMapButton > button {
   background-color: #21ba45;
   color: #fff;
   text-shadow: none;
@@ -93,11 +85,106 @@
   border-radius: 0.25rem;
   font-weight: 700;
   height: 38px;
-  width: 150px;
   transition: background-color 0.15s;
 }
-.searchBar .searchBar_displayMapButton.hideMap {
+.searchBar .searchBar_displayMapButton > button.hideMap {
   background-color: #fbc02d;
+}
+
+@media screen and (max-width: 575px) {
+  .searchBar {
+    flex-direction: column;
+    width: 100%;
+  }
+  .searchBar .searchBar_categories, .searchBar .searchBar_location, .searchBar .searchBar_distance {
+    margin-bottom: 1rem;
+  }
+  .searchBar .searchBar_displayMapButton {
+    width: 100%;
+  }
+  .searchBar .searchBar_displayMapButton > button {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .searchBar {
+    flex-direction: column;
+    width: 100%;
+  }
+  .searchBar .searchBar_categories, .searchBar .searchBar_location, .searchBar .searchBar_distance {
+    margin-bottom: 1rem;
+  }
+  .searchBar .searchBar_displayMapButton {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .searchBar .searchBar_displayMapButton > button {
+    width: 250px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .searchBar {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .searchBar .searchBar_location {
+    width: calc(100% - 400px);
+  }
+  .searchBar .searchBar_distance {
+    width: 200px;
+  }
+  .searchBar .searchBar_categories {
+    width: 180px;
+  }
+  .searchBar .searchBar_displayMapButton {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .searchBar .searchBar_displayMapButton > button {
+    width: 150px;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .searchBar {
+    justify-content: space-between;
+    width: 900px;
+    align-items: flex-end;
+  }
+  .searchBar .searchBar_distance {
+    width: 200px;
+  }
+  .searchBar .searchBar_categories {
+    width: 180px;
+  }
+  .searchBar .searchBar_location {
+    width: calc(100% - 578px);
+  }
+  .searchBar .searchBar_displayMapButton > button {
+    width: 150px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .searchBar {
+    justify-content: space-between;
+    width: 940px;
+    align-items: flex-end;
+  }
+  .searchBar .searchBar_distance {
+    width: 200px;
+  }
+  .searchBar .searchBar_categories {
+    width: 180px;
+  }
+  .searchBar .searchBar_location {
+    width: calc(100% - 578px);
+  }
+  .searchBar .searchBar_displayMapButton > button {
+    width: 150px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

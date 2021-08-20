@@ -98,7 +98,7 @@ const Products = ({
         if (category !== '' && product._id && price !== '0' && !isNaN(parseInt(price, 10))) {
             setIsFormError(false);
             addProduct({
-                _id: `${Date.now()}_${product._id}`,
+                id: `${Date.now()}_${product._id}`,
                 category: product.category,
                 imageUrl: product.imageUrl,
                 name: product.name,
@@ -127,13 +127,13 @@ const Products = ({
 
     /**
      * Fonction se déclanchant lors du clique sur le bouton permettant de supprimer un produit (dans le formulaire de la "carte" représentant le produit).
-     *  Le produit est retiré, de la propriété "producerProducts" du "state" du "reducer" "dashboard" qui contient la liste des produit du producteur, via
-     *  l'action "removeProduct".
+     * Le produit est retiré, de la propriété "producerProducts" du "state" du "reducer" "dashboard" qui contient la liste des produit du producteur, via
+     * l'action "removeProduct".
      * @param e
      */
     const handleOnClickRemoveProductButton = (e) => {
         const productToRemove = e.currentTarget.value;
-        const productsListFiltered = userData.products.filter(product => product._id !== productToRemove);
+        const productsListFiltered = userData.products.filter(product => product.id !== productToRemove);
         removeProduct(productsListFiltered);
     };
 
@@ -154,7 +154,7 @@ const Products = ({
      */
     const displayProduct = (product) => {
         return (
-            <form className={'dashboard_products_list_container_item'} key={product._id} onSubmit={handleSubmitRemoveProductForm}>
+            <form className={'dashboard_products_list_container_item'} key={product.id} onSubmit={handleSubmitRemoveProductForm}>
                 <div className={'dashboard_products_list_container_item_productImg'}>
                     <img
                         src={`${process.env.REACT_APP_API_URL}${product.imageUrl}`}
@@ -185,7 +185,7 @@ const Products = ({
                 <button
                     className={'dashboard_products_list_container_item_removeButton'}
                     type={'submit'}
-                    value={product._id}
+                    value={product.id}
                     onClick={handleOnClickRemoveProductButton}
                 >
                     Supprimer
@@ -214,6 +214,7 @@ const Products = ({
                             className={'dashboard_products_add_card_form_select'}
                             name={'category'}
                             value={category}
+                            onChange={() => {}}
                         >
                             <option value={''} onClick={() => setCategory('')}>Sélectionner une catégorie</option>
                             {userData.categories && categories.map(category => {
@@ -239,7 +240,7 @@ const Products = ({
                                 value={price}
                                 onChange={e => setPrice(e.currentTarget.value)}
                             />
-                            <select>
+                            <select name={'measure'} value={measure} onChange={() => {}}>
                                 <option value={'kg'} onClick={() => setMeasure('kg')}>Kg</option>
                                 <option value={'pcs'} onClick={() => setMeasure('pcs')}>Pcs</option>
                             </select>
