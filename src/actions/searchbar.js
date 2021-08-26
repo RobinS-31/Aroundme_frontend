@@ -5,6 +5,7 @@ export const SETCATEGORY = 'SETCATEGORY';
 export const SETDISTANCE = 'SETDISTANCE';
 export const GETDISTANCEORDURATION = 'GETDISTANCEORDURATION';
 export const SETDISTANCEORDURATION = 'SETDISTANCEORDURATION';
+export const SETDISPLAYMAP = 'SETDISPLAYMAP';
 
 export const getAddressResult = () => ({
     type: GETADDRESSRESULT
@@ -32,4 +33,8 @@ export const getDistanceOrDuration = () => ({
 export const setDistanceOrDuration = (distanceOrDuration) => ({
     type: SETDISTANCEORDURATION,
     distanceOrDuration
+});
+export const setDisplayMap = (bool) => ({
+    type: SETDISPLAYMAP,
+    bool
 });

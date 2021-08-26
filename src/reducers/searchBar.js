@@ -4,6 +4,7 @@ import {
     SETCATEGORY,
     SETDISTANCE,
     SETDISTANCEORDURATION,
+    SETDISPLAYMAP
 } from "../actions/searchbar";
 
 const initialState = {
@@ -42,6 +43,11 @@ const searchBar = (state = initialState, action = {}) => {
             return {
                 ...state,
                 distanceOrDuration: action.distanceOrDuration
+            };
+        case SETDISPLAYMAP:
+            return {
+                ...state,
+                displayMap: action.bool
             };
         default: return state;
     }

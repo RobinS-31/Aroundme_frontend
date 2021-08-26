@@ -17,17 +17,17 @@ const SearchBar = ({
     distanceUnit,
     distanceMetric,
     userLocation,
-    props,
     getAddressResult,
     setAddressValue,
     setCategory,
     setDistance,
-    setUserLocation
+    setUserLocation,
+    displayMap,
+    setDisplayMap
 }) => {
 
     const [displayAddressResults, setDisplayAddressResults] = useState(false);
     const [isInAddressResultsZone, setIsInAddressResultsZone] = useState(false);
-    const { displayMap, setDisplayMap } = props;
 
     const metrics = [
         { key: 'km', text: 'km', value: 'distances' },

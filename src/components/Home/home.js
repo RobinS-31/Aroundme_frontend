@@ -9,9 +9,7 @@ import SearchBar from "../../containers/searchBar";
 // == Import : local
 import './style.scss';
 
-const Home = ({ getProducersList, getCategories }) => {
-
-    const [displayMap, setDisplayMap] = useState(false);
+const Home = ({ getProducersList, getCategories, displayMap }) => {
 
     useEffect(() => {
         getProducersList();
@@ -31,7 +29,7 @@ const Home = ({ getProducersList, getCategories }) => {
                     Entrez votre adresse pour trouver rapidement les producteurs autour de vous, ou afficher la carte pour voir tout les producteurs en France.
                 </p>
             </div>
-            <SearchBar displayMap={displayMap} setDisplayMap={setDisplayMap} />
+            <SearchBar />
             {displayMap &&
             <Map />
             }

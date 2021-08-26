@@ -6,8 +6,9 @@
         width: 100%;
 
         .producerShowCase_info_picture {
-            max-width: calc(600px - 2rem);
-            min-height: 400px;
+            display: flex;
+            justify-content: center;
+            max-height: 600px;
 
             > img {
                 max-width: 100%;
@@ -17,16 +18,11 @@
             }
         }
         .producerShowCase_info_data {
-            width: calc(600px - 2rem);
-            padding-left: 2rem;
             display: flex;
             align-items: flex-start;
             flex-wrap: wrap;
 
             .producerShowCase_info_data_item {
-                width: 50%;
-                min-height: 60px;
-
                 &.description {
                     width: 100%;
                 }
@@ -38,7 +34,6 @@
                 > p {
                     word-break: normal;
                     overflow-wrap: anywhere;
-                    padding-right: .5rem;
                 }
             }
         }
@@ -48,8 +43,7 @@
         flex-wrap: wrap;
         border-top: 1px solid rgba(34,36,38,.15);
         width: 100%;
-        margin-top: 3rem;
-        padding-top: 2rem;
+
 
         .producerShowCase_products_item {
             background-color: #fff;
@@ -57,7 +51,6 @@
             border-radius: .25rem;
             width: 250px;
             padding: 1rem 1rem 3rem 1rem;
-            margin-right: 2rem;
             margin-bottom: 1.5rem;
 
             .producerShowCase_products_item_picture {
@@ -117,3 +110,135 @@
         }
     }
 }
+
+@media screen and (max-width: 575px) {
+    .producerShowCase_info {
+        flex-direction: column;
+
+        .producerShowCase_info_picture {
+            margin-bottom: 2rem;
+        }
+        .producerShowCase_info_data .producerShowCase_info_data_item {
+            width: 100%;
+            margin-bottom: 1.5rem;
+        }
+    }
+    .producerShowCase_products {
+        justify-content: center;
+        margin-top: 1rem;
+        padding-top: 2.5rem;
+    }
+};
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    .producerShowCase_info {
+        flex-direction: column;
+
+        .producerShowCase_info_picture {
+            margin-bottom: 2rem;
+        }
+        .producerShowCase_info_data .producerShowCase_info_data_item {
+            width: 100%;
+            margin-bottom: 1.5rem;
+        }
+    }
+    .producerShowCase_products {
+        justify-content: center;
+        margin-top: 1rem;
+        padding-top: 2.5rem;
+
+        .producerShowCase_products_item {
+            margin-right: 1.5rem;
+        }
+    }
+};
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .producerShowCase_info {
+        flex-direction: column;
+
+        .producerShowCase_info_picture {
+            margin-bottom: 2rem;
+        }
+        .producerShowCase_info_data .producerShowCase_info_data_item {
+            width: 50%;
+            margin-bottom: 1.5rem;
+
+            > p {
+                padding-right: .5rem;
+            }
+        }
+    }
+    .producerShowCase_products {
+        margin-top: 1rem;
+        padding-top: 2.5rem;
+
+        .producerShowCase_products_item {
+            margin-right: 1.5rem;
+        }
+    }
+};
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .producerShowCase_info {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        .producerShowCase_info_picture {
+            max-width: calc(600px - 2rem);
+            min-height: 400px;
+        }
+        .producerShowCase_info_data {
+            width: calc(600px - 2rem);
+            padding-left: 2rem;
+
+            .producerShowCase_info_data_item {
+                width: 50%;
+                min-height: 60px;
+
+                > p {
+                    padding-right: .5rem;
+                }
+            }
+        }
+    }
+    .producerShowCase_products {
+        margin-top: 3rem;
+        padding-top: 2rem;
+
+        .producerShowCase_products_item {
+            margin-right: 2rem;
+        }
+    }
+};
+@media screen and (min-width: 1200px) {
+    .producerShowCase_info {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        .producerShowCase_info_picture {
+            max-width: calc(600px - 2rem);
+            min-height: 400px;
+        }
+        .producerShowCase_info_data {
+            width: calc(600px - 2rem);
+            padding-left: 2rem;
+
+            .producerShowCase_info_data_item {
+                width: 50%;
+                min-height: 60px;
+
+                > p {
+                    padding-right: .5rem;
+                }
+            }
+        }
+    }
+    .producerShowCase_products {
+        margin-top: 3rem;
+        padding-top: 2rem;
+
+        .producerShowCase_products_item {
+            margin-right: 2rem;
+        }
+    }
+};

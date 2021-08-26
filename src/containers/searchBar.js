@@ -3,18 +3,18 @@ import { connect } from 'react-redux';
 
 // == Import : components
 import SearchBar from "../components/Home/SearchBar/searchBar";
-import { getAddressResult, setAddressValue, setCategory, setDistance } from "../actions/searchbar";
+import { getAddressResult, setAddressValue, setCategory, setDistance, setDisplayMap } from "../actions/searchbar";
 import { setUserLocation } from "../actions/user";
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
     categoriesList: state.products.categories,
     addressResult: state.searchBar.addressResult,
     distanceUnit: state.searchBar.distanceUnit,
     distanceMetric: state.searchBar.distanceMetric,
     category: state.searchBar.category,
     addressValue: state.searchBar.addressValue,
-    userLocation: state.user.location,
-    props: ownProps
+    displayMap: state.searchBar.displayMap,
+    userLocation: state.user.location
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -32,6 +32,9 @@ const mapDispatchToProps = (dispatch) => ({
     },
     setUserLocation: (lon, lat) => {
         dispatch(setUserLocation(lon, lat));
+    },
+    setDisplayMap: (bool) => {
+        dispatch(setDisplayMap(bool));
     }
 });
 
