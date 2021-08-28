@@ -9,20 +9,15 @@
   display: flex;
   justify-content: center;
   padding-top: 2rem;
-  min-height: calc(100% - 350px);
+  min-height: calc(100% - 300px);
 }
 
 @media screen and (max-width: 575px) {
   .container {
-    width: 90%;
+    min-height: calc(100% - 400px) !important;
   }
 }
-@media screen and (min-width: 576px) and (max-width: 767px) {
-  .container {
-    width: 90%;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 991px) {
+@media screen and (max-width: 991px) {
   .container {
     width: 90%;
   }

@@ -690,70 +690,72 @@ const Form = ({
                 <form className={'form security'} onSubmit={handleOnSubmitSecurityForm}>
                     <h2 className={'title'}>Modifier mon mot de passe</h2>
                     <div className={'form_container'}>
-                        <div className={'form_container_data_item inputContainer'}>
-                            <label htmlFor={'oldPassword'}>Ancien mot de passe</label>
-                            <input
-                                id={'oldPassword'}
-                                name={'oldPassword'}
-                                type={'password'}
-                                placeholder={'Ancien mot de passe'}
-                                value={oldPassword}
-                                onChange={handleOnChangeFormInput}
-                            />
-                            {state.isOldPasswordError &&
-                            <div className={'inputContainer_errorMessage'}>
-                                Veuillez indiquer votre ancien mot de passe
+                        <div className={'form_container_data'}>
+                            <div className={'form_container_data_item inputContainer security'}>
+                                <label htmlFor={'oldPassword'}>Ancien mot de passe</label>
+                                <input
+                                    id={'oldPassword'}
+                                    name={'oldPassword'}
+                                    type={'password'}
+                                    placeholder={'Ancien mot de passe'}
+                                    value={oldPassword}
+                                    onChange={handleOnChangeFormInput}
+                                />
+                                {state.isOldPasswordError &&
+                                <div className={'inputContainer_errorMessage'}>
+                                    Veuillez indiquer votre ancien mot de passe
+                                </div>
+                                }
                             </div>
-                            }
-                        </div>
-                        <div className={'form_container_data_item inputContainer'}>
-                            <label htmlFor={'password'}>Nouveau mot de passe</label>
-                            <input
-                                id={'password'}
-                                name={'password'}
-                                type={'password'}
-                                placeholder={'Nouveau mot de passe'}
-                                value={password}
-                                onChange={handleOnChangeFormInput}
-                                onFocus={() => setIsPasswordFocus(true)}
-                                onBlur={() => setIsPasswordFocus(false)}
-                            />
-                            {state.isPasswordError &&
-                            <div className={'inputContainer_errorMessage'}>
-                                Veuillez ajouter un mot de passe correct
+                            <div className={'form_container_data_item inputContainer security'}>
+                                <label htmlFor={'password'}>Nouveau mot de passe</label>
+                                <input
+                                    id={'password'}
+                                    name={'password'}
+                                    type={'password'}
+                                    placeholder={'Nouveau mot de passe'}
+                                    value={password}
+                                    onChange={handleOnChangeFormInput}
+                                    onFocus={() => setIsPasswordFocus(true)}
+                                    onBlur={() => setIsPasswordFocus(false)}
+                                />
+                                {state.isPasswordError &&
+                                <div className={'inputContainer_errorMessage'}>
+                                    Veuillez ajouter un mot de passe correct
+                                </div>
+                                }
+                                {isPasswordFocus &&
+                                <div className={'inputContainer_passwordMessage'}>
+                                    <p>Le mot de passe doit contenir, au moins :</p>
+                                    <ul>
+                                        <li>
+                                            {isLowerUpperChar &&
+                                            <FontAwesomeIcon className={'inputContainer_passwordMessage_icon'} icon={faCheck} />
+                                            }
+                                            1 lettre majuscule et 1 minuscule
+                                        </li>
+                                        <li>
+                                            {isNumberChar &&
+                                            <FontAwesomeIcon className={'inputContainer_passwordMessage_icon'} icon={faCheck} />
+                                            }
+                                            1 chiffre
+                                        </li>
+                                        <li>
+                                            {isSpecialChar &&
+                                            <FontAwesomeIcon className={'inputContainer_passwordMessage_icon'} icon={faCheck} />
+                                            }
+                                            1 caractère spécial
+                                        </li>
+                                        <li>
+                                            {isMinLength &&
+                                            <FontAwesomeIcon className={'inputContainer_passwordMessage_icon'} icon={faCheck} />
+                                            }
+                                            6 caratères
+                                        </li>
+                                    </ul>
+                                </div>
+                                }
                             </div>
-                            }
-                            {isPasswordFocus &&
-                            <div className={'inputContainer_passwordMessage'}>
-                                <p>Le mot de passe doit contenir, au moins :</p>
-                                <ul>
-                                    <li>
-                                        {isLowerUpperChar &&
-                                        <FontAwesomeIcon className={'inputContainer_passwordMessage_icon'} icon={faCheck} />
-                                        }
-                                        1 lettre majuscule et 1 minuscule
-                                    </li>
-                                    <li>
-                                        {isNumberChar &&
-                                        <FontAwesomeIcon className={'inputContainer_passwordMessage_icon'} icon={faCheck} />
-                                        }
-                                        1 chiffre
-                                    </li>
-                                    <li>
-                                        {isSpecialChar &&
-                                        <FontAwesomeIcon className={'inputContainer_passwordMessage_icon'} icon={faCheck} />
-                                        }
-                                        1 caractère spécial
-                                    </li>
-                                    <li>
-                                        {isMinLength &&
-                                        <FontAwesomeIcon className={'inputContainer_passwordMessage_icon'} icon={faCheck} />
-                                        }
-                                        6 caratères
-                                    </li>
-                                </ul>
-                            </div>
-                            }
                         </div>
                     </div>
                     {securityFormRequestIsValidated &&

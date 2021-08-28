@@ -12,7 +12,6 @@
         .form_container_picture {
             max-width: 300px;
             max-height: 300px;
-            margin-right: 2rem;
 
             > img {
                 max-width: 100%;
@@ -76,8 +75,6 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
-    padding: 0 .5rem;
-    flex-basis: 50%;
 
     > label {
         height: 20px;
@@ -174,3 +171,39 @@
         margin-top: .15rem;
     }
 }
+
+@media screen and (max-width: 767px) {
+    .form_container {
+        flex-direction: column;
+        align-items: center;
+
+        .form_container_picture {
+            margin-bottom: 2rem;
+        }
+    }
+    .inputContainer {
+        flex-basis: 100%;
+    }
+};
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .form_container_picture {
+        margin-right: 2rem;
+    }
+    .inputContainer {
+        flex-basis: 100%;
+        padding: 0 .5rem;
+
+        &.security {
+            flex-basis: 50%;
+        }
+    }
+};
+@media screen and (min-width: 992px) {
+    .form_container_picture {
+        margin-right: 2rem;
+    }
+    .inputContainer {
+        flex-basis: 50%;
+        padding: 0 .5rem;
+    }
+};

@@ -18,7 +18,7 @@ const Logout = ({ logOut, props }) => {
             onBlur={handleDisplayLoginZone}
         >
             <Link to={'/dashboard'}>
-                <button className={'button logout_myAccount'}>
+                <button className={'button logout_myAccount'} onClick={handleDisplayLoginZone}>
                     Mon Compte
                 </button>
             </Link>

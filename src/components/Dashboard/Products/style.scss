@@ -25,7 +25,6 @@
 
             .dashboard_products_list_container_item {
                 position: relative;
-                margin-right: 2rem;
                 margin-bottom: 1.5rem;
                 padding: 1rem 1rem 3rem 1rem;
             }
@@ -240,3 +239,14 @@
         }
     }
 }
+
+@media screen and (max-width: 575px) {
+    .dashboard_products_list_container {
+        justify-content: center;
+    }
+};
+@media screen and (min-width: 576px) {
+    .dashboard_products_list_container_item {
+        margin-right: 2rem;
+    }
+};

@@ -24,25 +24,25 @@ const Dashboard = ({ isProducer }) => {
         <div className={'section dashboard'}>
             {isProducer &&
                 <div className={'dashboard_menu'} ref={dashboardMenu}>
-                <button
-                    className={'dashboard_menu_button active'}
-                    onClick={() => {
-                        handleOnClickMenuButton();
-                        setMenuToDisplay('informations');
-                    }}
-                >
-                    Informations
-                </button>
-                <button
-                    className={'dashboard_menu_button'}
-                    onClick={() => {
-                        handleOnClickMenuButton();
-                        setMenuToDisplay('products');
-                    }}
-                >
-                    Produits
-                </button>
-            </div>
+                    <button
+                        className={'dashboard_menu_button active'}
+                        onClick={() => {
+                            handleOnClickMenuButton();
+                            setMenuToDisplay('informations');
+                        }}
+                    >
+                        Informations
+                    </button>
+                    <button
+                        className={'dashboard_menu_button'}
+                        onClick={() => {
+                            handleOnClickMenuButton();
+                            setMenuToDisplay('products');
+                        }}
+                    >
+                        Produits
+                    </button>
+                </div>
             }
             {menuToDisplay === 'informations' &&
                 <div className={'dashboard_content'}>

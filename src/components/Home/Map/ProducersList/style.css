@@ -1,5 +1,4 @@
 .producersList {
-  background-color: rgba(255, 255, 255, 0.6);
   padding: 0.5rem;
   border-radius: 0.25rem;
 }
@@ -54,7 +53,6 @@
   .producersList {
     height: 450px;
     margin-top: 1rem;
-    z-index: 9999;
     background-color: rgba(255, 255, 255, 0.8);
   }
   .producersList .producersList_item {
@@ -71,26 +69,7 @@
     margin-bottom: 0.25rem;
   }
 }
-@media screen and (min-width: 576px) and (max-width: 767px) {
-  .producersList {
-    height: 500px;
-    margin-top: 1rem;
-    z-index: 9999;
-    background-color: rgba(255, 255, 255, 0.8);
-  }
-  .producersList .producersList_item_content {
-    align-items: center;
-  }
-  .producersList .producersList_item_content .producersList_item_content_job > p {
-    margin-bottom: 0.25rem;
-  }
-  .producersList .producersList_item_content .producersList_item_content_job > p .producersList_item_content_job_spanKey {
-    display: inline-block;
-    width: 92px;
-    text-align: right;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 991px) {
+@media screen and (min-width: 576px) and (max-width: 991px) {
   .producersList {
     height: 500px;
     margin-top: 1rem;

@@ -7,12 +7,38 @@
     <list default="true" id="a91621d5-ada7-48d4-b047-30fc6668e5ce" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/App/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/style.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/App/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/Products/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/Products/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/Products/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/Products/style.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/Products/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/Products/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/style.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/footer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Footer/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Footer/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/style.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Footer/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Form/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Form/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Form/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/style.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Form/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/LoginButton/Logout/logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/LoginButton/Logout/logout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/Map/MapAPI/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Map/MapAPI/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/Map/MapAPI/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Map/MapAPI/style.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/Map/MapAPI/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Map/MapAPI/style.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Home/Map/ProducersList/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Map/ProducersList/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/Map/ProducersList/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Map/ProducersList/style.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Home/Map/ProducersList/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Map/ProducersList/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/Map/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Map/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/Map/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Map/style.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/Map/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Map/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/RegisterAccount/RegisterForm/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RegisterAccount/RegisterForm/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/RegisterAccount/RegisterForm/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RegisterAccount/RegisterForm/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/RegisterAccount/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RegisterAccount/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/RegisterAccount/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RegisterAccount/style.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/RegisterAccount/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RegisterAccount/style.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +73,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../back" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -79,7 +105,9 @@
       <workItem from="1629364605403" duration="17219000" />
       <workItem from="1629457576423" duration="15781000" />
       <workItem from="1629973257960" duration="21000" />
-      <workItem from="1629975629552" duration="6191000" />
+      <workItem from="1629975629552" duration="6283000" />
+      <workItem from="1629992359402" duration="104000" />
+      <workItem from="1630145874981" duration="8815000" />
     </task>
     <servers />
   </component>
