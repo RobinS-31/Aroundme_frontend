@@ -9,14 +9,19 @@
     src: url('../assets/fonts/Lobster-Regular.ttf');
 }
 
+html {
+    height: 100%;
+}
+
 body {
     margin: 0;
     font-family: 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    height: 100%;
 
     #root {
-        min-height: 100vh;
+        min-height: 100%;
         display: flex;
         overflow: auto;
         justify-content: center;
