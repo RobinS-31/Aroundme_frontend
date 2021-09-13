@@ -32,6 +32,10 @@ const App = ({
     }, [userLocation, distanceUnit, distanceMetric, location, getDistanceOrDuration]);
 
     useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location]);
+
+    useEffect(() => {
         checkedIfLogged();
     });
 

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 // == Import : components
 import LoginButton from "../../containers/loginButton";
+import CartButton from "../../containers/cartButton";
 
 // == Import : local
 import './style.scss';
@@ -17,6 +18,7 @@ const Header = () => {
                 </Link>
             </div>
             <div className={'header_nav'}>
+                <CartButton />
                 <LoginButton />
             </div>
         </div>

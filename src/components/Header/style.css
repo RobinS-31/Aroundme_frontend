@@ -11,5 +11,8 @@
   color: black;
   font-size: 2.5rem;
 }
+.header .header_nav {
+  display: flex;
+}
 
 /*# sourceMappingURL=style.css.map */

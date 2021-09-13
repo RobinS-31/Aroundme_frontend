@@ -46,11 +46,13 @@
 
 
         .producerShowCase_products_item {
+            display: flex;
+            flex-direction: column;
             background-color: #fff;
             box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
             border-radius: .25rem;
             width: 250px;
-            padding: 1rem 1rem 3rem 1rem;
+            padding: 1rem 1rem 1rem 1rem;
             margin-bottom: 1.5rem;
 
             .producerShowCase_products_item_picture {
@@ -80,11 +82,12 @@
                     margin-bottom: 1.5rem;
                 }
                 .producerShowCase_products_item_info_details {
-                    font-size: .95rem;
                     margin-bottom: 1.5rem;
 
                     > p {
+                        font-size: .95rem;
                         margin-bottom: .5rem;
+                        font-family: "Lobster", cursive;
                     }
                     > ul {
                         padding-left: 1rem;
@@ -101,10 +104,52 @@
                     > p:first-child {
                         font-size: .95rem;
                         margin-bottom: .5rem;
+                        font-family: "Lobster", cursive;
                     }
                     > p:not(:first-of-type) {
                         font-size: .9rem;
                     }
+                }
+            }
+            .producerShowCase_products_item_addToCart {
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+
+                .producerShowCase_products_item_addToCart_quantity {
+                    display: flex;
+                    width: 100%;
+                    margin-bottom: .5rem;
+                    border-top: 1px solid rgba(34, 36, 38, 0.15);
+                    padding-top: 1rem;
+
+                    > input, > select {
+                        border: 1px solid rgba(34,36,38,.15);
+                        height: 38px;
+                        padding: .5rem 1rem;
+                    }
+                    > input {
+                        width: calc(100% - 70px);
+                        border-radius: .25rem 0 0 .25rem;
+                        padding: .5rem .5rem .5rem 1rem;
+                    }
+                    > select {
+                        width: 70px;
+                        border-left: none;
+                        border-radius: 0 .25rem .25rem 0;
+                        padding: .5rem 1rem;
+                    }
+                }
+                .producerShowCase_products_item_addToCart_button {
+                    width: 100%;
+                    height: 40px;
+                    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+                    border: none;
+                    background-color: #00c851;
+                    color: white;
+                    font-size: .8rem;
+                    border-radius: .25rem;
                 }
             }
         }
@@ -184,7 +229,7 @@
 
         .producerShowCase_info_picture {
             max-width: calc(600px - 2rem);
-            min-height: 400px;
+            //min-height: 400px;
         }
         .producerShowCase_info_data {
             width: calc(600px - 2rem);
@@ -217,7 +262,7 @@
 
         .producerShowCase_info_picture {
             max-width: calc(600px - 2rem);
-            min-height: 400px;
+            //min-height: 400px;
         }
         .producerShowCase_info_data {
             width: calc(600px - 2rem);
