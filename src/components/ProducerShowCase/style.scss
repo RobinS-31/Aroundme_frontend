@@ -150,6 +150,18 @@
                     color: white;
                     font-size: .8rem;
                     border-radius: .25rem;
+
+                    .show {
+                        display: inline;
+                        animation: opacityFade 0.75s ease;
+
+                        .button_icon {
+                            margin-right: .25rem;
+                        }
+                    }
+                    .hide {
+                        display: none;
+                    }
                 }
             }
         }
@@ -287,3 +299,12 @@
         }
     }
 };
+
+@keyframes opacityFade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

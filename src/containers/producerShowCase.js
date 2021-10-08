@@ -18,8 +18,8 @@ const mapDispatchToProps = (dispatch) => ({
     resetOneProducer: () => {
         dispatch(resetOneProducer());
     },
-    addProductToCart: (id, quantity, measure) => {
-        dispatch(addProductToCart(id, quantity, measure))
+    addProductToCart: (productId, producerId, dataProduct) => {
+        dispatch(addProductToCart(productId, producerId, dataProduct))
     }
 });
 

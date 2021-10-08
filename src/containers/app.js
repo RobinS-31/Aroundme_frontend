@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import App from "../components/App/app";
 import { checkedIfLogged } from "../actions/login";
 import { getDistanceOrDuration } from "../actions/searchbar";
+import { getProducersList } from "../actions/producer";
+import { getCategories } from "../actions/products";
 
 const mapStateToProps = (state, ownProps) => ({
     userLocation: state.user.location,
@@ -20,6 +22,12 @@ const mapDispatchToProps = (dispatch) => ({
     },
     getDistanceOrDuration: () => {
         dispatch(getDistanceOrDuration());
+    },
+    getProducersList: () => {
+        dispatch(getProducersList());
+    },
+    getCategories: () => {
+        dispatch(getCategories());
     }
 });
 

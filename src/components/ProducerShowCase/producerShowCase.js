@@ -1,5 +1,5 @@
 // == Import : npm
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useLocation } from 'react-router-dom';
 
@@ -66,7 +66,7 @@ const ProducerShowCase = ({ producerData, getOneProducer, resetOneProducer, addP
                 </div>
             </div>
             <div className='producerShowCase_products'>
-                {producerData.length !== 0 && producerData.products.map(productData => <ProductCard product={productData} addProductToCart={addProductToCart} key={productData.id} />)}
+                {producerData.length !== 0 && producerData.products.map(productData => <ProductCard product={productData} addProductToCart={addProductToCart} producerId={location.state.id} key={productData.id} />)}
             </div>
         </div>
     );

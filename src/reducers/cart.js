@@ -11,7 +11,10 @@ const cart = (state = initialState, action = {}) => {
                 ...state,
                 cartProduct: {
                     ...state.cartProduct,
-                    [action.id]: [action.quantity, action.measure]
+                    [action.producerId]: {
+                        ...state.cartProduct[action.producerId],
+                        [action.productId]: action.dataProduct
+                    }
                 }
             };
         default: return state;

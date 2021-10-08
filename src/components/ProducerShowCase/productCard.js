@@ -1,22 +1,56 @@
 // == Import : npm
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
 // == Import : local
 import { priceFormatted } from "../../utils/tools";
 
-const ProductCard = ({ product, addProductToCart }) => {
+const ProductCard = ({ product, addProductToCart, producerId }) => {
+
     const [quantity, setQuantity] = useState('');
     const [measure, setMeasure] = useState('g');
+    const addToCart = useRef(null);
+    const addedToCart = useRef(null);
 
+    /**
+     * Définit la valeur de "measure" sur "pcs" pour les produits ayant comme valeur de mesure "pcs".
+     */
     useEffect(() => {
+        console.log(product);
         if (product.measure === 'pcs') setMeasure('pcs');
     }, [product]);
 
-    const handleOnClickAddToCartButton = () => {
-        if (quantity !== '') {
-            addProductToCart(product.id, quantity, measure);
-            setQuantity('');
-            product.measure === 'pcs' ? setMeasure('pcs') : setMeasure('g');
+    /**
+     * Fonction déclenché lors de la soumission du formulaire lié à l'ajout d'un produit dans le "panier".
+     * @param e
+     */
+    const handleOnClickAddToCartButton = (e) => {
+        e.preventDefault();
+
+        if (Number.isInteger(parseFloat(quantity))) {
+            const dataProduct = {
+                quantity,
+                measure,
+                price: product.price,
+                defaultMeasure: product.measure,
+                name: product.name,
+                imageUrl: product.imageUrl,
+                details: product.details,
+                description: product.description,
+                category: product.category
+            };
+
+            addProductToCart(product.id, producerId, dataProduct); // "Action" permettant d'ajouté les informations du produit dans le state du reducer "cart"
+            setQuantity(''); // Réinitialise la valeur de "quantity" sur sa valeur initiale
+            product.measure === 'pcs' ? setMeasure('pcs') : setMeasure('g'); // Réinitialise la valeur de "measure" sur sa valeur initiale
+            addToCart.current.classList.replace('show', 'hide');
+            addedToCart.current.classList.replace('hide', 'show');
+
+            setTimeout(() => {
+                addedToCart.current.classList.replace('show', 'hide');
+                addToCart.current.classList.replace('hide', 'show');
+            }, 2000)
         }
     };
 
@@ -53,13 +87,14 @@ const ProductCard = ({ product, addProductToCart }) => {
                 </div>
                 }
             </div>
-            <div className={'producerShowCase_products_item_addToCart'}>
+            <form className={'producerShowCase_products_item_addToCart'}>
                 <div className={'producerShowCase_products_item_addToCart_quantity'}>
                     <input
                         name={'quantity'}
                         type={'number'}
                         placeholder={"Quantité"}
                         step={1}
+                        min={0}
                         value={quantity}
                         onChange={e => setQuantity(e.currentTarget.value)}
                     />
@@ -79,8 +114,18 @@ const ProductCard = ({ product, addProductToCart }) => {
                         }
                     </select>
                 </div>
-                <button className={'producerShowCase_products_item_addToCart_button'} onClick={handleOnClickAddToCartButton}>Ajouter au panier</button>
-            </div>
+                <button
+                    className={'producerShowCase_products_item_addToCart_button'}
+                    type={'submit'}
+                    onClick={handleOnClickAddToCartButton}
+                >
+                    <span className={'show'} ref={addToCart}>Ajouter au panier</span>
+                    <span className={'hide'} ref={addedToCart}>
+                        <FontAwesomeIcon className={'button_icon'} icon={faCheckCircle} />
+                        Produit ajouté
+                    </span>
+                </button>
+            </form>
         </div>
     )
 };

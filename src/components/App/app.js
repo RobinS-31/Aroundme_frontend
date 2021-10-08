@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { Switch, Route, useLocation, Redirect } from 'react-router-dom';
 
 // == Import : components
+import Cart from "../../containers/cart";
 import Dashboard from "../../containers/dashboard";
 import Header from "../Header/header";
 import Home from "../../containers/home";
@@ -21,9 +22,16 @@ const App = ({
     userConnected,
     distanceUnit,
     distanceMetric,
+    getProducersList,
+    getCategories,
     props
 }) => {
     const location = useLocation().pathname;
+
+    useEffect(() => {
+        getProducersList();
+        getCategories();
+    }, [getProducersList, getCategories]);
 
     useEffect(() => {
         if (location === "/" && userLocation.lat && distanceUnit !== '') {
@@ -95,6 +103,7 @@ const App = ({
                     <RestrictedRoute component={RegisterForm} path={'/register-producer'} exact />
                     <Route path={'/producteur/:name'} component={ProducerShowCase} exact />
                     <PrivateRoute component={Dashboard} path={'/dashboard'} exact />
+                    <Route path={'/cart'} component={Cart} exact />
                 </Switch>
             </div>
             <Footer />

@@ -1,8 +1,8 @@
 export const ADDPRODUCTTOCART = 'ADDPRODUCTTOCART';
 
-export const addProductToCart = (id, quantity, measure) => ({
+export const addProductToCart = (productId, producerId, dataProduct) => ({
     type: ADDPRODUCTTOCART,
-    id,
-    quantity,
-    measure
+    productId,
+    producerId,
+    dataProduct
 });

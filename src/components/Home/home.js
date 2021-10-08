@@ -9,12 +9,7 @@ import SearchBar from "../../containers/searchBar";
 // == Import : local
 import './style.scss';
 
-const Home = ({ getProducersList, getCategories, displayMap }) => {
-
-    useEffect(() => {
-        getProducersList();
-        getCategories();
-    }, [getProducersList, getCategories]);
+const Home = ({ displayMap }) => {
 
     return (
         <div className={'home'}>
