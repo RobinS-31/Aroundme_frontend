@@ -9,7 +9,7 @@ const Cart = ({ cartProduct, producersList }) => {
     useEffect(() => {
         console.log(cartProduct);
         console.log(producersList);
-    }, []);
+    }, [producersList]);
 
     return (
         <div className={'section'}>

@@ -17,7 +17,6 @@ const ProductCard = ({ product, addProductToCart, producerId }) => {
      * Définit la valeur de "measure" sur "pcs" pour les produits ayant comme valeur de mesure "pcs".
      */
     useEffect(() => {
-        console.log(product);
         if (product.measure === 'pcs') setMeasure('pcs');
     }, [product]);
 

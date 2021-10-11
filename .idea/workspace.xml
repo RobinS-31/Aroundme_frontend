@@ -5,23 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a91621d5-ada7-48d4-b047-30fc6668e5ce" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Cart/cart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Cart/style.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/cart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/middlewares/cartMiddleware.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/cart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/App/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/CartButton/cartButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/CartButton/cartButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProducerShowCase/producerShowCase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProducerShowCase/producerShowCase.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Cart/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cart/cart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ProducerShowCase/productCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProducerShowCase/productCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProducerShowCase/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProducerShowCase/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProducerShowCase/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProducerShowCase/style.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProducerShowCase/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProducerShowCase/style.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/producerShowCase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/producerShowCase.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +95,8 @@
       <workItem from="1631529818041" duration="1389000" />
       <workItem from="1631538827712" duration="7913000" />
       <workItem from="1632215202714" duration="80000" />
-      <workItem from="1633686877307" duration="12116000" />
+      <workItem from="1633686877307" duration="12338000" />
+      <workItem from="1633965855087" duration="6192000" />
     </task>
     <servers />
   </component>

@@ -24,6 +24,8 @@ const App = ({
     distanceMetric,
     getProducersList,
     getCategories,
+    cartProduct,
+    saveCart,
     props
 }) => {
     const location = useLocation().pathname;
@@ -42,6 +44,10 @@ const App = ({
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [location]);
+
+    useEffect(() => {
+        if (Object.keys(cartProduct).length) saveCart();
+    }, [cartProduct]);
 
     useEffect(() => {
         checkedIfLogged();
