@@ -7,7 +7,6 @@ import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { priceFormatted } from "../../utils/tools";
 
 const ProductCard = ({ product, addProductToCart, producerId }) => {
-
     const [quantity, setQuantity] = useState('');
     const [measure, setMeasure] = useState('g');
     const addToCart = useRef(null);
@@ -129,4 +128,4 @@ const ProductCard = ({ product, addProductToCart, producerId }) => {
     )
 };
 
-export default ProductCard;
+export default React.memo(ProductCard);
