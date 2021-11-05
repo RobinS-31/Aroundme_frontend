@@ -1,19 +1,20 @@
 // == Import : npm
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense } from 'react';
 import { Switch, Route, useLocation, Redirect } from 'react-router-dom';
-
-// == Import : components
-import Cart from "../../containers/cart";
-import Dashboard from "../../containers/dashboard";
-import Header from "../Header/header";
-import Home from "../../containers/home";
-import ProducerShowCase from "../../containers/producerShowCase";
-import RegisterAccount from "../RegisterAccount/registerAccount";
-import RegisterForm from "../RegisterAccount/RegisterForm/registerForm";
-import Footer from "../Footer/footer";
 
 // == Import : local
 import './style.scss';
+
+// == Import : components
+import Header from "../Header/header";
+import Home from "../../containers/home";
+import Footer from "../Footer/footer";
+const Cart = React.lazy(() => import("../../containers/cart"));
+const Dashboard = React.lazy(() => import("../../containers/dashboard"));
+const ProducerShowCase = React.lazy(() => import("../../containers/producerShowCase"));
+const RegisterAccount = React.lazy(() => import("../RegisterAccount/registerAccount"));
+const RegisterForm = React.lazy(() => import("../RegisterAccount/RegisterForm/registerForm"));
+
 
 const App = ({
     checkedIfLogged,
@@ -26,6 +27,7 @@ const App = ({
     getCategories,
     cartProduct,
     saveCart,
+    getCart,
     props
 }) => {
     const location = useLocation().pathname;
@@ -46,8 +48,12 @@ const App = ({
     }, [location]);
 
     useEffect(() => {
-        if (Object.keys(cartProduct).length) saveCart();
+        saveCart();
     }, [cartProduct]);
+
+    useEffect(() => {
+        getCart();
+    }, []);
 
     useEffect(() => {
         checkedIfLogged();
@@ -96,22 +102,28 @@ const App = ({
         );
     };
 
+    const Loading = () => (
+        <div className={'loading suspenseContainer'}>
+            <div className='spinnerLoader suspense' />
+        </div>
+    );
+
     return (
         <div className='app'>
             <Header />
-            <div className="container">
+            <main className="container">
                 <Switch>
-                    <Route path={'/'} exact>
-                        <Home />
-                    </Route>
-                    <RestrictedRoute component={RegisterAccount} path={'/register'} exact />
-                    <RestrictedRoute component={RegisterForm} path={'/register-user'} exact />
-                    <RestrictedRoute component={RegisterForm} path={'/register-producer'} exact />
-                    <Route path={'/producteur/:name'} component={ProducerShowCase} exact />
-                    <PrivateRoute component={Dashboard} path={'/dashboard'} exact />
-                    <Route path={'/cart'} component={Cart} exact />
+                    <Route path={'/'} component={Home} exact />
+                    <Suspense fallback={<Loading />}>
+                        <RestrictedRoute component={RegisterAccount} path={'/register'} exact />
+                        <RestrictedRoute component={RegisterForm} path={'/register-user'} exact />
+                        <RestrictedRoute component={RegisterForm} path={'/register-producer'} exact />
+                        <Route path={'/producteur/:name'} component={ProducerShowCase} exact />
+                        <PrivateRoute component={Dashboard} path={'/dashboard'} exact />
+                        <Route path={'/cart'} component={Cart} exact />
+                    </Suspense>
                 </Switch>
-            </div>
+            </main>
             <Footer />
         </div>
     );

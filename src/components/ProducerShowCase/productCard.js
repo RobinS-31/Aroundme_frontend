@@ -11,6 +11,13 @@ const ProductCard = ({ product, addProductToCart, producerId }) => {
     const [measure, setMeasure] = useState('g');
     const addToCart = useRef(null);
     const addedToCart = useRef(null);
+    const setTimeOutId = useRef(null);
+
+    useEffect(() => {
+        return () => {
+            clearTimeout(setTimeOutId.current);
+        }
+    }, []);
 
     /**
      * Définit la valeur de "measure" sur "pcs" pour les produits ayant comme valeur de mesure "pcs".
@@ -45,10 +52,10 @@ const ProductCard = ({ product, addProductToCart, producerId }) => {
             addToCart.current.classList.replace('show', 'hide');
             addedToCart.current.classList.replace('hide', 'show');
 
-            setTimeout(() => {
+            setTimeOutId.current = setTimeout(() => {
                 addedToCart.current.classList.replace('show', 'hide');
                 addToCart.current.classList.replace('hide', 'show');
-            }, 2000)
+            }, 2000);
         }
     };
 

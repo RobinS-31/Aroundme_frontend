@@ -7,7 +7,7 @@ import { checkedIfLogged } from "../actions/login";
 import { getDistanceOrDuration } from "../actions/searchbar";
 import { getProducersList } from "../actions/producer";
 import { getCategories } from "../actions/products";
-import { saveCart } from "../actions/cart";
+import { saveCart, getCart } from "../actions/cart";
 
 const mapStateToProps = (state, ownProps) => ({
     userLocation: state.user.location,
@@ -33,6 +33,9 @@ const mapDispatchToProps = (dispatch) => ({
     },
     saveCart: () => {
         dispatch(saveCart());
+    },
+    getCart: () => {
+        dispatch(getCart());
     }
 });
 

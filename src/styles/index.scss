@@ -64,6 +64,10 @@ code {
     justify-content: center;
     align-items: center;
     padding: 2px 1.25rem;
+
+    &.suspenseContainer {
+        opacity: .2;
+    }
 }
 .spinnerLoader {
     display: inline-block;
@@ -74,6 +78,13 @@ code {
     border-top-color: #fff;
     animation: spin 1s ease-in-out infinite;
     -webkit-animation: spin 1s ease-in-out infinite;
+
+    &.suspense {
+        border: 10px solid rgba(0,0,0,1);
+        border-top-color: rgb(255,255,255);
+        width: 100px;
+        height: 100px;
+    }
 }
 
 @keyframes spin {

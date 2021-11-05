@@ -7,7 +7,7 @@ import './style.scss';
 
 const Footer = () => {
     return (
-        <div className='footer'>
+        <footer className='footer'>
             <div className='footer_content'>
                 <ul className={'footer_content_list'}>
                     <li>
@@ -31,7 +31,7 @@ const Footer = () => {
                     </li>
                 </ul>
             </div>
-        </div>
+        </footer>
     );
 };
 export default React.memo(Footer);

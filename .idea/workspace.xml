@@ -5,11 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a91621d5-ada7-48d4-b047-30fc6668e5ce" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Cart/cartItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Cart/cartItemProduct.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Cart/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cart/cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Cart/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cart/style.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Footer/footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/CartButton/cartButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/CartButton/cartButton.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/header.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ProducerShowCase/productCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProducerShowCase/productCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/cart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/middlewares/cartMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/cartMiddleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/tools.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/tools.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +60,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../back" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -94,7 +107,11 @@
       <workItem from="1632215202714" duration="80000" />
       <workItem from="1633686877307" duration="12338000" />
       <workItem from="1633965855087" duration="6192000" />
-      <workItem from="1635784120372" duration="3455000" />
+      <workItem from="1635784120372" duration="4260000" />
+      <workItem from="1635847873272" duration="5147000" />
+      <workItem from="1635949471202" duration="8230000" />
+      <workItem from="1636018749473" duration="10077000" />
+      <workItem from="1636103126618" duration="15492000" />
     </task>
     <servers />
   </component>

@@ -11,7 +11,7 @@ import './style.scss';
 
 const Header = () => {
     return (
-        <div className='header'>
+        <header className='header'>
             <div className='header_title'>
                 <Link to='/'>
                     <p>AroundMe</p>
@@ -21,7 +21,7 @@ const Header = () => {
                 <CartButton />
                 <LoginButton />
             </div>
-        </div>
+        </header>
     );
 };
 export default React.memo(Header);
