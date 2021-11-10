@@ -48,12 +48,12 @@ const App = ({
     }, [location]);
 
     useEffect(() => {
-        saveCart();
-    }, [cartProduct]);
-
-    useEffect(() => {
         getCart();
     }, []);
+
+    useEffect(() => {
+        saveCart();
+    }, [cartProduct]);
 
     useEffect(() => {
         checkedIfLogged();

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 // == Import : components
 import CartItem from "./cartItem";
+import Form from "../../containers/form";
 
 // == Import : local
 import { priceFormatted } from "../../utils/tools";
@@ -23,7 +24,7 @@ const Cart = ({ cartProduct, producersList, removeProductToCart }) => {
 
     useEffect(() => {
         console.log(cartFormated);
-    }, [cartFormated])
+    }, [cartFormated]);
 
     const formatCart = (cartData, producersData) => {
         Object.entries(cartData).forEach(([producerId, cartContent]) => {
@@ -64,15 +65,18 @@ const Cart = ({ cartProduct, producersList, removeProductToCart }) => {
     };
 
     return (
-        <div className={'section'}>
-            <h2 className={'title'}>Mon Panier</h2>
+        <section className={'section cart'}>
             <div className={'cartDetails'}>
-                {cartFormated.length > 0 && cartFormated.map(item => <CartItem key={item._id} item={item} priceFormatted={priceFormatted} removeProductToCart={removeProductToCart} />)}
-            </div>
-            <div className={'cartTotalPrice'}>
+                <h2 className={'title'}>Mon Panier</h2>
+                <div>
+                    {cartFormated.length > 0 && cartFormated.map(item => <CartItem key={item._id} item={item} priceFormatted={priceFormatted} removeProductToCart={removeProductToCart} />)}
+                </div>
                 <h3 className={'cartTotalPrice_title'}><span>Prix total :</span> {priceFormatted(totalPrice, 0, 2)}</h3>
             </div>
-        </div>
+            <div>
+                <h2 className={'title'}>Mes Informations</h2>
+            </div>
+        </section>
     );
 };
 
