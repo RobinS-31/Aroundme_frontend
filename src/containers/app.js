@@ -9,13 +9,12 @@ import { getProducersList } from "../actions/producer";
 import { getCategories } from "../actions/products";
 import { saveCart, getCart } from "../actions/cart";
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
     userLocation: state.user.location,
     userConnected: state.user.userConnected,
     distanceUnit: state.searchBar.distanceUnit,
     distanceMetric: state.searchBar.distanceMetric,
-    cartProduct: state.cart.cartProduct,
-    props: ownProps
+    cartProduct: state.cart.cartProduct
 });
 
 const mapDispatchToProps = (dispatch) => ({

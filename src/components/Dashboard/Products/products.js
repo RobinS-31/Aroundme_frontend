@@ -3,10 +3,12 @@ import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
+// == Import : components
+import DisplayProduct from "./displayProduct";
+
 // == Import : local
-import './style.scss';
-import { priceFormatted } from "../../../utils/tools";
 import imgPlaceholder from '../../../assets/images/imageFake.webp';
+import './style.scss';
 
 const Products = ({
     getProducts,
@@ -25,17 +27,17 @@ const Products = ({
     isProductsFormValidated
 }) => {
 
-    const [category, setCategory] = useState(''); // Correspond à la catégorie sélectionné (dans le formulaire d'ajout d'un produit)
+    const [category, setCategory] = useState(''); // Correspond à la catégorie sélectionnée (dans le formulaire d'ajout d'un produit)
     const [product, setProduct] = useState({}); // Correspond aux informations du produit sélectionné (dans le formulaire d'ajout d'un produit)
     const [price, setPrice] = useState(''); // Correspond au prix du produit (dans le formulaire d'ajout d'un produit)
     const [measure, setMeasure] = useState('kg'); // Correspond a l'unité de mesure du prix du produit (dans le formulaire d'ajout d'un produit)
     const [description, setDescription] = useState(''); // Correspond à la description du produit (dans le formulaire d'ajout d'un produit)
     const [productDetail, setProductDetail] = useState(''); // Correspond au dernier détail ajouté au produit (dans le formulaire d'ajout d'un produit)
-    const [productDetailsList, setProductDetailsList] = useState([]); // Contient tout les détails du produit (affiché dans le formulaire d'ajout d'un produit)
+    const [productDetailsList, setProductDetailsList] = useState([]); // Contient tous les détails du produit (affiché dans le formulaire d'ajout d'un produit)
     const [isFormError, setIsFormError] = useState(false); // Indique si le formulaire d'ajout du produit contient une erreur
 
     /**
-     * Au montage du composant, récupère la liste de tout les produits qu'il est possible d'ajouter (getProducts())
+     * Au montage du composant, récupère la liste de tous les produits qu'il est possible d'ajouter (getProducts())
      * et défini la valeur de la propriété "producerProducts" du "state" du "reducer" "dashboard" pour que cette dernière
      * contienne la liste des produits dont dispose à ce moment le producteur (setProducerProducts(userData.products)).
      */
@@ -127,7 +129,7 @@ const Products = ({
 
     /**
      * Fonction se déclanchant lors du clique sur le bouton permettant de supprimer un produit (dans le formulaire de la "carte" représentant le produit).
-     * Le produit est retiré, de la propriété "producerProducts" du "state" du "reducer" "dashboard" qui contient la liste des produit du producteur, via
+     * Le produit est retiré, de la propriété "producerProducts" du "state" du "reducer" "dashboard" qui contient la liste des produits du producteur, via
      * l'action "removeProduct".
      * @param e
      */
@@ -145,53 +147,6 @@ const Products = ({
     const handleSubmitRemoveProductForm = (e) => {
         e.preventDefault();
         updateProducerProducts();
-    };
-
-    /**
-     * Permet d'afficher une "carte" représentant un produit.
-     * @param product - Données d'un produit, de la liste des produits du producteur.
-     * @returns {JSX.Element}
-     */
-    const displayProduct = (product) => {
-        return (
-            <form className={'dashboard_products_list_container_item'} key={product.id} onSubmit={handleSubmitRemoveProductForm}>
-                <div className={'dashboard_products_list_container_item_productImg'}>
-                    <img
-                        src={`${process.env.REACT_APP_API_URL}${product.imageUrl}`}
-                        alt={'Représentation du produit'}
-                        loading={'lazy'}
-                    />
-                </div>
-                <div className={'dashboard_products_list_container_item_productInfo'}>
-                    <p className={'dashboard_products_list_container_item_productInfo_name'}>{product.name}</p>
-                    <p className={'dashboard_products_list_container_item_productInfo_price'}>{priceFormatted(product.price)} / {product.measure}</p>
-                    {product.details.length !== 0 &&
-                    <div className={'dashboard_products_list_container_item_productInfo_details'}>
-                        <p>Détails du produit :</p>
-                        <ul>
-                            {product.details.map(detail => {
-                                return <li key={detail}>- {detail}</li>
-                            })}
-                        </ul>
-                    </div>
-                    }
-                    {product.description.length !== 0 &&
-                    <div className={'dashboard_products_list_container_item_productInfo_description'}>
-                        <p>Description :</p>
-                        <p>{product.description}</p>
-                    </div>
-                    }
-                </div>
-                <button
-                    className={'dashboard_products_list_container_item_removeButton'}
-                    type={'submit'}
-                    value={product.id}
-                    onClick={handleOnClickRemoveProductButton}
-                >
-                    Supprimer
-                </button>
-            </form>
-        );
     };
 
     return (
@@ -317,7 +272,14 @@ const Products = ({
             <div className={'dashboard_products_list'}>
                 <h3>Gérer mes produits</h3>
                 <div className={'dashboard_products_list_container'}>
-                    {userData && userData.products.map(product => displayProduct(product))}
+                    {userData && userData.products.map(product =>
+                        <DisplayProduct
+                            key={product.id}
+                            product={product}
+                            handleSubmitRemoveProductForm={handleSubmitRemoveProductForm}
+                            handleOnClickRemoveProductButton={handleOnClickRemoveProductButton}
+                        />
+                    )}
                 </div>
             </div>
         </div>

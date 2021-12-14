@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 
 // == Import : components
 import CartItem from "./cartItem";
-import Form from "../../containers/form";
 
 // == Import : local
 import { priceFormatted } from "../../utils/tools";
@@ -21,10 +20,6 @@ const Cart = ({ cartProduct, producersList, removeProductToCart }) => {
             formatCart(cartProduct, producersList);
         }
     }, [cartProduct, producersList]);
-
-    useEffect(() => {
-        console.log(cartFormated);
-    }, [cartFormated]);
 
     const formatCart = (cartData, producersData) => {
         Object.entries(cartData).forEach(([producerId, cartContent]) => {

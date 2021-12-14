@@ -4,6 +4,8 @@ import { useLocation, useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
+import FormInput from "../FormInput/formInput";
+
 // == Import : local
 import './style.scss';
 import {
@@ -362,10 +364,7 @@ const Form = ({
                     }
                     <div className={'form_container_data'}>
                         <div className={'form_container_data_item inputContainer'}>
-                            <label htmlFor={'firstname'}>
-                                Prénom
-                            </label>
-                            <input
+                            <FormInput
                                 id={'firstname'}
                                 name={'firstname'}
                                 type={'text'}
@@ -381,10 +380,7 @@ const Form = ({
                             }
                         </div>
                         <div className={'form_container_data_item inputContainer'}>
-                            <label htmlFor={'lastname'}>
-                                Nom
-                            </label>
-                            <input
+                            <FormInput
                                 id={'lastname'}
                                 name={'lastname'}
                                 type={'text'}
@@ -400,10 +396,7 @@ const Form = ({
                             }
                         </div>
                         <div className={'form_container_data_item inputContainer'}>
-                            <label htmlFor={'address'}>
-                                Adresse
-                            </label>
-                            <input
+                            <FormInput
                                 id={'address'}
                                 name={'address'}
                                 type={'text'}
@@ -419,10 +412,7 @@ const Form = ({
                             }
                         </div>
                         <div className={'form_container_data_item inputContainer'}>
-                            <label htmlFor={'city'}>
-                                Ville
-                            </label>
-                            <input
+                            <FormInput
                                 id={'city'}
                                 name={'city'}
                                 type={'text'}
@@ -438,8 +428,7 @@ const Form = ({
                             }
                         </div>
                         <div className={'form_container_data_item inputContainer'}>
-                            <label htmlFor={'postcode'}>Code Postal</label>
-                            <input
+                            <FormInput
                                 id={'postcode'}
                                 name={'postcode'}
                                 type={'text'}
@@ -455,8 +444,7 @@ const Form = ({
                             }
                         </div>
                         <div className={'form_container_data_item inputContainer'}>
-                            <label htmlFor={'email'}>Email</label>
-                            <input
+                            <FormInput
                                 id={'email'}
                                 name={'email'}
                                 type={'email'}
@@ -473,8 +461,7 @@ const Form = ({
                         </div>
                         {!isDashboard &&
                         <div className={'form_container_data_item inputContainer'}>
-                            <label htmlFor={'password'}>Mot de passe</label>
-                            <input
+                            <FormInput
                                 id={'password'}
                                 name={'password'}
                                 type={'password'}
@@ -524,8 +511,7 @@ const Form = ({
                         </div>
                         }
                         <div className={'form_container_data_item inputContainer'}>
-                            <label className={'notRequired'} htmlFor={'phone'}>Téléphone</label>
-                            <input
+                            <FormInput
                                 id={'phone'}
                                 name={'phone'}
                                 type={'text'}
@@ -538,8 +524,7 @@ const Form = ({
                         {isProducer &&
                         <>
                             <div className={'form_container_data_item inputContainer'}>
-                                <label htmlFor={'establishment'}>Établissement</label>
-                                <input
+                                <FormInput
                                     id={'establishment'}
                                     name={'establishment'}
                                     type={'text'}
@@ -555,8 +540,7 @@ const Form = ({
                                 }
                             </div>
                             <div className={'form_container_data_item inputContainer'}>
-                                <label htmlFor={'job'}>Métier</label>
-                                <input
+                                <FormInput
                                     id={'job'}
                                     name={'job'}
                                     type={'text'}
@@ -572,8 +556,7 @@ const Form = ({
                                 }
                             </div>
                             <div className={'form_container_data_item inputContainer'}>
-                                <label htmlFor={'siret'}>Numéro Siret</label>
-                                <input
+                                <FormInput
                                     id={'siret'}
                                     name={'siret'}
                                     type={'text'}

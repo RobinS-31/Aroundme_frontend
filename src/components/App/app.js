@@ -27,8 +27,7 @@ const App = ({
     getCategories,
     cartProduct,
     saveCart,
-    getCart,
-    props
+    getCart
 }) => {
     const location = useLocation().pathname;
 
@@ -49,11 +48,11 @@ const App = ({
 
     useEffect(() => {
         getCart();
-    }, []);
+    }, [getCart]);
 
     useEffect(() => {
         saveCart();
-    }, [cartProduct]);
+    }, [cartProduct,saveCart]);
 
     useEffect(() => {
         checkedIfLogged();
